@@ -1,5 +1,4 @@
 class AssignmentsController < ApplicationController
-
   def show
     @assignment = Assignment.find(params[:id])
   end
@@ -10,19 +9,12 @@ class AssignmentsController < ApplicationController
 
   def create
     @assignment = Assignment.new(assignment_params)
+    @assignment.course = @course
     if @assignment.save
-      redirect_to assignments_path
+      redirect_to course_assignments_path
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-
-  end
-
-  def update
-
   end
 
   private
@@ -30,5 +22,4 @@ class AssignmentsController < ApplicationController
   def assignment_params
     params.require(:assigment).permit(:due_date, :title)
   end
-
 end
