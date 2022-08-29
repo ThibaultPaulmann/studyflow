@@ -3,5 +3,5 @@ class Answer < ApplicationRecord
   belongs_to :user
   
   validates :content, presence: true, length: { minimum: 2 }
-  validates :upvotes, presence: true, numericality: { only_integer: true }
+  validates :upvotes, numericality: { only_integer: true }
 end
