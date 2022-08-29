@@ -1,12 +1,54 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: $background-color;
+  border-bottom: 0.1rem solid white;
 }
-
+.navbar-container {
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  margin-bottom: 40px;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  filter: hue-rotate(180deg) saturate(40%);
+}
+.nav-item {
+  margin-right: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#logo-text {
+  font-family: 'Baloo Bhai';
+  font-size: 40px;
+}
+
+.nav-item-dropdown {
+  border-radius: 50%;
+}
+
+#logo-text {
+  margin-left: 10px;
+}
+
+.logo-text-nav {
+  display: flex;
+  margin-left: 78px;
+}
+
+.nav-link-button {
+  text-decoration: none;
+  color: #29323d;
+  font-weight: bolder;
+}
+
+.nav-link {
+  font-weight: 500;
 }
