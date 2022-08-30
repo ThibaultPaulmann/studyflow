@@ -1,6 +1,18 @@
 
 .container-assignment-top {
   display: flex;
+  justify-content: space-between;
+  margin-left: 53px;
+  margin-right: 53px;
+
+  #your-progress-compared {
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 35px;
+  }
 }
 
 
@@ -14,7 +26,7 @@
   background-color: lightgray;
   display: flex;
   justify-content: space-between;
-  width: 800px;
+  width: 1000px;
   margin: 30px;
   margin-right: auto;
   margin-left: 20px;
@@ -26,7 +38,7 @@
   background-color: rgb(231, 228, 228);
   display: flex;
   justify-content: space-between;
-  width: 800px;
+  width: 1000px;
   margin: 30px;
   margin-right: auto;
   margin-left: 20px;
@@ -40,7 +52,8 @@
   padding: 10px;
   width: 300px;
   border-radius: 10px;
-  margin: auto;
+  margin: 30px;
+  height: 400px;
 
   ul {
     list-style: none;
@@ -48,6 +61,8 @@
 
   h3 {
     text-align: center;
+    margin-bottom: 0px;
+    font-weight: bold;
   }
 
 }
@@ -55,10 +70,11 @@
 #pdf-container {
   border: solid black 1px;
   background-color: lightgrey;
-  width: 800px;
-  height: 1132px;
+  width: 1000px;
+  height: 1000px;
   margin: auto;
-  margin-top: 30px;
+  margin-left: 20px;
+  margin-top: 70px;
   border-radius: 5px;
 }
 

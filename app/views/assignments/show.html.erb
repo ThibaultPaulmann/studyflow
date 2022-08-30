@@ -1,40 +1,42 @@
 
 <div class="container-assignment-top">
-<div class="container-difficulty-title">
-  <div class="container-progress-difficulty" id="progress-difficulty">
-    <div class="container-your-progress" id="your-progress"><h5>Your progress</h5></div>
-    <div class="container-difficulty-box" id="difficulty-box">
-      <span class="dot"></span><h5>medium</h5>
+  <div class="container-difficulty-title">
+    <div class="container-progress-difficulty" id="progress-difficulty">
+      <div class="container-your-progress" id="your-progress"><h5>Your progress</h5></div>
+      <div class="container-difficulty-box" id="difficulty-box">
+        <span class="dot"></span><h5>medium</h5>
+      </div>
+    </div>
+
+    <div class="container-title-due-date" id="title-due-date">
+      <h2><%= @assignment.title %></h2>
+      <h2><%= @assignment.due_date %></h2>
+    </div>
+    <div class="container" id="pdf-container">
+      <h1>pdf placeholder</h1>
     </div>
   </div>
-
-  <div class="container-title-due-date" id="title-due-date">
-    <h2><%= @assignment.title %></h2>
-    <h2><%= @assignment.due_date %></h2>
-  </div>
-</div>
-
 
   <div class="container" id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
     <ul>
+    <div id="your-progress-compared">
+      <strong><li><i class="fa-solid fa-icons"></i> Philipp (you)</li></strong>
+    </div>
+        <br>
       <li><i class="fa-solid fa-icons"></i> Thibault </li>
         <br>
       <li><i class="fa-solid fa-icons"></i> Mike</li>
         <br>
       <li><i class="fa-solid fa-icons"></i> Timothy</li>
         <br>
-      <li><i class="fa-solid fa-icons"></i> Philipp</li>
+      <li><i class="fa-solid fa-icons"></i> Tom</li>
     </ul>
   </div>
 </div>
 
+
+
+
 <%= link_to "Forum", "#", class: "btn btn-ghost" %>
-
-<div class="container" id="pdf-container">
-  <h1>pdf placeholder</h1>
-</div>
-
-
-<div></div>
