@@ -1,4 +1,36 @@
-<%= @assignment.title %>
-<%= @assignment.due_date %>
-<h1>Assignment for: </h1><%= @assignment.course.name %>
-<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
+<div class="container-assignment-top">
+  <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
+    <div class="container-title-difficulty-due-date" id="title-difficulty-due-date">
+      <div class="container-title-difficulty" id="title-difficulty">
+        <h2><%= @assignment.title %></h2>
+        <div class="container-difficulty-box" id="difficulty-box">
+          <span class="dot"></span><h5>medium</h5>
+        </div>
+      </div>
+     <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
+    </div>
+    <div class="container" id="pdf-container">
+      <h1>pdf placeholder</h1>
+    </div>
+  </div>
+  <div class="container" id="classmate-progress">
+    <h3>User progress</h3>
+    <i class="fa-solid fa-user-tie-hair"></i>
+    <ul>
+    <div id="your-progress-compared">
+      <strong><li><i class="fa-solid fa-icons"></i> Philipp (you)</li></strong>
+    </div>
+        <br>
+      <li><i class="fa-solid fa-icons"></i> Thibault </li>
+        <br>
+      <li><i class="fa-solid fa-icons"></i> Mike</li>
+        <br>
+      <li><i class="fa-solid fa-icons"></i> Timothy</li>
+        <br>
+      <li><i class="fa-solid fa-icons"></i> Tom</li>
+    </ul>
+      <div class="container-forum" id="forum-button">
+        <%= link_to "Forum", "#", class: "btn btn-ghost" %>
+      </div>
+  </div>
+</div>
