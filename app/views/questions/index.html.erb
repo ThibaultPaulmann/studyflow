@@ -1,0 +1,9 @@
+<h1>Question html</h1>
+<% @data.each do |hash| %>
+  <p>question: <%= hash[:question].title %></p>
+  <p> answers:
+    <% hash[:answers].each do |answer| %>
+      <%= answer.content %>
+    <% end %>
+  </p>
+<% end %>
