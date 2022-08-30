@@ -1,7 +1,3 @@
-<h1>hello</h1>
-
-<h3>Title: <%= @assignment.title %></h3>
-<br>
-<h3>Due Date: <%= @assignment.due_date %></h3>
-<br>
-<h3>Assignment for: <%= @assignment.course.name %></h3>
+<%= @assignment.title %>
+<%= @assignment.due_date %>
+<h1>Assignment for: </h1><%= @assignment.course.name %>

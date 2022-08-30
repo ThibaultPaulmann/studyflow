@@ -5,5 +5,6 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @assignments = Assignment.where(course: @course)
   end
 end
