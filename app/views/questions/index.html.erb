@@ -1,9 +1,28 @@
-<h1>Question html</h1>
-<% @data.each do |hash| %>
-  <p>question: <%= hash[:question].title %></p>
-  <p> answers:
-    <% hash[:answers].each do |answer| %>
-      <%= answer.content %>
+<div class="questions-index">
+  <div class="question-create">Create a new question</div>
+  <p>text</p>
+  <div class="forum-container">
+    <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
+    <% @data.each_with_index do |dataHash| %>
+      <% columns.sort_by! { |column| column[:height]} %>
+      <% columns.first[:elements] << dataHash %>
+      <% columns.first[:height] += (dataHash[:answers].size + 1) %>
     <% end %>
-  </p>
-<% end %>
+    <div class="forum-column">
+      <% columns[0][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
+      <% end %>
+    </div>
+    <div class="forum-column">
+      <% columns[1][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
+      <% end %>
+    </div>
+    <div class="forum-column">
+      <% columns[2][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
+      <% end %>
+    </div>
+  </div>
+  <p>text</p>
+</div>

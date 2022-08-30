@@ -1,0 +1,29 @@
+<div class="forum-card">
+  <div class="question">
+    <div class="question-header d-flex justify-content-between">
+      <p><%= dataHash[:question].user.firstName %> <%= dataHash[:question].user.lastName %></p>
+      <p>^ <%= dataHash[:question].upvotes %></p>
+    </div>
+    <div class="question-body">
+      <h3><%= dataHash[:question].title %></h3>
+    </div>
+    <div class="question-footer">
+      <p><%= dataHash[:question].created_at %></p>
+    </div>
+  </div>
+  <div class="answers">
+    <h4><%= pluralize(dataHash[:answers].count, "Answer") %></h2>
+    <% dataHash[:answers].each do |answer| %>
+      <div class="answer">
+        <div class="answer-header d-flex justify-content-between">
+          <p><%= answer.user.firstName + answer.user.lastName %></p>
+          <p>^ <%= answer.upvotes %></p>
+        </div>
+        <div class="answer-body">
+          <p><%= answer.content %></p>
+          <p><%= answer.created_at %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
