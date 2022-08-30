@@ -1,3 +1,10 @@
-<div class="d-flex align-items-center justify-content-center">
-  <h1>Welcome to courses controller</h1>
-</div>
+<h1>My Courses</h1>
+<% @courses.each do |course|%>
+  <div>
+  <%= course.code %>
+  <%= link_to course.name, course_path(course.id) %>
+
+  <h1>--------------------</h1>
+  <br>
+  </div>
+<% end %>

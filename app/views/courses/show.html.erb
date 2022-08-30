@@ -1,10 +1,10 @@
 <h1>Course: <%= @course.name %></h1>
 <h2>Course Name: <%= @course.code %></h2>
 
-<br>
-<br>
+<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
 
 <h1>Due Assignments: </h1>
+
 <%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
  <% @assignments.each do |assignment| %>
       <div>
