@@ -1,3 +1,15 @@
+
+.container-assignment-top {
+  display: flex;
+}
+
+
+
+
+
+
+
+
 #title-due-date {
   background-color: lightgray;
   display: flex;
@@ -11,7 +23,7 @@
 }
 
 #progress-difficulty {
-  background-color: lightgray;
+  background-color: rgb(231, 228, 228);
   display: flex;
   justify-content: space-between;
   width: 800px;
@@ -48,4 +60,41 @@
   margin: auto;
   margin-top: 30px;
   border-radius: 5px;
+}
+
+#difficulty-box {
+  background-color: lightblue;
+  width: 125px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+
+  h5 {
+    margin: auto;
+  }
+
+
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    // margin-top: 10px;
+    // margin-bottom: 5px;
+    background-color: yellow;
+    margin: auto;
+  }
+}
+
+#your-progress {
+  background-color: lightblue;
+  border-radius: 10px;
+  width: 150px;
+
+  h5 {
+    margin-top: 7px;
+    text-align: center;
+  }
 }
