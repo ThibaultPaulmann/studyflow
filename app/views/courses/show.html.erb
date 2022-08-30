@@ -6,8 +6,10 @@
 
 <h1>Due Assignments: </h1>
  <% @assignments.each do |assignment| %>
-      <div class="booking-box">
-        <h5>From: <%= assignment.title %></h5>
-        <h5>To: <%= assignment.due_date %></h5>
+      <div>
+        <h5><%= assignment.title.capitalize %></h5>
+        <h5>Due: <%= assignment.due_date %></h5>
       </div>
+      <h1>--------------------</h1>
+    <br>
     <% end %>
