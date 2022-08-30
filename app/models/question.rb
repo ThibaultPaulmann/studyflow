@@ -5,5 +5,5 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :title, presence: true, length: { minimum: 2 }, uniqueness: true
-  validates :upvotes, presence: true, numericality: { only_integer: true }
+  validates :upvotes, numericality: { only_integer: true }
 end

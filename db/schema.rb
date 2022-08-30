@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_104130) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_213925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_104130) do
     t.bigint "question_id", null: false
     t.bigint "user_id", null: false
     t.string "content"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_104130) do
   create_table "course_enrollments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "course_id", null: false
-    t.boolean "creator"
+    t.boolean "creator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_enrollments_on_course_id"
@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_104130) do
     t.bigint "assignment_id", null: false
     t.bigint "user_id", null: false
     t.string "title"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["assignment_id"], name: "index_questions_on_assignment_id"
