@@ -10,9 +10,10 @@ class AssignmentsController < ApplicationController
 
   def create
     @assignment = Assignment.new(assignment_params)
+    @course = Course.find(params[:course_id])
     @assignment.course = @course
     if @assignment.save
-      redirect_to root_path
+      redirect_to course_path(@course)
     else
       render :new, status: :unprocessable_entity
     end
@@ -21,7 +22,6 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.require(:assigment).permit(:due_date, :title)
+    params.require(:assignment).permit(:due_date, :title)
   end
-
 end
