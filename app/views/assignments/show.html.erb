@@ -1,3 +1,4 @@
 <%= @assignment.title %>
 <%= @assignment.due_date %>
 <h1>Assignment for: </h1><%= @assignment.course.name %>
+<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
