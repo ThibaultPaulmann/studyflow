@@ -1,20 +1,31 @@
 class AnswersController < ApplicationController
 
   def create
-    @answer = Answer.new(params[:question_id])
-    @answer.save
-    redirect_to questions_path
+    @answer = Answer.new(answer_params)
+    @answer.question = Question.find(params[:question_id])
+    @answer.user = current_user
+    if @answer.save
+      redirect_to assignment_questions_path
+      flash[:notice] = "Answer posted!"
+    else
+      flash[:alert] = "Error posting the answer"
+    end
   end
 
-  def update
-    @answer = Answer.find(params[:question_id])
-    @answer.update(answer_params)
-    redirect_to questions_path(@question)
+  def upvote
+    @answer = Answer.find(params[:answer_id])
+    newUpvotes = @answer.upvotes + 1
+    @answer.update(upvotes: newUpvotes)
+    if redirect_to assignment_questions_path
+      flash[:notice] = "Answer upvoted!"
+    else
+      flash[:alert] = "Error upvoting the answer"
+    end
   end
 
   private
 
   def answer_params
-    params.require(:answer).permit(:answer)
+    params.require(:answer).permit(:content)
   end
 end
