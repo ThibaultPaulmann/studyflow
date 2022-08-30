@@ -5,7 +5,7 @@
   margin-left: 53px;
   margin-right: 53px;
 
-  #your-progress-compared {
+#your-progress-compared {
     border: solid black 1px;
     border-radius: 10px;
     width: 150px;
@@ -15,36 +15,26 @@
   }
 }
 
-
-
-
-
-
-
-
-#title-due-date {
-  background-color: lightgray;
+#title-difficulty {
   display: flex;
   justify-content: space-between;
-  width: 1000px;
-  margin: 30px;
-  margin-right: auto;
+  margin-top: 30px;
+  margin-right: 20px;
   margin-left: 20px;
-  padding: 10px;
-  border-radius: 10px;
+  padding-top: 10px;
+  align-items: center;
 }
 
-#progress-difficulty {
-  background-color: rgb(231, 228, 228);
-  display: flex;
-  justify-content: space-between;
+#title-difficulty-due-date {
+  background-color: lightgray;
   width: 1000px;
-  margin: 30px;
-  margin-right: auto;
-  margin-left: 20px;
-  padding: 10px;
   border-radius: 10px;
 
+  h6 {
+    margin-right: auto;
+    margin-left: 20px;
+    padding-bottom: 10px;
+  }
 }
 
 #classmate-progress {
@@ -64,7 +54,6 @@
     margin-bottom: 0px;
     font-weight: bold;
   }
-
 }
 
 #pdf-container {
@@ -72,8 +61,6 @@
   background-color: lightgrey;
   width: 1000px;
   height: 1000px;
-  margin: auto;
-  margin-left: 20px;
   margin-top: 70px;
   border-radius: 5px;
 }
@@ -86,10 +73,10 @@
   align-items: center;
   border-radius: 10px;
 
+
   h5 {
     margin: auto;
   }
-
 
   .dot {
     height: 25px;
@@ -97,20 +84,11 @@
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    // margin-top: 10px;
-    // margin-bottom: 5px;
     background-color: yellow;
     margin: auto;
   }
 }
 
-#your-progress {
-  background-color: lightblue;
-  border-radius: 10px;
-  width: 150px;
-
-  h5 {
-    margin-top: 7px;
-    text-align: center;
-  }
+#forum-button {
+  margin-left: 90px;
 }
