@@ -9,17 +9,21 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  height: 40px;
 }
 
 .container-fluid {
   margin: 0px 70px 0px 70px;
   display: flex;
-  justify-content: space-around;
 }
 
 .nav-item {
-  margin-right: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#logo-text {
+  font-family: "Baloo Bhai";
+  font-size: 40px;
 }
