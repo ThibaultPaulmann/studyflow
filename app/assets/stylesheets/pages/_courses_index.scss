@@ -1,0 +1,34 @@
+.courses-index {
+  display: flex;
+  margin: 0;
+
+  .index-left {
+    flex-grow: 1;
+  }
+
+  .courses {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-gap: 20px;
+  }
+
+  .index-right {
+    width: 400px;
+    margin-left: 20px;
+  }
+
+  .calendar {
+    width: 100%;
+    height: 400px;
+    background: lightgrey;
+    margin-bottom: 20px;
+  }
+
+  .due-assignments {
+    width: 100%;
+    height: 700px;
+    background: lightgrey;
+  }
+}
