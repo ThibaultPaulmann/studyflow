@@ -1,3 +1,10 @@
-<%= @assignment.title %>
-<%= @assignment.due_date %>
-<h1>Assignment for: </h1><%= @assignment.course.name %>
+<div class="container" id="title-due-date">
+  <h2><%= @assignment.title %></h2>
+  <h2><%= @assignment.due_date %></h2>
+</div>
+
+<div class="container" id="progress-difficulty">
+  <h3>User progress(dropdown)</h3>
+  <h3>Difficulty(stars)</h3>
+</div>
+ <%# <%= @assignment.course.name %>
