@@ -5,6 +5,7 @@
 <br>
 
 <h1>Due Assignments: </h1>
+<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
  <% @assignments.each do |assignment| %>
       <div>
         <h5><%= assignment.title.capitalize %></h5>
