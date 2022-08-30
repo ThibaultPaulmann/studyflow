@@ -1,54 +1,57 @@
 .navbar-lewagon {
   justify-content: space-between;
-  // background: $background-color;
-  border-bottom: 0.1rem solid white;
+  background: white;
 }
-.navbar-container {
-  z-index: 5;
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  margin-bottom: 40px;
-}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  filter: hue-rotate(180deg) saturate(40%);
+  height: 40px;
 }
+
+.container-fluid {
+  margin: 0px 70px 0px 70px;
+  display: flex;
+}
+
 .nav-item {
-  margin-right: 78px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 #logo-text {
-  font-family: 'Baloo Bhai';
+  font-family: "Baloo Bhai";
   font-size: 40px;
-}
+  .navbar-lewagon {
+    justify-content: space-between;
+    background: white;
+  }
 
-.nav-item-dropdown {
-  border-radius: 50%;
-}
+  .navbar-lewagon .navbar-collapse {
+    flex-grow: 0;
+  }
 
-#logo-text {
-  margin-left: 10px;
-}
+  .navbar-lewagon .navbar-brand img {
+    width: 40px;
+    height: 40px;
+  }
 
-.logo-text-nav {
-  display: flex;
-  margin-left: 78px;
-}
+  .container-fluid {
+    margin: 0px 70px 0px 70px;
+    display: flex;
+  }
 
-.nav-link-button {
-  text-decoration: none;
-  color: #29323d;
-  font-weight: bolder;
-}
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.nav-link {
-  font-weight: 500;
-}
+  #logo-text {
+    font-family: "Baloo Bhai";
+    font-size: 40px;
+  }
