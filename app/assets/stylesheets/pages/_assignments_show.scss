@@ -1,5 +1,5 @@
 #title-due-date {
-  background-color: wheat;
+  background-color: lightgray;
   display: flex;
   justify-content: space-between;
   width: 800px;
@@ -7,10 +7,11 @@
   margin-right: auto;
   margin-left: 20px;
   padding: 10px;
+  border-radius: 10px;
 }
 
 #progress-difficulty {
-  background-color: wheat;
+  background-color: lightgray;
   display: flex;
   justify-content: space-between;
   width: 800px;
@@ -18,4 +19,33 @@
   margin-right: auto;
   margin-left: 20px;
   padding: 10px;
+  border-radius: 10px;
+
+}
+
+#classmate-progress {
+  background-color:lightgray;
+  padding: 10px;
+  width: 300px;
+  border-radius: 10px;
+  margin: auto;
+
+  ul {
+    list-style: none;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+}
+
+#pdf-container {
+  border: solid black 1px;
+  background-color: lightgrey;
+  width: 800px;
+  height: 1132px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 5px;
 }
