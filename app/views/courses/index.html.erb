@@ -1,10 +1,10 @@
+<h1>My Courses</h1>
 <% @courses.each do |course|%>
-<div>
+  <div>
   <%= course.code %>
   <%= link_to course.name, course_path(course.id) %>
 
   <h1>--------------------</h1>
   <br>
-  <% end %>
-
-</div>
+  </div>
+<% end %>

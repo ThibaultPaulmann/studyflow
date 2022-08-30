@@ -1,14 +1,14 @@
 <h1>Course: <%= @course.name %></h1>
 <h2>Course Name: <%= @course.code %></h2>
 
-<br>
-<br>
-  <h1>Due Assignments: </h1>
- <%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
+<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
 
-    <% @assignments.each do |assignment| %>
-          <div class="booking-box">
-            <h5>From: <%= assignment.title %></h5>
-            <h5>To: <%= assignment.due_date %></h5>
-          </div>
-    <% end %>
+<h1>Due Assignments: </h1>
+<% @assignments.each do |assignment| %>
+  <div>
+    <h5><%= assignment.title.capitalize %></h5>
+    <h5>Due: <%= assignment.due_date %></h5>
+  <h1>--------------------</h1>
+  <br>
+  </div>
+<% end %>
