@@ -19,21 +19,30 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.user = current_user
     @question.assignment = params[:assignment_id]
-    @question.save
+    if @question.save
+      redirect_to assignment_questions_path
+      flash[:notice] = "Question posted!"
+    else 
+      render :new, status: :unprocessable_entity
+      flash[:alert] = "Error posting the question"
+    end
   end
 
-  def update
+  def upvote
     @question = Question.find(params[:question_id])
-    @question.update(update_params)
+    newUpvotes = @question.upvotes + 1
+    if @question.update(upvotes: newUpvotes)
+      redirect_to assignment_questions_path
+      flash[:notice] = "Question upvoted!"
+    else
+      flash[:alert] = "Error upvoting the question"
+    end
+    
   end
 
   private
 
   def question_params
     params.require(:question).permit(:title)
-  end
-
-  def update_params
-    params.require(:question).permit(:upvotes)
   end
 end
