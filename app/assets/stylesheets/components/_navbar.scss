@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $font-color;
+  height: 65px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,13 +18,34 @@
   display: flex;
 }
 
+.nav-logo {
+  color: $background-color;
+  &:hover {
+    color: $tertiary-color;
+  }
+}
+
 .nav-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: $background-color;
+
+  &:hover {
+    color: $tertiary-color;
+  }
 }
 
 #logo-text {
   font-family: "Baloo Bhai";
   font-size: 40px;
+  color: $background-color;
+
+  &:hover {
+    color: $tertiary-color;
+  }
 }
