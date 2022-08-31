@@ -1,9 +1,8 @@
 #course-show {
+  display: flex;
   margin: 53px;
   margin-top: 1px;
 }
-
-
 
 
 #course-name-code {
@@ -12,7 +11,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: antiquewhite;
-  width: 400px;
+  width: 600px;
   margin-top: 20px;
   padding: 27px;
   margin-bottom: 20px;
@@ -24,10 +23,10 @@
 
 #each-due-assignment {
   background-color: antiquewhite;
-  margin: 10px;
+  margin: 40px 0px 40px 0px;
   padding: 10px;
   text-decoration: none;
-  width: 400px;
+  width: 600px;
 
   a {
     text-decoration: none;
@@ -38,6 +37,14 @@
       color: rgb(70, 67, 47);
     }
   }
+}
 
 
+#title-own-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#back-to-courses-btn {
 }
