@@ -116,12 +116,12 @@
   }
 }
 
-.extension {
+#extension {
   position: absolute;
   overflow-x: hidden;
   overflow-y: scroll;
   background: teal;
-  width: 300px;
-  left: -300px;
+  width: 350px;
+  left: -350px;
   height: 100%;
 }
