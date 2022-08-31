@@ -1,14 +1,44 @@
 .course {
   width: 100%;
-  height: 380px;
-  background-color: lightgray;
+  height: fit-content;
+  background-color: grey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-radius: 5px;
+
+
+
 
   .icon-container {
-    background: teal;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     width: 100%;
     height: 300px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
   }
 
   .content {
+    width: 100%;
+    height: fit-content;
+    background-color: lightgrey;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+  }
+
+  .content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #020024;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #020024;
+    margin-bottom: auto;
+    margin-top: 35px;
   }
 }
