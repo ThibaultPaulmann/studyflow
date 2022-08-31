@@ -1,18 +1,21 @@
-<h1>Course: <%= @course.name %></h1>
-<h2>Course Name: <%= @course.code %></h2>
+<div class="container-course-show" id="course-show">
 
 
-<h1>Due Assignments: </h1>
-<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
-
-
- <% @assignments.each do |assignment| %>
-      <div>
-        <h5><%= assignment.title.capitalize %></h5>
-        <h5>Due: <%= assignment.due_date %></h5>
+  <div class="container-course-name-code" id="course-name-code">
+    <h1><%= @course.name %></h1>
+    <em><h4><%= @course.code %></h2></em>
+  </div>
+  <div>
+    <h1>Due Assignments: </h1>
+  </div>
+  <div class="container-assignments" id="assignments">
+    <% @assignments.each do |assignment| %>
+      <div class="container-each-due-assignment" id="each-due-assignment">
+        <h5><%= link_to assignment.title.capitalize, course_assignment_path(@course, assignment) %></h5>
+        <h6>Due: <%= assignment.due_date %></h5>
       </div>
-      <%= link_to "Assignment", course_assignment_path(@course, assignment), class: 'btn btn-outline-primary' %>
-      <h1>--------------------</h1>
-
-    <br>
     <% end %>
+  </div>
+      <%= link_to "Back to all Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
+
+</div>

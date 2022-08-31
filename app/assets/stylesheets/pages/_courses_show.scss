@@ -1,0 +1,43 @@
+#course-show {
+  margin: 53px;
+  margin-top: 1px;
+}
+
+
+
+
+#course-name-code {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  width: 400px;
+  margin-top: 20px;
+  padding: 27px;
+  margin-bottom: 20px;
+
+  h1 {
+    font-weight: bold;
+  }
+}
+
+#each-due-assignment {
+  background-color: antiquewhite;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: none;
+  width: 400px;
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+      color: rgb(70, 67, 47);
+    }
+  }
+
+
+}
