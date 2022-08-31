@@ -12,7 +12,10 @@
       <h2>Calendar</h2>
     </div>
     <div class="due-assignments">
-      <h2>Due-assignments</h2>
+      <h2>Due assignments</h2>
+      <% current_user.assignments.each do |assignment| %>
+        <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+      <% end %>
     </div>
   </div>
 </div>

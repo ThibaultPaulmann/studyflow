@@ -1,3 +1,10 @@
 <div class="course">
-  <h3><%= course.name %></h3>
+  <%= link_to course_path(course) do %>
+    <div class="icon-container">
+    </div>
+  <% end %>
+  <div class="content d-flex justify-content-between">
+    <h3><%= course.name %></h3>
+    <h5><%= course.code %></h5>
+  </div>
 </div>
