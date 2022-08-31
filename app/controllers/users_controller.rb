@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.photo.attach(params[:photo])
+    raise
     if @user.update(user_params)
       flash[:notice] = "Your account information was succesfully updated"
       # redirect_to caravans_path
@@ -31,6 +32,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :photo)
+    params.require(:user).permit(:firstName, :lastName, :photo)
   end
 end
