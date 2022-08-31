@@ -5,10 +5,8 @@
   <% end %>
   <div class="content justify-content-between">
     <div class="d-flex justify-content-between">
-      <h3><%= course.name %></h3>
-      <h3> | </h3>
-      <h3><%= course.code %></h3>
+      <h3> <%= link_to course.name, course_path(course) %></h3>
+      <h3><%= link_to course.code, course_path(course) %></h3>
     </div>
-      
   </div>
 </div>
