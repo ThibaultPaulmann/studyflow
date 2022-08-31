@@ -30,6 +30,13 @@
     text-align: center;
   }
 
+  .calendar-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .day {
     padding-top: 20px;
     border: none;
@@ -41,22 +48,27 @@
     width: 31px;
     height: 31px;
     text-align: center;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .td-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   .assignments-container {
     display: flex;
     justify-content: center;
-    height: 8px;
+    height: 7px;
     width: 80%;
+    overflow: hidden;
     flex-wrap: wrap;
     i {
-      padding: 2px;
+      padding: 0 2px 2px 2px;
       font-size: 5px;
     }
   }
@@ -102,4 +114,14 @@
 
   .has-events {
   }
+}
+
+.extension {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: teal;
+  width: 300px;
+  left: -300px;
+  height: 100%;
 }
