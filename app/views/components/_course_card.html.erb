@@ -3,8 +3,12 @@
     <div class="icon-container">
     </div>
   <% end %>
-  <div class="content d-flex justify-content-between">
-    <h3><%= course.name %></h3>
-    <h5><%= course.code %></h5>
+  <div class="content justify-content-between">
+    <div class="d-flex justify-content-between">
+      <h3><%= course.name %></h3>
+      <h3> | </h3>
+      <h3><%= course.code %></h3>
+    </div>
+      
   </div>
 </div>
