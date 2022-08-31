@@ -15,20 +15,21 @@
   }
 
   .index-right {
-    width: 400px;
+    width: 500px;
     margin-left: 20px;
   }
 
   .calendar {
     width: 100%;
-    height: 400px;
+    height: auto;
     background: lightgrey;
     margin-bottom: 20px;
   }
 
   .due-assignments {
     width: 100%;
-    height: 700px;
+    height: auto;
+    padding: 20px 10px;
     background: lightgrey;
   }
 }
