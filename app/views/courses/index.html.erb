@@ -9,7 +9,7 @@
   </div>
   <div class="index-right">
     <div class="calendar">
-      <h2>Calendar</h2>
+      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
     </div>
     <div class="due-assignments">
       <h2>Due assignments</h2>

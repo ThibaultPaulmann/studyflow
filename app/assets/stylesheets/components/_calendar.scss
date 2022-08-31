@@ -1,0 +1,105 @@
+.simple-calendar {
+  padding-bottom: 5px;
+
+  .table {
+    table-layout: fixed;
+
+    td {
+      overflow: hidden;
+    }
+  }
+
+  .calendar-heading {
+    display: flex;
+    justify-content: center;
+
+    .calendar-title {
+      width: 200px;
+    }
+
+    font-size: 24px;
+    text-align: center;
+    a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .table-header {
+    text-align: center;
+  }
+
+  .day {
+    padding-top: 20px;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .day-container {
+    width: 31px;
+    height: 31px;
+    text-align: center;
+  }
+
+  .td-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .assignments-container {
+    display: flex;
+    justify-content: center;
+    height: 8px;
+    width: 80%;
+    flex-wrap: wrap;
+    i {
+      padding: 2px;
+      font-size: 5px;
+    }
+  }
+
+  .wday-0 {
+  }
+  .wday-1 {
+  }
+  .wday-2 {
+  }
+  .wday-3 {
+  }
+  .wday-4 {
+  }
+  .wday-5 {
+  }
+  .wday-6 {
+  }
+
+  .today {
+    .day-container {
+      background-color: teal;
+      border-radius: 50%;
+      color: white;
+    }
+  }
+  .past {
+  }
+  .future {
+  }
+
+  .start-date {
+  }
+
+  .prev-month {
+    color: grey;
+  }
+  .next-month {
+    color: grey;
+  }
+  .current-month {
+  }
+
+  .has-events {
+  }
+}
