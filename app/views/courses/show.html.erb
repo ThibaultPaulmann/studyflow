@@ -10,11 +10,7 @@
     <div class="container-assignments" id="assignments">
       <% @assignments.each do |assignment| %>
         <div class="container-each-due-assignment" id="each-due-assignment">
-          <div class="container-title-own-progress" id="title-own-progress">
-            <h5><%= link_to assignment.title.capitalize, course_assignment_path(@course, assignment) %></h5>
-            <h5>user progress</h5>
-          </div>
-          <h6>Due: <%= assignment.due_date %></h5>
+          <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
         </div>
       <% end %>
     </div>

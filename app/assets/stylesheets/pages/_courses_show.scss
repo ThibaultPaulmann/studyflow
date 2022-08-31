@@ -23,8 +23,8 @@
 
 #each-due-assignment {
   background-color: antiquewhite;
-  margin: 40px 0px 40px 0px;
-  padding: 10px;
+  margin: 20px 0px 20px 0px;
+  padding: 2px;
   text-decoration: none;
   width: 600px;
 
@@ -37,14 +37,4 @@
       color: rgb(70, 67, 47);
     }
   }
-}
-
-
-#title-own-progress {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#back-to-courses-btn {
 }
