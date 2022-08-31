@@ -1,0 +1,13 @@
+<div class="assignment-card">
+  <%= link_to course_assignment_path(assignment.course, assignment) do %>
+    <div class= "d-flex justify-content-between">
+      <div>
+        <p><%= assignment.title %></p>
+        <p>user progress</p>
+      </div>
+      <div>
+        <p><%= assignment.due_date %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
