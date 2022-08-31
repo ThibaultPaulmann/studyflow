@@ -1,24 +1,32 @@
+
+
 <div class="container-course-show" id="course-show">
   <div class="container-title-assignments-back-btn" id="container-title-assignments-back-btn">
     <div class="container-course-name-code" id="course-name-code">
       <h1><%= @course.name %></h1>
       <em><h4><%= @course.code %></h2></em>
     </div>
-    <div>
-      <h1>Due Assignments: </h1>
-    </div>
-    <div class="container-assignments" id="assignments">
-      <% @assignments.each do |assignment| %>
-        <div class="container-each-due-assignment" id="each-due-assignment">
-          <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
-        </div>
-      <% end %>
+    <div class="container-each-due-assignment" id="each-due-assignment">      <h1>Due Assignments: </h1>
+        <% @assignments.each do |assignment| %>
+            <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+        <% end %>
     </div>
     <div id="back-to-courses-btn">
       <%= link_to "Back to all Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
     </div>
   </div>
-  <div>
-    <h1>calendar</h1>
+   <div class="index-right">
+     <div class="container-calendar">
+      <div class="calendar">
+        <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-useful-resources">
+  <h1>Useful Resources</h1>
+  <div >
+    <%# after the migration, use each to list each resource %>
   </div>
 </div>

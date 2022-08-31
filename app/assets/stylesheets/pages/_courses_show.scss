@@ -1,5 +1,6 @@
 #course-show {
   display: flex;
+  justify-content: space-between;
   margin: 53px;
   margin-top: 1px;
 }
@@ -24,7 +25,7 @@
 #each-due-assignment {
   background-color: antiquewhite;
   margin: 20px 0px 20px 0px;
-  padding: 2px;
+  padding: 20px;
   text-decoration: none;
   width: 600px;
 
@@ -37,4 +38,14 @@
       color: rgb(70, 67, 47);
     }
   }
+}
+
+.container-calendar {
+  width: 500px;
+  background-color: grey;
+}
+
+.container-useful-resources {
+  background-color: grey;
+  margin: 53px;
 }
