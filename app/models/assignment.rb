@@ -9,5 +9,4 @@ class Assignment < ApplicationRecord
 
   validates :due_date, presence: true
   validates :title, presence: true, length: { minimum: 3, maximum: 43 }, uniqueness: true
-
 end
