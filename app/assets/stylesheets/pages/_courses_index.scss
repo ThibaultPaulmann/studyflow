@@ -1,6 +1,6 @@
 .courses-index {
   display: flex;
-  margin: 0;
+  margin: 10px;
 
   .index-left {
     flex-grow: 1;
@@ -28,24 +28,21 @@
   .due-assignments {
     width: 100%;
     height: auto;
-    padding: 20px 10px;
-    background: lightgrey;
+    background: $background-color;
+
   }
 }
 
 .due-assignments {
-  padding: 0px;
   margin: 0px;
   box-sizing: border-box;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
 
   h2 {
     font-size: 2.5rem;
-    font-weight: bold;
     color: #020024;
-    font-family: "Aboreto", cursive;
+    font-family: $important-headers-font;
     border-radius: 20px;
     animation: zoom-out 5s 1s 3 left-right fill-mode forwards;
   }
