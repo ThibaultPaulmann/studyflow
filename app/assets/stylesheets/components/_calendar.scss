@@ -1,5 +1,8 @@
 .simple-calendar {
+  background-color: $font-color;
+  border-radius: 20px;
   padding-bottom: 5px;
+  color: $background-color;
 
   .table {
     table-layout: fixed;
@@ -22,11 +25,12 @@
     a {
       margin: 0 10px;
       text-decoration: none;
-      color: black;
+      color: $background-color;
     }
   }
 
   .table-header {
+    color: $background-color;
     text-align: center;
   }
 
@@ -42,6 +46,7 @@
     border: none;
     text-align: center;
     vertical-align: middle;
+    color: $background-color;
   }
 
   .day-container {
@@ -50,6 +55,7 @@
     align-items: center;
     width: 31px;
     height: 31px;
+    border-radius: 50%;
     text-align: center;
     vertical-align: middle;
     &:hover {
@@ -94,9 +100,8 @@
 
   .today {
     .day-container {
-      background-color: teal;
-      border-radius: 50%;
-      color: white;
+      background-color: $background-color;
+      color: $font-color;
     }
   }
   .past {
@@ -121,11 +126,37 @@
 }
 
 #extension {
+  border-right: 1px solid $background-color;
+  border-radius: 20px 0 0 20px;
   position: absolute;
+  z-index: 2;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: teal;
+  background: $font-color;
+
+  color: $background-color;
+  h5 {
+    font-weight: 600;
+  }
+
   width: 350px;
   left: -350px;
   height: 100%;
+  padding: 45px 10px 10px 15px;
+
+  .assignments {
+    margin-top: 32px;
+  }
+
+  .calendar-assignment-card {
+    margin: 18px 0;
+    p {
+      margin: 0;
+    }
+
+    .assignment-time {
+      font-style: italic;
+      color: $tertiary-color;
+    }
+  }
 }
