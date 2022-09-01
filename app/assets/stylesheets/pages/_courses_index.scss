@@ -54,18 +54,9 @@
     }
     animation: zoom-out 5s 1s 3 left-right fill-mode forwards;
   }
+}
 
-  a {
-    text-decoration: none;
-  }
-
-  p {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-
-    &:hover {
-      color: burlywood;
-    }
-  }
+.add-course-btn {
+  margin-top: 35px;
+  margin-left: 7px;
 }
