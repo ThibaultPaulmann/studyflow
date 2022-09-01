@@ -6,6 +6,6 @@
       </div>
       <h6><%= render partial: "components/user_progress" %></h6>
     </div>
-    <p><%=assignment.due_date%></p>
+    <p><em><%=assignment.due_date.strftime("%A, %b %d")%></em></p>
   </div>
 </div>

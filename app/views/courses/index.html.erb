@@ -1,6 +1,5 @@
 <div class="courses-index">
   <div class="index-left">
-    <h1>My Courses</h1>
     <div class="courses">
       <% @courses.each do |course|%>
         <%= render partial: "components/course_card", locals: { course: course } %>

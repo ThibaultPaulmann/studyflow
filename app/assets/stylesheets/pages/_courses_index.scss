@@ -1,6 +1,6 @@
 .courses-index {
   display: flex;
-  margin: 0;
+  margin: 10px;
 
   .index-left {
     flex-grow: 1;
@@ -29,7 +29,7 @@
   .due-assignments {
     width: 100%;
     height: auto;
-    background: lightgrey;
+    background: $background-color;
 
   }
 }
