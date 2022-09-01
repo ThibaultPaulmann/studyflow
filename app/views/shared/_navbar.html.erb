@@ -22,10 +22,9 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+         <%= render "shared/login" %>
         <% end %>
+
       </ul>
     </div>
   </div>
