@@ -10,7 +10,12 @@
      <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
     </div>
     <div class="container" id="pdf-container">
-      <h1>pdf placeholder</h1>
+      <%# <h1>pdf placeholder</h1> %>
+      <% if @assignment.photos.attached? %>
+        <% @assignment.photos.each do |photo| %>
+          <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="container" id="classmate-progress">
@@ -18,16 +23,20 @@
     <i class="fa-solid fa-user-tie-hair"></i>
     <ul>
     <div id="your-progress-compared">
-      <strong><li><i class="fa-solid fa-icons"></i> Philipp (you)</li></strong>
+      <% if current_user.photo.present? %>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-small" %>
+      <% else %>
+        <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar-small"%>
+      <% end %>
+      <strong><%= current_user.firstName %> (you)</strong>
     </div>
         <br>
-      <li><i class="fa-solid fa-icons"></i> Thibault </li>
-        <br>
-      <li><i class="fa-solid fa-icons"></i> Mike</li>
-        <br>
-      <li><i class="fa-solid fa-icons"></i> Timothy</li>
-        <br>
-      <li><i class="fa-solid fa-icons"></i> Tom</li>
+    <% @assignment.users.each do |user| %>
+    <%= user.id %>
+      <div class="profiles">
+        <%= render "shared/avatar", user:  user%>
+      </div>
+    <% end %>
     </ul>
       <div class="container-forum" id="forum-button">
         <%= link_to "Forum", class: "btn btn-ghost" %>
