@@ -4,9 +4,7 @@
     </div>
   <% end %>
   <div class="content justify-content-between">
-    <div class="d-flex justify-content-between">
-      <h3> <%= link_to course.name, course_path(course) %></h3>
-      <h3><%= link_to course.code, course_path(course) %></h3>
-    </div>
+    <h3> <%= link_to course.name, course_path(course) %></h3>
+    <em><h6><%= link_to course.code, course_path(course) %></h6></em>
   </div>
 </div>
