@@ -4,12 +4,13 @@
       <div class="container-title-difficulty" id="title-difficulty">
         <h2><%= @assignment.title %></h2>
         <div class="container-difficulty-box" id="difficulty-box">
-          <span class="dot"></span><h5>medium</h5>
+          <span class="dot"></span>
+          <h5>medium</h5>
         </div>
       </div>
-     <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
+      <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
     </div>
-    <div class="container" id="pdf-container">
+    <div id="pdf-container">
       <%# <h1>pdf placeholder</h1> %>
       <% if @assignment.photos.attached? %>
         <% @assignment.photos.each do |photo| %>
@@ -18,28 +19,28 @@
       <% end %>
     </div>
   </div>
-  <div class="container" id="classmate-progress">
+  <div id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
     <ul>
-    <div id="your-progress-compared">
-      <% if current_user.photo.present? %>
-        <%= cl_image_tag current_user.photo.key, class: "avatar-small" %>
-      <% else %>
-        <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar-small"%>
+      <div id="your-progress-compared">
+        <% if current_user.photo.present? %>
+          <%= cl_image_tag current_user.photo.key, class: "avatar-small" %>
+        <% else %>
+          <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar-small"%>
+        <% end %>
+        <strong><%= current_user.firstName %> (you)</strong>
+      </div>
+      <br>
+      <% @assignment.users.each do |user| %>
+        <%= user.id %>
+        <div class="profiles">
+          <%= render "shared/avatar", user:  user%>
+        </div>
       <% end %>
-      <strong><%= current_user.firstName %> (you)</strong>
-    </div>
-        <br>
-    <% @assignment.users.each do |user| %>
-    <%= user.id %>
-      <div class="profiles">
-        <%= render "shared/avatar", user:  user%>
-      </div>
-    <% end %>
     </ul>
-      <div class="container-forum" id="forum-button">
-        <%= link_to "Forum", class: "btn btn-ghost" %>
-      </div>
+    <div class="container-forum" id="forum-button">
+      <%= link_to "Forum", class: "btn btn-ghost" %>
+    </div>
   </div>
 </div>
