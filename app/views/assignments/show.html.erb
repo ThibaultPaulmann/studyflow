@@ -30,7 +30,8 @@
       <li><i class="fa-solid fa-icons"></i> Tom</li>
     </ul>
       <div class="container-forum" id="forum-button">
-        <%= link_to "Forum", assignment_questions_path(@assignment), class: "btn btn-ghost" %>
+        <%= link_to "Forum", assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-ghost" %>
+
       </div>
   </div>
 </div>
