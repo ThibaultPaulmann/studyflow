@@ -1,9 +1,11 @@
 <div class="assignment-card">
-    <div class= "d-flex justify-content-between">
+  <div class="container-title-progress-due-date">
+    <div class="title-user-progress">
       <div class="assignment-card-title">
-        <h6><%= assignment.title %></h6>
+        <h4><%= assignment.title %></h4>
       </div>
-      <h6>user progress</h6>
+      <h6><%= render partial: "components/user_progress" %></h6>
     </div>
     <p><%=assignment.due_date%></p>
+  </div>
 </div>
