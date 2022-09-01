@@ -1,18 +1,32 @@
-<h1>Course: <%= @course.name %></h1>
-<h2>Course Name: <%= @course.code %></h2>
-
-
-<h1>Due Assignments: </h1>
-<%= link_to "Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
-
-
- <% @assignments.each do |assignment| %>
-      <div>
-        <h5><%= assignment.title.capitalize %></h5>
-        <h5>Due: <%= assignment.due_date %></h5>
+<div class="container-course-show">
+  <div class="course-show-left">
+    <div class="course-title-container">
+      <h1><%= @course.name %></h1>
+      <em>
+        <h4><%= @course.code %></h2>
+      </em>
+    </div>
+    <div class="due-assignments">
+      <h1>Due Assignments: </h1>
+      <% @assignments.each do |assignment| %>
+        <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+      <% end %>
+    </div>
+    <div id="back-to-courses-btn">
+      <%= link_to "Back to all Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
+    </div>
+  </div>
+  <div class="course-show-right">
+    <div class="container-calendar">
+      <div class="calendar">
+        <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
       </div>
-      <%= link_to "Assignment", course_assignment_path(@course, assignment), class: 'btn btn-outline-primary' %>
-      <h1>--------------------</h1>
-
-    <br>
-    <% end %>
+    </div>
+    <div class="container-useful-resources">
+      <h1>Useful Resources</h1>
+      <div >
+        <%# after the migration, use each to list each resource %>
+      </div>
+    </div>
+  </div>
+</div>

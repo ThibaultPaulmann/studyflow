@@ -1,10 +1,22 @@
-<h1>My Courses</h1>
-<% @courses.each do |course|%>
-  <div>
-  <%= course.code %>
-  <%= link_to course.name, course_path(course.id) %>
-
-  <h1>--------------------</h1>
-  <br>
+<div class="courses-index">
+  <div class="index-left">
+    <div class="courses">
+      <% @courses.each do |course|%>
+        <%= render partial: "components/course_card", locals: { course: course } %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <div class="index-right">
+    <div class="calendar">
+      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
+    </div>
+    <div class="due-assignments">
+      <div style="padding-bottom: 10px; padding-top: 10px;">
+        <h2>Due Assignments</h2>
+        <% current_user.assignments.each do |assignment| %>
+          <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

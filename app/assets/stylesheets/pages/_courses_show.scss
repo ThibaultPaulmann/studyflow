@@ -1,0 +1,44 @@
+.container-course-show {
+  display: flex;
+  justify-content: space-between;
+
+  .course-show-left {
+    flex-grow: 1;
+  }
+
+  .course-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    width: 100%;
+    padding: 27px;
+    margin-bottom: 20px;
+
+    h1 {
+      font-weight: bold;
+    }
+  }
+
+  .due-assignments {
+    text-align: left;
+    background-color: antiquewhite;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    width: 100%;
+  }
+  .course-show-right {
+    width: 500px;
+    margin-left: 20px;
+  }
+
+  .container-calendar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .container-useful-resources {
+    width: 100%;
+    background-color: grey;
+  }
+}

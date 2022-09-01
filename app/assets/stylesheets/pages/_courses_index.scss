@@ -1,0 +1,61 @@
+.courses-index {
+  display: flex;
+
+  .index-left {
+    flex-grow: 1;
+  }
+
+  .courses {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-gap: 20px;
+  }
+
+  .index-right {
+    width: 500px;
+    margin-left: 20px;
+  }
+
+  .calendar {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .due-assignments {
+    width: 100%;
+    height: auto;
+    background: $background-color;
+  }
+}
+
+.due-assignments {
+  margin: 0px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 10px;
+
+  h2 {
+    font-size: 2.5rem;
+    color: #020024;
+    font-family: $important-headers-font;
+    border-radius: 20px;
+    animation: zoom-out 5s 1s 3 left-right fill-mode forwards;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: burlywood;
+    }
+  }
+}

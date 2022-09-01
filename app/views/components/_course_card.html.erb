@@ -1,0 +1,11 @@
+<div class="course-card">
+  <%= link_to course_path(course) do %>
+    <div class="icon-container">
+      <i class="fa-solid fa-dna"></i>
+      <div class="content justify-content-between">
+        <h3> <%= link_to course.name, course_path(course) %></h3>
+        <em><h6><%= link_to course.code, course_path(course) %></h6></em>
+      </div>
+    </div>
+  <% end %>
+</div>
