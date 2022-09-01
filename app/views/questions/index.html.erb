@@ -3,31 +3,26 @@
   <p>text</p>
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
-    <%# @data.each_with_index do |dataHash| %>
-      <%# columns.sort_by! { |column| column[:height]} %>
-      <%# columns.first[:elements] << dataHash %>
-      <%# columns.first[:height] += (dataHash[:answers].size + 1) %>
-      <%# end %>
-      <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, dataHash[:answers].size] } %>
-      <% sortedData.each_with_index do |dataHash, index| %>
-        <% columns[index % 3][:elements] << dataHash %>
-        <% columns[index % 3][:height] += (dataHash[:answers].size + 1) %>
+    <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, -dataHash[:answers].size] } %>
+    <% sortedData.each_with_index do |dataHash, index| %>
+      <% columns[index % 3][:elements] << dataHash %>
+      <% columns[index % 3][:height] += (dataHash[:answers].size + 1) %>
+    <% end %>
+    <div class="forum-column">
+      <% columns[0][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
       <% end %>
-      <div class="forum-column">
-        <% columns[0][:elements].each do |element| %>
-          <%= render partial: "components/forum_card", locals: {dataHash: element} %>
-        <% end %>
-      </div>
-      <div class="forum-column">
-        <% columns[1][:elements].each do |element| %>
-          <%= render partial: "components/forum_card", locals: {dataHash: element} %>
-        <% end %>
-      </div>
-      <div class="forum-column">
-        <% columns[2][:elements].each do |element| %>
-          <%= render partial: "components/forum_card", locals: {dataHash: element} %>
-        <% end %>
-      </div>
     </div>
-    <p>text</p>
+    <div class="forum-column">
+      <% columns[1][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
+      <% end %>
+    </div>
+    <div class="forum-column">
+      <% columns[2][:elements].each do |element| %>
+        <%= render partial: "components/forum_card", locals: {dataHash: element} %>
+      <% end %>
+    </div>
   </div>
+  <p>text</p>
+</div>
