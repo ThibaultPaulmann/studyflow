@@ -46,7 +46,7 @@
   padding: 10px;
   width: 300px;
   border-radius: 10px;
-  height: 400px;
+  height: auto;
   color: $background-color;
 
   ul {
@@ -72,7 +72,7 @@
 #forum-button {
   margin-left: 90px;
   text-align: center;
-  margin: auto;
+  margin: 15px;
 }
 
 .profiles {
