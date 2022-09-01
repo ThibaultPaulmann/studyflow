@@ -1,1 +1,7 @@
-<img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani"/>
+<%# <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani"/> %>
+
+<% if user.photo.present? %>
+  <%= cl_image_tag user.photo.key, class: "avatar" %>
+<% else %>
+  <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar"%>
+<% end %>

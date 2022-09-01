@@ -22,6 +22,6 @@ class AssignmentsController < ApplicationController
   private
 
   def assignment_params
-    params.require(:assignment).permit(:due_date, :title)
+    params.require(:assignment).permit(:due_date, :title, photos: [])
   end
 end
