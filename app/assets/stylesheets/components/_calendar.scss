@@ -45,9 +45,13 @@
   }
 
   .day-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 31px;
     height: 31px;
     text-align: center;
+    vertical-align: middle;
     &:hover {
       cursor: pointer;
     }
