@@ -1,13 +1,19 @@
 .course {
   width: 100%;
   height: fit-content;
-  background-color: grey;
+  background-color: $font-color;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-radius: 5px;
 
+  a {
+    text-decoration: none;
+    color: $background-color;
 
-
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
 
   .icon-container {
     background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
@@ -21,7 +27,7 @@
   .content {
     width: 100%;
     height: fit-content;
-    background-color: lightgrey;
+    background-color: $font-color;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 10px;
@@ -30,7 +36,7 @@
   .content h3 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #020024;
+    color: $background-color;
     font-family: 'Poppins', sans-serif;
   }
 
