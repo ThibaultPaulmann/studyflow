@@ -23,12 +23,16 @@
     padding-top: 12px;
   }
 
-  &:hover {
-    color: $tertiary-color;
+  a {
+    color: $background-color;
+
+    &:hover {
+      color: $quarternary-color;
+    }
   }
 
+
   p {
-    color: $tertiary-color;
     text-align: start;
   }
 

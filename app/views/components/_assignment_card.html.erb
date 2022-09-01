@@ -2,10 +2,10 @@
   <div class="container-title-progress-due-date">
     <div class="title-user-progress">
       <div class="assignment-card-title">
-        <h4><%= assignment.title %></h4>
+        <h4><%= link_to assignment.title, course_assignment_path(assignment.course, assignment) %></h4>
       </div>
-      <h6><%= render partial: "components/user_progress" %></h6>
-    </div>
-    <p><em><%=assignment.due_date.strftime("%A, %b %d")%></em></p>
+         <h6><%= render partial: "components/user_progress" %></h6>
+      </div>
+    <p><em><%= link_to assignment.due_date.strftime("%A, %b %d"), course_assignment_path(assignment.course, assignment)%></em></p>
   </div>
 </div>
