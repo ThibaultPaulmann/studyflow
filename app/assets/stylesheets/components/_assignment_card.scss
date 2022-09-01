@@ -23,17 +23,24 @@
     padding-top: 12px;
   }
 
-  a {
+  h4 {
     color: $background-color;
 
     &:hover {
       color: $quarternary-color;
     }
+    text-align: start;
   }
 
   p {
+    color: $background-color;
+
+    &:hover {
+      color: $quarternary-color;
+    }
     text-align: start;
   }
+
 
   h6 {
     color: $tertiary-color;
