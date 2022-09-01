@@ -8,6 +8,22 @@ class AssignmentsController < ApplicationController
     @assignment = Assignment.new
   end
 
+  def edit
+    @assignment = Assignment.find(params[:id])
+    @course = Course.find(params[:course_id])
+  end
+
+  def update
+    @assignment = Assignment.find(params[:id])
+    if @assignment.update(assignment_params)
+      redirect_to course_assignment_path(@assignment)
+      flash[:notice] = "Your assignment has been changed!"
+    else
+      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Couldn't change the assignment"
+    end
+  end
+
   def create
     @assignment = Assignment.new(assignment_params)
     @course = Course.find(params[:course_id])

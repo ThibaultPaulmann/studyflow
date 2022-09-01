@@ -25,14 +25,21 @@
 
   a {
     text-decoration: none;
-    color: $background-color;
+  }
 
+  h4 {
+    color: $background-color;
     &:hover {
       color: $quarternary-color;
     }
   }
 
   p {
+    color: $background-color;
+
+    &:hover {
+      color: $quarternary-color;
+    }
     text-align: start;
   }
 

@@ -54,7 +54,7 @@
   border: solid black 1px;
   background-color: lightgrey;
   width: 1000px;
-  height: 1000px;
+  height: auto;
   margin-top: 70px;
   border-radius: 5px;
 }
@@ -89,4 +89,11 @@
 .profiles {
   display: flex;
   margin-bottom: 10px;
+}
+
+#carouselExampleIndicators .carousel-item img {
+  object-fit: contain;
+  object-position: center;
+  height: 60vh;
+  overflow: hidden;
 }
