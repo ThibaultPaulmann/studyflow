@@ -4,11 +4,15 @@
 
   #your-progress-compared {
     border: solid black 1px;
+    display: flex;
     border-radius: 10px;
     width: 150px;
     padding: 10px;
     text-align: center;
     margin-left: 35px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 7px;
   }
 }
 

@@ -1,6 +1,6 @@
 .btn-ghost {
-  color: white;
-  border: 1px solid white;
+  color: $background-color;
+  border: 1px solid $background-color;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -11,4 +11,18 @@
 .btn-ghost:hover {
   opacity: 1;
   color: $background-color;
+}
+
+
+.btn-flat {
+  color: $background-color;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $font-color;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: $quarternary-color;
+  color: $font-color;
 }
