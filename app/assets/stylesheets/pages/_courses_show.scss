@@ -1,51 +1,44 @@
-#course-show {
+.container-course-show {
   display: flex;
   justify-content: space-between;
-  margin: 53px;
-  margin-top: 1px;
-}
 
-
-#course-name-code {
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: antiquewhite;
-  width: 600px;
-  margin-top: 20px;
-  padding: 27px;
-  margin-bottom: 20px;
-
-  h1 {
-    font-weight: bold;
+  .course-show-left {
+    flex-grow: 1;
   }
-}
 
-#each-due-assignment {
-  background-color: antiquewhite;
-  margin: 20px 0px 20px 0px;
-  padding: 20px;
-  text-decoration: none;
-  width: 600px;
+  .course-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    width: 100%;
+    padding: 27px;
+    margin-bottom: 20px;
 
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-
-    &:hover {
-      color: rgb(70, 67, 47);
+    h1 {
+      font-weight: bold;
     }
   }
-}
 
-.container-calendar {
-  width: 500px;
-  background-color: grey;
-}
+  .due-assignments {
+    text-align: left;
+    background-color: antiquewhite;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    width: 100%;
+  }
+  .course-show-right {
+    width: 500px;
+    margin-left: 20px;
+  }
 
-.container-useful-resources {
-  background-color: grey;
-  margin: 53px;
+  .container-calendar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .container-useful-resources {
+    width: 100%;
+    background-color: grey;
+  }
 }

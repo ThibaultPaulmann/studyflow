@@ -1,11 +1,8 @@
-
 .container-assignment-top {
   display: flex;
   justify-content: space-between;
-  margin-left: 53px;
-  margin-right: 53px;
 
-#your-progress-compared {
+  #your-progress-compared {
     border: solid black 1px;
     border-radius: 10px;
     width: 150px;
@@ -18,9 +15,7 @@
 #title-difficulty {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
   margin-right: 20px;
-  margin-left: 20px;
   padding-top: 10px;
   align-items: center;
 }
@@ -38,11 +33,10 @@
 }
 
 #classmate-progress {
-  background-color:lightgray;
+  background-color: lightgray;
   padding: 10px;
   width: 300px;
   border-radius: 10px;
-  margin: 30px;
   height: 400px;
 
   ul {
@@ -60,7 +54,7 @@
   border: solid black 1px;
   background-color: lightgrey;
   width: 1000px;
-  height: 1000px;
+  height: auto;
   margin-top: 70px;
   border-radius: 5px;
 }
@@ -72,7 +66,6 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-
 
   h5 {
     margin: auto;
@@ -96,4 +89,11 @@
 .profiles {
   display: flex;
   margin-bottom: 10px;
+}
+
+#carouselExampleIndicators .carousel-item img {
+  object-fit: contain;
+  object-position: center;
+  height: 60vh;
+  overflow: hidden;
 }

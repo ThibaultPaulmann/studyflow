@@ -1,22 +1,20 @@
 // Define variables for your color scheme
 
 // For example:
-$red: #FD1015;
-$blue: #0D6EFD;
-$yellow: #FFC65A;
-$orange: #E67E22;
-$green: #1EDD88;
-$gray: #0E0000;
-$light-gray: #F4F4F4;
-
+$red: #fd1015;
+$blue: #0d6efd;
+$yellow: #ffc65a;
+$orange: #e67e22;
+$green: #1edd88;
+$gray: #0e0000;
+$light-gray: #f4f4f4;
 
 // studyFlow color scheme
 
-$background-color: #F5F5EF;
-$font-color: #1F2839;
+$background-color: #f5f5ef;
+$font-color: #1f2839;
 $tertiary-color: #cdc9c5;
 $quarternary-color: #c1cfce;
-
 
 // subject colors
 
@@ -26,3 +24,9 @@ $tertiary-subject-color: #7BE495;
 $quarternary-subject-color: #FE7A15;
 $quinternary-subject-color:#522157;
 $hexernary-subject-color:#F8D90F;
+
+// user progress colors
+
+$not-started-color: #d0342b;
+$working-on-it-color: #feb91c;
+$completed-color: #003900;
