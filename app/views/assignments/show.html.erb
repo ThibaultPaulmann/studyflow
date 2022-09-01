@@ -10,7 +10,12 @@
      <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
     </div>
     <div class="container" id="pdf-container">
-      <h1>pdf placeholder</h1>
+      <%# <h1>pdf placeholder</h1> %>
+      <% if @assignment.photos.attached? %>
+        <% @assignment.photos.each do |photo| %>
+          <div class="photo-img" style="background-image: url('<%= cl_image_path photo.key, crop: :fill%>')"></div>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <div class="container" id="classmate-progress">
