@@ -22,7 +22,6 @@
   .calendar {
     width: 100%;
     height: auto;
-    background: lightgrey;
     margin-bottom: 20px;
   }
 
@@ -34,19 +33,31 @@
   }
 }
 
-
 .due-assignments {
   margin: 0px;
   box-sizing: border-box;
   text-align: center;
   border-radius: 10px;
 
-
   h2 {
     font-size: 2.5rem;
     color: #020024;
     font-family: $important-headers-font;
     border-radius: 20px;
-    animation: zoom-out 5s  1s 3 left-right fill-mode forwards;
+    animation: zoom-out 5s 1s 3 left-right fill-mode forwards;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  p {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: burlywood;
+    }
   }
 }
