@@ -1,13 +1,11 @@
 <div class="assignment-card">
-  <%= link_to course_assignment_path(assignment.course, assignment) do %>
-    <div class= "d-flex justify-content-between">
-      <div>
-        <p><%= assignment.title %></p>
-        <p>user progress</p>
+  <div class="container-title-progress-due-date">
+    <div class="title-user-progress">
+      <div class="assignment-card-title">
+        <h4><%= link_to assignment.title, course_assignment_path(assignment.course, assignment) %></h4>
       </div>
-      <div>
-        <p><%= assignment.due_date %></p>
+         <h6><%= render partial: "components/user_progress" %></h6>
       </div>
-    </div>
-  <% end %>
+    <p><em><%= link_to assignment.due_date.strftime("%A, %b %d"), course_assignment_path(assignment.course, assignment)%></em></p>
+  </div>
 </div>

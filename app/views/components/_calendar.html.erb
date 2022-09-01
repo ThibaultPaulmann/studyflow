@@ -1,15 +1,21 @@
-<%= month_calendar(attribute: :due_date, events: assignments) do |date, assignments| %>
-  <span class="day-container">
-    <%= date.day %>
-  </span>
-  <div class="assignments-container">
-    <% assignments.each do |assignment| %>
-      <i class="fa-solid fa-circle"></i>
-    <% end %>
+<div class="d-flex position-relative" data-controller="calendar" data-action="click@window->calendar#toggleExtend">
+  <div id="extension" class="d-none" data-calendar-target="extension">
+    <div class="extension-header">
+      <h5>Assignments due <span id="extension-date" data-calendar-target="extensionDate"></span></h5>
+    </div>
+    <div class="assignments" data-calendar-target="extensionAssignments">
+    </div>
   </div>
-  <%# assignments.each do |assignment| %>
-    <%# <div> %>
-    <%# assignment.title %>
-    <%# </div> %>
-    <%# end %>
+  <%= month_calendar(attribute: :due_date, events: assignments) do |date, assignments| %>
+    <div class="calendar-item">
+      <span class="day-container" data-calendar-target="item" data-date="<%= date.strftime("%B %d") %>" data-assignments="<%= assignments.to_json %>">
+        <%= date.day %>
+      </span>
+      <div class="assignments-container">
+        <% assignments.each do |assignment| %>
+          <i class="fa-solid fa-circle"></i>
+        <% end %>
+      </div>
+    </div>
   <% end %>
+</div>
