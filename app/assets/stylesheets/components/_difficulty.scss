@@ -1,0 +1,23 @@
+#difficulty-box {
+  background-color: $background-color;
+  width: 125px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+
+  h5 {
+    margin: auto;
+    color: $font-color;
+  }
+
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: yellow;
+    margin: auto;
+  }
+}
