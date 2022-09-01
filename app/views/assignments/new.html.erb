@@ -9,6 +9,7 @@
     <div class="form-group col-md-6">
       <%= f.input :title %>
     </div>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit class:"btn submit-btn"%>
   <% end %>
 </div>
