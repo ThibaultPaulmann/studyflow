@@ -3,12 +3,9 @@
     <div class="container-title-difficulty-due-date" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
         <h2><%= @assignment.title %></h2>
-        <div class="container-difficulty-box" id="difficulty-box">
-          <span class="dot"></span>
-          <h5>medium</h5>
-        </div>
+           <%= render partial: "components/difficulty" %>
       </div>
-      <h6><strong>Due: </strong><%= @assignment.due_date %></h6>
+      <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
     </div>
     <div id="pdf-container">
       <% if @assignment.photos.size == 1 %>
