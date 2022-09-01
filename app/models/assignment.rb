@@ -8,6 +8,6 @@ class Assignment < ApplicationRecord
   has_many_attached :photos, dependent: :destroy
 
   validates :due_date, presence: true
-  validates :title, presence: true, length: { minimum: 3 }, uniqueness: true
+  validates :title, presence: true, length: { minimum: 3, maximum: 43 }, uniqueness: true
 
 end
