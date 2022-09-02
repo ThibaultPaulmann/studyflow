@@ -3,9 +3,12 @@
     <div class="container-title-difficulty-due-date" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
         <h2><%= @assignment.title %></h2>
-           <%= render partial: "components/difficulty", locals: { assignments: current_user.assignments } %>
+        <%= render partial: "components/difficulty", locals: { assignments: current_user.assignments } %>
       </div>
       <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
+    </div>
+    <div class="btn-edit">
+      <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
     </div>
     <div id="pdf-container">
       <% if @assignment.photos.size == 1 %>
@@ -38,39 +41,39 @@
       <% end %>
     </div>
   </div>
-     <div class="btn-edit">
-      <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
-   </div>
   <div id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
     <ul>
-      <div id="your-progress-compared">
-        <% if current_user.photo.present? %>
-          <%= cl_image_tag current_user.photo.key, class: "avatar-small" %>
-        <% else %>
-          <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar-small"%>
-        <% end %>
-        <div>
-          <strong><%= current_user.firstName %>(you)</strong>
+      <div class="user-avatar-name profile-current-user">
+        <div class="profile-left">
+          <div class="profiles">
+            <%= render "shared/avatar", user:  current_user%>
+          </div>
+          <div class="user-name">
+            <strong>Me</strong>
+          </div>
         </div>
         <div>
           <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
         </div>
       </div>
-      <br>
       <% @assignment.users.each do |user| %>
         <div class="user-avatar-name">
-          <div class="profiles">
-            <%= render "shared/avatar", user:  user%>
+          <div class="profile-left">
+            <div class="profiles">
+              <%= render "shared/avatar", user:  user%>
+            </div>
+            <div class="user-name">
+              <%= user.firstName %> <%= user.lastName %>
+            </div>
           </div>
-          <div class="user-name">
-          <%= user.firstName %> <%= user.lastName %>
+          <div>
+            <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
           </div>
         </div>
       <% end %>
     </ul>
-
     <div class="container-forum" id="forum-button">
       <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light" %>
     </div>
