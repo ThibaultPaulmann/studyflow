@@ -1,6 +1,6 @@
-<div class="container-vid">
+<div class="sign-up-container">
   <%= video_tag "background.mp4", muted: :muted,autoplay: :autoplay, loop: :loop, class: "background-video" %>
-  <div class="body-container-log original-box-shadow" id="log-in-form";>
+  <div class="login-body-log original-box-shadow" id="log-in-form";>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
