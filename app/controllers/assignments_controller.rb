@@ -1,6 +1,7 @@
 class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
+    @user_assignment = current_user.user_assignments.where(assignment: @assignment)
   end
 
   def new
