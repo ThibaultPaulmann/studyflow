@@ -1,14 +1,16 @@
 <div class="forum-card">
   <div class="question">
-    <div class="question-header d-flex justify-content-between">
-      <p><%= dataHash[:question].user.firstName %> <%= dataHash[:question].user.lastName %></p>
-      <p>^ <%= dataHash[:question].upvotes %></p>
-    </div>
-    <div class="question-body">
-      <h3><%= dataHash[:question].title %></h3>
-    </div>
-    <div class="question-footer">
-      <p><%= dataHash[:question].created_at %></p>
+    <div class="question-text">
+      <div class="question-header d-flex justify-content-between">
+        <p><%= dataHash[:question].user.firstName %> <%= dataHash[:question].user.lastName %></p>
+        <p>^ <%= dataHash[:question].upvotes %></p>
+      </div>
+      <div class="question-body">
+        <h3><%= dataHash[:question].title %></h3>
+      </div>
+      <div class="question-footer">
+        <p><%= dataHash[:question].created_at.strftime("%a %d - %H:%M") %></p>
+      </div>
     </div>
   </div>
   <div class="answers">
@@ -27,13 +29,17 @@
     <% end %>
   </div>
   <div class="container-write-an-answer" style="width: 100%;">
-    <div class="answer-header d-flex justify-content-between" style="width: 100%;">
+    <div class="answer-header-form d-flex justify-content-between">
       <%= simple_form_for ([@course, @assignment, dataHash[:question], @answer]) do |f| %>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <%= f.input :content, as: :text, input_html: {rows: 3, :style => 'width: 100%'} %>
+        <div class="bottom-answer-box">
+          <div class="row-form-group">
+            <div class="form-group col-md-6">
+              <%= f.input :content, as: :text, input_html: {rows: 3 } %>
+            </div>
           </div>
-           <%= f.submit class:"btn submit-btn"%>
+          <div class="btn-centered">
+             <%= f.submit class:"btn btn-flat"%>
+           </div>
          <% end %>
         </div>
     </div>
