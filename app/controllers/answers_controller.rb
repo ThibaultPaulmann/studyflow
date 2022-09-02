@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
     @answer.question = Question.find(params[:question_id])
     @answer.user = current_user
     if @answer.save
-      redirect_to root_path
+      redirect_to course_assignment_questions_path(params[:course_id], params[:assignment_id])
       flash[:notice] = "Answer posted!"
     else
       flash[:alert] = "Error posting the answer"

@@ -1,10 +1,15 @@
-<h1>Forum</h1>
 <div class="questions-index">
-  <div class="question-create">
-   <%= simple_form_for([@course, @assignment, @question]) do |f| %>
-      <%= f.input :title %>
-      <%= f.button :submit, class: "btn btn-primary"%>
-   <% end %>
+  <div class="create-question-box">
+    <div class="question-create">
+      <div class="element-within-question-create">
+        <%= simple_form_for([@course, @assignment, @question]) do |f| %>
+        <div class="input-title">
+          <%= f.input :title %>
+        </div>
+            <%= f.button :submit, class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </div>
   </div>
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
