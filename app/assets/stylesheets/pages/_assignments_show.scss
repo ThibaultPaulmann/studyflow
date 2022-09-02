@@ -53,13 +53,29 @@
 
 #classmate-progress {
   background-color: $font-color;
-  padding: 10px;
+  padding: 20px;
   width: 500px;
   height: 100%;
   border-radius: 10px;
   height: auto;
   color: $background-color;
   margin-left: 20px;
+
+  .dropdown-toggle {
+    color: white;
+    padding: 0px;
+  }
+
+  .dropdown-menu {
+    width: 300px;
+  }
+
+  .dropdown-menu-center {
+    position: absolute;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 80%) !important;
+  }
 
   ul {
     list-style: none;
@@ -118,13 +134,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .profile-current-user {
+  position: relative;
+  color: $background-color;
+}
+
+.user-progress-button {
+  border: none;
+  padding: 0;
+  background: transparent;
+  width: 100%;
+}
+
+.seperator {
+  margin: 20px 10px;
   border-bottom: 1px solid $background-color;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
 }
 
 .user-name {
