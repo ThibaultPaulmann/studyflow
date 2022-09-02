@@ -21,9 +21,21 @@
         </div>
         <div class="answer-body">
           <p><%= answer.content %></p>
-          <p><%= answer.created_at %></p>
+          <p><%= answer.created_at.strftime("%b %e, %l:%M %p") %></p>
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="container-write-an-answer" style="width: 100%;">
+    <div class="answer-header d-flex justify-content-between" style="width: 100%;">
+      <%= simple_form_for :answer do |f| %>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <%= f.input :answer, as: :text, input_html: {rows: 3, :style => 'width: 100%'} %>
+          </div>
+           <%= f.submit class:"btn submit-btn"%>
+         <% end %>
+        </div>
+    </div>
   </div>
 </div>
