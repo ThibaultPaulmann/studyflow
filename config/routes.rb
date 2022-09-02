@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  get "courses/:course_id/assignments/:assignment_id/forum", to: "questions#index", as: :assignment_questions
-  get "courses/:course_id/assignments/:assignment_id/forum/new", to: "questions#new", as: :new_assignment_question
+  # get "courses/:course_id/assignments/:assignment_id/forum", to: "questions#index", as: :assignment_questions
+  # get "courses/:course_id/assignments/:assignment_id/forum/new", to: "questions#new", as: :new_assignment_question
   post "courses/:course_id/assignments/:assignment_id/forum", to: "questions#create"
   patch "/courses/:course_id/assignments/:assignment_id/forum/", to: "questions#upvote"
 
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   patch "/courses/:course_id/assignments/:assignment_id/forum/:question_id/answers/:answer_id", to: "answers#update", as: :question_answer
 
   resources :courses, only: [:index, :show, :new, :create] do
-    resources :assignments, only: [:show, :new, :create, :edit, :update]
+    resources :assignments, only: [:show, :new, :create, :edit, :update] do
+      resources :questions, only: [:create, :index]
+    end
   end
 end

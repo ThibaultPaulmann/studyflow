@@ -1,6 +1,12 @@
+<h1>Forum</h1>
 <div class="questions-index">
-  <div class="question-create">Create a new question</div>
-  <p>text</p>
+  <div class="question-create">
+   <%= simple_form_for([@course, @assignment, @question]) do |f| %>
+      <%= f.input :title %>
+      <%= f.button :submit %>
+   <% end %>
+  </div>
+  <%# <p>text</p> %>
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
     <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, -dataHash[:answers].size] } %>
