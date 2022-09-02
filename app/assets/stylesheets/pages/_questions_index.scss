@@ -1,14 +1,35 @@
 .questions-index {
-  background: grey;
+  background: $background-color;
+}
+
+.create-question-box {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
 }
 .question-create {
-  border: 1px solid black;
-  background-color: white;
-  width: 100%;
-  height: 141px;
+  background-color: $font-color;
+  width: 70%;
+  height: auto;
+  border-radius: 15px;
+  color: $background-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .element-within-question-create {
+    margin: 20px;
+    width: 85%;
+  }
+
+  .input-title{
+    width: 100%;
+  }
 }
 .forum-container {
-  background-color: white;
+  background-color: $background-color;
   margin: 0 auto;
   width: 100%;
   padding: 20px;

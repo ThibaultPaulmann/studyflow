@@ -23,7 +23,7 @@ end
 puts "created courses"
 
 15.times do
-  assignment = Assignment.new(course: Course.all.sample, due_date: Time.now, title: Faker::Book.title)
+  assignment = Assignment.new(course: Course.all.sample, due_date: (DateTime.now + rand(1..10).days), title: Faker::Book.title)
   assignment.save
 end
 puts "created asignments"
