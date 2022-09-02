@@ -5,7 +5,9 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @assignments = Assignment.where(course: @course)
+    assignments = Assignment.where(course: @course)
+    @due_assignments = assignments.filter { |assignment| assignment.due_date >= Time.now }
+    @past_assignments = assignments.filter { |assignment| assignment.due_date < Time.now }
   end
 
   def new
