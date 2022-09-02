@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def index
     @courses = current_user.courses
+    @due_assignments = current_user.assignments.filter { |assignment| assignment.due_date >= Time.now}
   end
 
   def show
