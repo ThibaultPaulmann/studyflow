@@ -28,10 +28,10 @@
   </div>
   <div class="container-write-an-answer" style="width: 100%;">
     <div class="answer-header d-flex justify-content-between" style="width: 100%;">
-      <%= simple_form_for ([@course, @assignment, @question, @answer]) do |f| %>
+      <%= simple_form_for ([@course, @assignment, dataHash[:question], @answer]) do |f| %>
         <div class="row">
           <div class="form-group col-md-6">
-            <%= f.input :answer, as: :text, input_html: {rows: 3, :style => 'width: 100%'} %>
+            <%= f.input :content, as: :text, input_html: {rows: 3, :style => 'width: 100%'} %>
           </div>
            <%= f.submit class:"btn submit-btn"%>
          <% end %>
