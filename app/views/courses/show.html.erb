@@ -12,14 +12,16 @@
         <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
       <% end %>
     </div>
+    <div class="add-btn">
+      <div id="assignment-new-button">
+    </div>
+        <%= link_to "Add an Assignment", new_course_assignment_path(@course), class: "btn btn-flat" %>
+    </div>
     <div class="assignments">
       <h1>Past Assignments: </h1>
       <% @past_assignments.each do |assignment| %>
         <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
       <% end %>
-    </div>
-     <div id="assignment-new-button">
-        <%= link_to "Add an Assignment", new_course_assignment_path(@course), class: "btn btn-flat" %>
     </div>
     <div id="back-to-courses-btn">
       <%= link_to "Back to all Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
