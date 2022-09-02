@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
+      CourseEnrollment.create(user: current_user, course: @course, creator: true)
       redirect_to courses_path(@course)
       flash[:notice] = "Your listing has been created!"
     else
