@@ -14,7 +14,7 @@
       <%# <h1>pdf placeholder</h1> %>
 
 <% if @assignment.photos.size == 1 %>
-  <img class="d-block w-100" src="<%= cl_image_path @assignment.photos.first.key %>" alt="photo" >
+  <img class="d-block w-100 one-img" src="<%= cl_image_path @assignment.photos.first.key %>" alt="photo" >
 <% elsif @assignment.photos.size > 1 %>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
