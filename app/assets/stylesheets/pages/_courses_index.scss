@@ -42,6 +42,16 @@
     color: #020024;
     font-family: $important-headers-font;
     border-radius: 20px;
+    animation: zoom-out 5s  1s 3 left-right fill-mode forwards;
+
+
+    .my-element {
+      display: inline-block;
+      margin: 0 0.5rem;
+
+      animation: wobble; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 2s; /* don't forget to set a duration! */
+    }
     animation: zoom-out 5s 1s 3 left-right fill-mode forwards;
   }
 }

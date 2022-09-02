@@ -6,6 +6,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -48,4 +49,8 @@
   &:hover {
     color: $tertiary-color;
   }
+}
+
+.navbar {
+  z-index: 1;
 }
