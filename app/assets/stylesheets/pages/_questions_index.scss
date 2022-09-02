@@ -4,10 +4,28 @@
 
 .create-question-box {
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.number-of-questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $font-color;
+  width: 17%;
+  color: $background-color;
+  border-radius: 20px;
+  margin: auto;
+  margin-top: 40px;
+
+  h1 {
+    font-weight: bold;
+    padding: 10px;
+  }
+}
+
 .question-create {
   background-color: $font-color;
   width: 70%;

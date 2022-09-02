@@ -59,18 +59,18 @@
       </div>
     </div>
     <div class="seperator"></div>
-    <% @assignment.users.each do |user| %>
+    <% @user_assignments.filter { |user_assignment| user_assignment.user != current_user}.each do |user_assignment| %>
       <div class="user-avatar-name">
         <div class="profile-left">
           <div class="profiles">
-            <%= render "shared/avatar", user:  user%>
+            <%= render "shared/avatar", user: user_assignment.user %>
           </div>
           <div class="user-name">
-            <%= user.firstName %> <%= user.lastName %>
+            <%= user_assignment.user.firstName %> <%= user_assignment.user.lastName %>
           </div>
         </div>
         <div>
-          <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
+          <%= render partial: "components/user_progress", locals: { user_progress: user_assignment.user_progress } %>
         </div>
       </div>
     <% end %>

@@ -23,7 +23,9 @@
         </div>
         <div class="answer-body">
           <p><%= answer.content %></p>
-          <p><%= answer.created_at.strftime("%b %e, %l:%M %p") %></p>
+          <div class="answer-date">
+            <p><%= answer.created_at.strftime("%b %e, %l:%M %p") %></p>
+          </div>
         </div>
       </div>
     <% end %>
