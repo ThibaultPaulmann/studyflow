@@ -16,7 +16,7 @@
     <div class="due-assignments">
       <div style="padding-bottom: 10px; padding-top: 10px;">
         <h2>Due Assignments</h2>
-        <% current_user.assignments.each do |assignment| %>
+        <% @due_assignments.each do |assignment| %>
           <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
         <% end %>
       </div>
