@@ -53,7 +53,7 @@
         </div>
       </div>
       <div>
-        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user_progress } %>
+        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}&.user_progress } %>
       </div>
     </div>
     <div class="seperator"></div>
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div>
-          <%= render partial: "components/user_progress", locals: { user_progress: user_assignment.user_progress } %>
+          <%= render partial: "components/user_progress", locals: { user_progress: user_assignment&.user_progress } %>
         </div>
       </div>
     <% end %>
