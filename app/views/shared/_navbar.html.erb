@@ -3,14 +3,12 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", class: "nav-logo"%>
     <% end %>
-      <%= link_to root_path, class: "navbar-brand" do %>
-        <h3 id="logo-text">StudyFlow</h3>
-      <% end %>
-
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <h3 id="logo-text">StudyFlow</h3>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -21,7 +19,6 @@
               <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
               <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
