@@ -1,4 +1,4 @@
-<h1>Forum</h1>
+<h1>Forum - <%= pluralize @assignment.questions.size, "question" %></h1>
 <div class="questions-index">
   <div class="question-create">
    <%= simple_form_for([@course, @assignment, @question]) do |f| %>
