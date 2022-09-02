@@ -39,12 +39,14 @@
     border: 1px solid black;
     width: 90%;
     margin: 10px;
+    border-radius: 12px;
     }
 
   .answer-header {
     background-color: $font-color;
     color: $background-color;
     margin: auto;
+    border-radius: 10px;
   }
 
   .row {
