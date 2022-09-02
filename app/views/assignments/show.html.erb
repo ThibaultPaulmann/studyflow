@@ -44,18 +44,16 @@
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
     <div class="user-avatar-name profile-current-user">
-      <div class="d-flex justify-content-between">
-        <div class="profile-left">
-          <div class="profiles">
-            <%= render "shared/avatar", user:  current_user%>
-          </div>
-          <div class="user-name">
-            <strong>Me</strong>
-          </div>
+      <div class="profile-left">
+        <div class="profiles">
+          <%= render "shared/avatar", user: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user %>
         </div>
-        <div>
-          <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
+        <div class="user-name">
+          <strong>Me</strong>
         </div>
+      </div>
+      <div>
+        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user_progress } %>
       </div>
     </div>
     <div class="seperator"></div>

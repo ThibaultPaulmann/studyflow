@@ -8,19 +8,23 @@
     </div>
     <div class="assignments">
       <h1>Due Assignments: </h1>
-      <% @due_assignments.each do |assignment| %>
-        <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+      <% unless @due_assignments.empty? %>
+        <% @due_assignments.each do |assignment| %>
+          <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+        <% end %>
       <% end %>
     </div>
     <div class="add-btn">
       <div id="assignment-new-button">
-    </div>
-        <%= link_to "Add an Assignment", new_course_assignment_path(@course), class: "btn btn-flat" %>
+      </div>
+      <%= link_to "Add an Assignment", new_course_assignment_path(@course), class: "btn btn-flat" %>
     </div>
     <div class="assignments">
       <h1>Past Assignments: </h1>
-      <% @past_assignments.each do |assignment| %>
-        <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+      <% unless @past_assignments.empty? %>
+        <% @past_assignments.each do |assignment| %>
+          <%= render partial: "components/assignment_card", locals: { assignment: assignment } %>
+        <% end %>
       <% end %>
     </div>
     <div id="back-to-courses-btn">
