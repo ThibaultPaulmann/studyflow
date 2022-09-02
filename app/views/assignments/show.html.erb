@@ -34,6 +34,7 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+
       <% end %>
     </div>
   </div>
@@ -71,7 +72,7 @@
     </ul>
 
     <div class="container-forum" id="forum-button">
-      <%= link_to "Forum", assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light" %>
+      <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light" %>
     </div>
   </div>
 </div>
