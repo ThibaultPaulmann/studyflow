@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
     @assignment = Assignment.find(params[:assignment_id])
     @course = @assignment.course
     @question = Question.new
+    @answer = Answer.new
     questions.each do |question|
       hash = {
         question: question,
@@ -12,7 +13,6 @@ class QuestionsController < ApplicationController
       }
       @data << hash
     end
-
   end
 
   def new
