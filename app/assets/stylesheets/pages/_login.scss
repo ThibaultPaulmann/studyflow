@@ -53,11 +53,19 @@
 
 .background-video {
   position: fixed;
-  left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  width: auto;
+  height: auto;
   z-index: 0;
+  overflow: hidden;
+
+  video {
+    min-width: 50%;
+    min-height: 50%;
+    top: 50%;
+    left: 50%;
+  }
 }
 
 .container-vid {
