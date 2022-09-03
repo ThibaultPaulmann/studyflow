@@ -1,5 +1,5 @@
 <div class="container" id="simple-form-new-assignment">
-<h1 id="header-simple-form">Create an Assignment</h1>
+<h1 id="header-simple-form"><span class="auto-type"></span></h1>
 <br>
   <%= simple_form_for [@course, @assignment] do |f| %>
   <div class="row">
@@ -13,3 +13,14 @@
     <%= f.submit class:"btn submit-btn"%>
   <% end %>
 </div>
+
+
+<%# Thibault where do I put this ????? %>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  const typed = new Typed(".auto-type", { strings: ["Create an Assignment", "Help your Classmates"],
+    typeSpeed: 130,
+    backSpeed: 90,
+    loop: true
+  })
+</script>
