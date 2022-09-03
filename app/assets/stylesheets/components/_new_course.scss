@@ -1,0 +1,22 @@
+#simple-form-new-course {
+  background-color: $background-color;
+  border: 1px solid $font-color;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 30px;
+
+  .simple-form-input {
+    width: 100%;
+
+    .btn {
+      width: 25%;
+    }
+
+  }
+
+
+}

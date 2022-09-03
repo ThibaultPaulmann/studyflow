@@ -1,14 +1,16 @@
-<div class="container" id="simple-form-new-assignment">
-<h1 id="header-simple-form">Create a Course</h1>
-<br>
-  <%= simple_form_for(@course) do |f| %>
-  <div class="row">
-    <div class="form-group col-md-6">
-      <%= f.input :name %>
-    </div>
-    <div class="form-group col-md-6">
-      <%= f.input :code %>
-    </div>
-    <%= f.submit class:"btn submit-btn"%>
-  <% end %>
+<div class="container" id="simple-form-new-course">
+  <div class="simple-form-input">
+    <h1 id="header-simple-form">Create a Course</h1>
+    <br>
+    <%= simple_form_for(@course) do |f| %>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <%= f.input :name %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.input :code %>
+      </div>
+      <%= f.submit class:"btn submit-btn"%>
+    <% end %>
+  </div>
 </div>
