@@ -16,36 +16,34 @@ emails.each do |email|
 end
 puts "created users"
 
-10.times do
-  course = Course.new(name: Faker::Educator.subject, code: rand(101..207))
-  course.save
-end
-puts "created courses"
+8.times do
+  course = Course.new(name: Faker::Educator.course_name.truncate(17), code: rand(101..207))
+  course.save!
 
-15.times do
-  assignment = Assignment.new(course: Course.all.sample, due_date: (DateTime.now + rand(1..10).days), title: Faker::Book.title)
-  assignment.save
-end
-puts "created asignments"
+  users = User.all.sample(3)
+  users.each do |user|
+    CourseEnrollment.create!(user: user, course: course)
+  end
+  puts "created enrollments"
 
-15.times do
-  user_assignment = UserAssignment.new(assignment: Assignment.all.sample, user: User.all.sample, user_progress: UserAssignment::PROGRESS.sample)
-  user_assignment.save
+  5.times do
+    assignment = Assignment.new(course: course, due_date: (DateTime.now + rand(-2..5).days), title: Faker::Book.title.truncate(43))
+    assignment.save!
+
+    course.users.each do |user|
+      UserAssignment.create!(assignment: assignment, user: user, user_progress: UserAssignment::PROGRESS.sample)
+    end
+
+    course.users.each do |user|
+      question = Question.new(assignment: assignment, user: user, title: Faker::Book.title)
+      question.save
+    end
+    puts "created questions"
+
+    Answer.create!(question: assignment.questions.sample, user: course.users.sample, content: Faker::Science.science)
+    puts "created answer"
+  end
+  puts "created assignments and userAssignments"
 end
-puts "created user_assignments"
-10.times do
-  course_enrollment = CourseEnrollment.new(user: User.all.sample, course: Course.all.sample)
-  course_enrollment.save
-end
-puts "created course enrollments"
-15.times do
-  question = Question.new(assignment: Assignment.all.sample, user: User.all.sample, title: Faker::Book.title)
-  question.save
-end
-puts "created questions"
-15.times do
-  answer = Answer.new(question: Question.all.sample, user: User.all.sample, content: Faker::Science.science)
-  answer.save
-end
-puts "created answers"
+puts "created courses and enrollments"
 puts 'Done!'

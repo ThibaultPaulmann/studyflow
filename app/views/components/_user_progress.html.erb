@@ -1,2 +1,10 @@
-<span class="dot" style="margin-top: 10px;">
-</span>
+<% if user_progress == "Not started" %>
+  <span class="dot progress-not-started">
+  </span>
+<% elsif user_progress == "Working"%>
+  <span class="dot progress-working">
+  </span>
+<% else %>
+  <span class="dot progress-finished">
+  </span>
+<% end %>

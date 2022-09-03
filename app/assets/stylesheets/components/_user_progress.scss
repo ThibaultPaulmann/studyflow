@@ -1,7 +1,19 @@
 .dot {
   height: 20px;
   width: 20px;
-  background: linear-gradient(to right, $working-on-it-color  0%, #ae9fbf 100%);
+  margin-top: 6px;
   border-radius: 50%;
   display: inline-block;
+}
+
+.progress-not-started {
+  background: linear-gradient(to right, $not-started-color 0%, #ae9fbf 100%);
+}
+
+.progress-working {
+  background: linear-gradient(to right, $working-on-it-color 0%, #ae9fbf 100%);
+}
+
+.progress-finished {
+  background: linear-gradient(to right, $completed-color 0%, #ae9fbf 100%);
 }

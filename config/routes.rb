@@ -19,4 +19,6 @@ Rails.application.routes.draw do
       end
     end
   end
+  resources :user_assignments, only: [:update]
+  resources :course_enrollments, only: [:create]
 end
