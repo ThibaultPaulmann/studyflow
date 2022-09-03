@@ -17,8 +17,9 @@ end
 puts "created users"
 
 8.times do
-  course = Course.new(name: Faker::Educator.subject, code: rand(101..207))
-  course.save
+  course = Course.new(name: Faker::Educator.course_name.truncate(17), code: rand(101..207))
+  course.save!
+
   users = User.all.sample(3)
   users.each do |user|
     CourseEnrollment.create!(user: user, course: course)
@@ -26,8 +27,8 @@ puts "created users"
   puts "created enrollments"
 
   5.times do
-    assignment = Assignment.new(course: course, due_date: (DateTime.now + rand(-2..5).days), title: Faker::Book.title)
-    assignment.save
+    assignment = Assignment.new(course: course, due_date: (DateTime.now + rand(-2..5).days), title: Faker::Book.title.truncate(43))
+    assignment.save!
 
     course.users.each do |user|
       UserAssignment.create!(assignment: assignment, user: user, user_progress: UserAssignment::PROGRESS.sample)
