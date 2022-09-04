@@ -1,6 +1,6 @@
 <div class="sign-up-container">
   <%= video_tag "background.mp4", muted: :muted,autoplay: :autoplay, loop: :loop, class: "background-video" %>
-  <%= image_tag "logo.png", class: "nav-logo"%><h3 id="logo-text"><a>StudyFlow</h3>
+  <%= image_tag "logo.png", class: "nav-logo"%><h3 id="logo-text-login"><a>StudyFlow</h3>
     <div class="login-body-log original-box-shadow" id="log-in-form";>
       <h2>Log In</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
