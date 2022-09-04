@@ -1,6 +1,6 @@
 #simple-form-new-course {
-  background-color: $background-color;
-  border: 1px solid $font-color;
+  background-color: $font-color;
+  border: 5px solid $quarternary-color;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -11,11 +11,8 @@
 
   .simple-form-input {
     width: 100%;
-
-    .btn {
-      width: 25%;
-    }
-
+    color: $background-color;
+    margin: auto;
   }
 
 

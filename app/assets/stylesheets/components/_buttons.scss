@@ -26,3 +26,15 @@
   background: $quarternary-color;
   color: $font-color;
 }
+
+
+.submit-btn {
+  color: $font-color;
+  width: 100%;
+  margin: auto;
+}
+
+.submit-btn:hover{
+    background-color: $font-color;
+    color: $background-color;
+}
