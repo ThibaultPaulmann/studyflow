@@ -29,6 +29,51 @@
   border-radius: 30px;
 }
 
+.nav-logo {
+  z-index: 1;
+  width: 100px;
+  // margin-right: 82px;
+  padding-right: 0px;
+  max-height: fit-content;
+}
+
+#logo-text {
+  font-family: 'Aboreto', cursive;
+  margin-right: 82px;
+  font-size: 40px;
+  color: whitesmoke;
+  z-index: 1;
+    font-weight: bold;
+    text-shadow: 0 0 65px #910606;
+    font-size: -webkit-xxx-large;
+    // font-variant: unicase;
+    a:link {
+      text-decoration: none;
+    }
+
+    a:visited {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a {
+      color:#fff;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+    }
+
+    a:hover {
+      color: #fdec6e;
+      text-shadow:0px 0px 30px #fdec6e;
+      -moz-transition: all 0.2s ease-in;
+      -o-transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+      transition: all 0.2s ease-in;
+    }
+  }
+
 .btn {
   background-color: darkgray;
   border-radius: 20px;
