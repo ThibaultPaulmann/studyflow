@@ -1,6 +1,6 @@
 <div class="container" id="simple-form-new-course">
   <div class="simple-form-input">
-    <h1 id="header-simple-form">Create a Course</h1>
+    <h1 id="header-simple-form"><span class="auto-type-course"></span></h1>
     <br>
     <%= simple_form_for(@course) do |f| %>
     <div class="row">
@@ -14,3 +14,12 @@
     <% end %>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  const typed = new Typed(".auto-type-course", { strings: ["Create a new Course", "Help your Classmates"],
+    typeSpeed: 130,
+    backSpeed: 90,
+    loop: true
+  })
+</script>

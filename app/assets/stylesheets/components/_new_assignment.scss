@@ -1,0 +1,24 @@
+#simple-form-new-assignment {
+  background-color: blue;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background-color: $font-color;
+  color: $background-color;
+  border-radius: 20px;
+}
+
+.simple-form-input-assignment {
+  width: 90%;
+
+  .btn {
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+}
