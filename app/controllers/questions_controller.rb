@@ -1,7 +1,11 @@
 class QuestionsController < ApplicationController
   def index
+    if params[:query].present?
+      questions = Question.search_by_title(params[:query])
+    else
+      questions = Question.where(assignment: params[:assignment_id])
+    end
     @data = []
-    questions = Question.where(assignment: params[:assignment_id])
     @assignment = Assignment.find(params[:assignment_id])
     @course = @assignment.course
     @question = Question.new

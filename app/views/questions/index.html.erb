@@ -14,16 +14,22 @@
   <div class="number-of-questions">
     <h1><%= pluralize @assignment.questions.size, "Question" %></h1>
   </div>
+
+
   <div class="search-box">
-    <%= form_with url: course_assignment_questions_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Question/Answer"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+    <div class="input-search-box">
+      <%= form_with url: course_assignment_questions_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a Question/Answer"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
+
+
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
     <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, -dataHash[:answers].size] } %>

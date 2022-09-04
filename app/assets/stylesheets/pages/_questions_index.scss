@@ -61,3 +61,19 @@
     flex-direction: column;
   }
 }
+
+.search-box {
+  width: 30%;
+  border-radius: 20px;
+  background-color: $font-color;
+  margin-top: 20px;
+}
+
+.input-search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: auto;
+  height: 70px;
+}

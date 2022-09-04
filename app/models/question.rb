@@ -9,10 +9,10 @@ class Question < ApplicationRecord
 
   include PgSearch::Model
 
-  pg_search_scope :search_by_title_and_upvotes,
+  pg_search_scope :search_by_title,
     against: [ :title, :upvotes ],
     associated_against: {
-      answer: [:content]
+      user: [:firstName, :lastName]
     },
     using: {
       tsearch: { prefix: true }
