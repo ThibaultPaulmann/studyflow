@@ -44,42 +44,31 @@
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
     <div class="user-avatar-name profile-current-user">
-      <button type="button" class="user-progress-button dropdown-toggle" data-bs-toggle="dropdown">
-        <div class="d-flex justify-content-between">
-          <div class="profile-left">
-            <div class="profiles">
-              <%= render "shared/avatar", user:  current_user%>
-            </div>
-            <div class="user-name">
-              <strong>Me</strong>
-            </div>
-          </div>
-          <div>
-            <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
-          </div>
+      <div class="profile-left">
+        <div class="profiles">
+          <%= render "shared/avatar", user: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user %>
         </div>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-center">
-        <li>
-          <form action="<%=  %>" method="get"><button class="dropdown-item" type="submit">Not started</button></form>
-        </li>
-        <li><button class="dropdown-item" type="button">Working</button></li>
-        <li><button class="dropdown-item" type="button">Completed</button></li>
-      </ul>
+        <div class="user-name">
+          <strong>Me</strong>
+        </div>
+      </div>
+      <div>
+        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}&.user_progress } %>
+      </div>
     </div>
     <div class="seperator"></div>
-    <% @assignment.users.each do |user| %>
+    <% @user_assignments.filter { |user_assignment| user_assignment.user != current_user}.each do |user_assignment| %>
       <div class="user-avatar-name">
         <div class="profile-left">
           <div class="profiles">
-            <%= render "shared/avatar", user:  user%>
+            <%= render "shared/avatar", user: user_assignment.user %>
           </div>
           <div class="user-name">
-            <%= user.firstName %> <%= user.lastName %>
+            <%= user_assignment.user.firstName %> <%= user_assignment.user.lastName %>
           </div>
         </div>
         <div>
-          <%= render partial: "components/user_progress", locals: { assignments: current_user.assignments } %>
+          <%= render partial: "components/user_progress", locals: { user_progress: user_assignment&.user_progress } %>
         </div>
       </div>
     <% end %>

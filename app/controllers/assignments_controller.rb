@@ -1,11 +1,26 @@
 class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
+    @user_assignments = UserAssignment.where(assignment: @assignment)
   end
 
   def new
     @course = Course.find(params[:course_id])
     @assignment = Assignment.new
+  end
+  
+  def create
+    @assignment = Assignment.new(assignment_params)
+    @course = Course.find(params[:course_id])
+    @assignment.course = @course
+    if @assignment.save
+      @course.users.each do |user|
+        UserAssignment.create!(user: user, assignment: @assignment, user_progress: "Not started")
+      end
+      redirect_to course_path(@course)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,16 +39,6 @@ class AssignmentsController < ApplicationController
     end
   end
 
-  def create
-    @assignment = Assignment.new(assignment_params)
-    @course = Course.find(params[:course_id])
-    @assignment.course = @course
-    if @assignment.save
-      redirect_to course_path(@course)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
 
   private
 

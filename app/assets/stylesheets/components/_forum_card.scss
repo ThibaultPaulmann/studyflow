@@ -91,9 +91,13 @@
   }
 
   .btn {
-    width: 40%;
     margin: auto;
     margin-bottom: 10px;
+    &:hover {
+      background-color: black;
+      animation: reverse 1s;
+      color: azure;
+    }
   }
 
   h4 {
