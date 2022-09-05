@@ -15,8 +15,15 @@
         <div class="hand-in-button" data-action="click->user-progress#completed">
           <h5>Hand-in</h5>
         </div>
-        <%= render partial: "components/difficulty", locals: { difficulty: @difficulty } %></div>
+          <%= link_to edit_course_assignment_path(params[:course_id], params[:id]) do %>
+        <div class="edit-assignment">
+            <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+            <% end %>
+        <%= render partial: "components/difficulty", locals: { difficulty: @difficulty } %>
+        </div>
     </div>
+
     <div class="container-forum-schedule-meeting">
       <div class="forum-box">
         <div id="forum-button">
