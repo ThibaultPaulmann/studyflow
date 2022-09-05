@@ -32,6 +32,7 @@
 }
 
 #title-difficulty-due-date {
+  position: relative;
   background-color: $font-color;
   width: 100%;
   border-radius: 10px;
@@ -164,4 +165,27 @@
 
 .carousel-control-prev:hover {
   background-color: rgba($color: $tertiary-color, $alpha: 0.5);
+}
+
+.edit-assignment {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $background-color;
+  padding: 4px;
+  background-color: $tertiary-color;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+
+
+
+  i {
+    text-decoration: none;
+    color: $font-color;
+    font-size: 20px;;
+  }
 }
