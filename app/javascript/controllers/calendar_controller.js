@@ -24,6 +24,7 @@ export default class extends Controller {
       this.extensionTarget.classList.add("d-none");
       if (this.previousTarget != null) {
         this.previousTarget.style.backgroundColor = "#1f2839";
+
       }
     }
   }
@@ -31,9 +32,21 @@ export default class extends Controller {
   extend(event) {
     if (this.previousTarget != null) {
       this.previousTarget.style.backgroundColor = "#1f2839";
+      let date = new Date();
+      let year = date.getFullYear();
+      let dateOld = new Date(this.previousTarget.dataset.date);
+      let sec = dateOld.setFullYear(year);
+      let d = new Date(sec);
+      let calendarToday = d.getDate();
+      let today = new Date().getDate();
+
+      if (calendarToday === today) {
+        this.previousTarget.style.backgroundColor = "white";
+      }
     }
 
     event.target.style.backgroundColor = "rgba(193,207,206,0.4)";
+
     this.previousTarget = event.target;
 
     const calendar = document.querySelector(".simple-calendar");
@@ -62,4 +75,5 @@ export default class extends Controller {
       </div>`;
     return assignmentCard;
   }
+
 }
