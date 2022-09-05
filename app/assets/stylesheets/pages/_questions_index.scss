@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .number-of-questions {
@@ -14,15 +15,17 @@
   flex-direction: column;
   align-items: center;
   background-color: $font-color;
-  width: 17%;
+  width: 13%;
   color: $background-color;
   border-radius: 20px;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 15px $font-color;
 
-  h1 {
-    font-weight: bold;
-    padding: 10px;
+
+  h3 {
+    padding: 5px;
   }
 }
 
@@ -36,6 +39,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 15px $font-color;
+
 
   .element-within-question-create {
     margin: 20px;
@@ -62,18 +67,32 @@
   }
 }
 
+.create-search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .search-box {
-  width: 30%;
-  border-radius: 20px;
-  background-color: $font-color;
-  margin-top: 20px;
+  background-color: #1f2839;
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+  color: #f5f5ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px $font-color;
+
 }
 
 .input-search-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  padding: auto;
-  height: 70px;
+  margin: 20px;
+  width: 85%;
+
+  .btn {
+    margin-top: 15px;
+  }
 }

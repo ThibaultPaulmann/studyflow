@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     if params[:query].present?
-      questions = Question.search_by_title(params[:query])
+      questions = Question.search_by_title(params[:query]).where(assignment: params[:assignment_id])
     else
       questions = Question.where(assignment: params[:assignment_id])
     end

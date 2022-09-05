@@ -4,7 +4,7 @@
       <div class="element-within-question-create">
         <%= simple_form_for([@course, @assignment, @question]) do |f| %>
         <div class="input-title">
-          <%= f.input :title %>
+          <%= f.input :title, label: 'Question'%>
         </div>
             <%= f.button :submit, class: "btn btn-primary"%>
         <% end %>
@@ -12,20 +12,21 @@
     </div>
   </div>
   <div class="number-of-questions">
-    <h1><%= pluralize @assignment.questions.size, "Question" %></h1>
+    <h3><%= pluralize @assignment.questions.size, "Question" %></h3>
   </div>
 
-
-  <div class="search-box">
-    <div class="input-search-box">
-      <%= form_with url: course_assignment_questions_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a Question/Answer"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+  <div class="create-search-box">
+    <div class="search-box">
+      <div class="input-search-box">
+        <%= form_with url: course_assignment_questions_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find a Question/Answer"
+          %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 
