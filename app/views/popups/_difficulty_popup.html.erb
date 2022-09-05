@@ -3,7 +3,14 @@
     <h1> How difficult was this assignment?</h1>
     <%= simple_form_for user_assignment do |f| %>
       <%= f.input :user_progress, :as => :hidden, :input_html => { :value => "Completed" } %>
-      <%= f.input :difficulty, required: true, collection: 1..4, as: :radio_buttons %>
+      <%= f.input :difficulty,
+            required: true,
+            legend_tag: false,
+            wrapper_html: { class: 'difficulty-input' },
+            collection: UserAssignment::DIFFICULTIES,
+            label_method: :last,
+            value_method: :first,
+            as: :radio_buttons %>
       <%= f.submit "Mark as completed" %>
     <% end %>
   </div>
