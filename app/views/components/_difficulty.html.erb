@@ -3,15 +3,15 @@
     <h5>N/A</h5>
   <% elsif difficulty == 1 %>
     <div id="diamond-narrow-easy"></div>
-    <h5>Easy</h5>
+    <h5><%= UserAssignment::DIFFICULTIES[difficulty] %></h5>
   <% elsif difficulty == 2 %>
     <div id="diamond-narrow-medium"></div>
-    <h5>Medium</h5>
+    <h5><%= UserAssignment::DIFFICULTIES[difficulty] %></h5>
   <% elsif difficulty == 3%>
     <div id="diamond-narrow-hard"></div>
-    <h5>Hard</h5>
+    <h5><%= UserAssignment::DIFFICULTIES[difficulty] %></h5>
   <% else %>
     <div id="diamond-narrow-expert"></div>
-    <h5>Expert</h5>
+    <h5><%= UserAssignment::DIFFICULTIES[difficulty] %></h5>
   <% end %>
 </div>
