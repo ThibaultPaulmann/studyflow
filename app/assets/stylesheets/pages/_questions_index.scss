@@ -10,17 +10,6 @@
 
 }
 
-.number-of-questions {
-  width: 30%;
-  margin-top: 30px;
-  margin-left: 54px;
-  margin-bottom: 0;
-
-  h3 {
-    padding: 5px;
-  }
-}
-
 .question-create {
   background-color: $font-color;
   width: 70%;
@@ -77,6 +66,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px $font-color;
+  margin-top: 40px;
 
 }
 
