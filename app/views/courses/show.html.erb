@@ -1,10 +1,13 @@
 <div class="container-course-show">
   <div class="course-show-left">
     <div class="course-title-container">
-      <h1><%= @course.name %></h1>
-      <em>
-        <h4><%= @course.code %></h2>
-      </em>
+      <div>
+        <h1><%= @course.name %></h1>
+        <em>
+          <h4><%= @course.code %></h2>
+        </em>
+      </div>
+       <%= link_to icon('fa-solid', 'circle-plus fa-4x'), new_course_assignment_path(@course), class: "btn btn-flat" %>
     </div>
     <div class="assignments">
       <h1>Due Assignments: </h1>
@@ -17,7 +20,6 @@
     <div class="add-btn">
       <div id="assignment-new-button">
       </div>
-      <%= link_to "Add an Assignment", new_course_assignment_path(@course), class: "btn btn-flat" %>
     </div>
     <div class="assignments">
       <h1>Past Assignments: </h1>
