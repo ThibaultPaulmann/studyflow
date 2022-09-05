@@ -20,7 +20,10 @@
     <div class="container-forum-schedule-meeting">
       <div class="forum-box">
         <div id="forum-button">
-          <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light" %>
+          <p>Have a Question?</p>
+          <p>Want to help your classmates?</p>
+        <%# <p>The Forum has </p><%= pluralize @assignment.questions.size, "Question" %>
+          <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light", style: "width: 100%;" %>
         </div>
       </div>
       <div id="schedule-study-session">

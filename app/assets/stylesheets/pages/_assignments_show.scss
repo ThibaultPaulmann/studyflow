@@ -98,11 +98,6 @@
   overflow: scroll;
 }
 
-#forum-button {
-  margin-left: 90px;
-  text-align: center;
-  margin: 15px;
-}
 
 .profiles {
   display: flex;
@@ -179,7 +174,16 @@
   color: $background-color;
   border-radius: 20px;
 
+  .simple-form-input-schedule-meeting {
+    height: 100%;
+  }
 
+  #new_study_session {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
 }
 
 .form-group {
@@ -196,8 +200,27 @@
 }
 
 .forum-box {
+  display: flex;
+  flex-direction: column;
   background-color: $font-color;
-  width: 40%;
+  width: 42%;
   padding: 30px;
   border-radius: 20px;
+
+  p {
+    color: $background-color;
+    font-size: 24px;
+  }
+
+
+  #forum-button {
+    flex-grow: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+
+  }
+
 }
