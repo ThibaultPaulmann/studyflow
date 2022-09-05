@@ -1,14 +1,21 @@
 <div class="btn-edit">
   <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
 </div>
-<div class="container-assignment-top">
+
+<div class="container-assignment-top" data-controller="user-progress">
+  <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
+
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
-    <div class="container-title-difficulty-due-date" id="title-difficulty-due-date">
+    <div class="container-title-difficulty-due-date d-flex justify-content-between align-items-center" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
         <h2><%= @assignment.title %></h2>
-        <%= render partial: "components/difficulty", locals: { assignments: current_user.assignments } %>
+        <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
       </div>
-      <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
+      <div class="d-flex">
+        <div class="hand-in-button" data-action="click->user-progress#completed">
+          <h5>Hand-in</h5>
+        </div>
+        <%= render partial: "components/difficulty", locals: { difficulty: @difficulty } %></div>
     </div>
     <div class="container-forum-schedule-meeting">
       <div class="forum-box">
@@ -65,21 +72,21 @@
   <div id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
-    <div class="user-avatar-name profile-current-user">
+    <div class="user-avatar-name">
       <div class="profile-left">
         <div class="profiles">
-          <%= render "shared/avatar", user: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user %>
+          <%= render "shared/avatar", user: @current_user_assignment.user %>
         </div>
         <div class="user-name">
           <strong>Me</strong>
         </div>
       </div>
       <div>
-        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}&.user_progress } %>
+        <%= render partial: "components/user_progress", locals: { user_progress: @current_user_assignment&.user_progress } %>
       </div>
     </div>
     <div class="seperator"></div>
-    <% @user_assignments.filter { |user_assignment| user_assignment.user != current_user}.each do |user_assignment| %>
+    <% @user_assignments.each do |user_assignment| %>
       <div class="user-avatar-name">
         <div class="profile-left">
           <div class="profiles">

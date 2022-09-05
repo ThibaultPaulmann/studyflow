@@ -1,10 +1,20 @@
 class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
-    @user_assignments = UserAssignment.where(assignment: @assignment)
     @course = Course.find(params[:course_id])
-    @assignment = Assignment.find(params[:course_id])
     @study_session = StudySession.new
+    @user_assignments = UserAssignment.where(assignment: @assignment).reject { |assignment| assignment.user == current_user}
+    @current_user_assignment = UserAssignment.where(assignment: @assignment).find_by(user: current_user)
+    difficultyArray = @assignment.user_assignments.filter { |assignment| assignment.difficulty != nil }
+
+    if difficultyArray.empty?
+      @difficulty = 0
+    else
+      @difficulty = difficultyArray.reduce(0) { |sum, user_assignment| sum + (user_assignment.difficulty.to_f / difficultyArray.size)}.round
+    end
+    if @current_user_assignment.user_progress == "Not started"
+      @current_user_assignment.update(user_progress: "Working")
+    end
   end
 
   def new

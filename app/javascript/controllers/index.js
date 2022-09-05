@@ -9,3 +9,6 @@ application.register("calendar", CalendarController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import UserProgressController from "./user_progress_controller"
+application.register("user-progress", UserProgressController)
