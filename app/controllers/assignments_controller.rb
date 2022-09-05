@@ -1,6 +1,8 @@
 class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
+    @course = Course.find(params[:course_id])
+    @study_session = StudySession.new
     @user_assignments = UserAssignment.where(assignment: @assignment).reject { |assignment| assignment.user == current_user}
     @current_user_assignment = UserAssignment.where(assignment: @assignment).find_by(user: current_user)
     difficultyArray = @assignment.user_assignments.filter { |assignment| assignment.difficulty != nil }
@@ -19,7 +21,7 @@ class AssignmentsController < ApplicationController
     @course = Course.find(params[:course_id])
     @assignment = Assignment.new
   end
-  
+
   def create
     @assignment = Assignment.new(assignment_params)
     @course = Course.find(params[:course_id])

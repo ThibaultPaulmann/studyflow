@@ -1,5 +1,5 @@
 class StudySession < ApplicationRecord
-  belongs_to :assignment
+  belongs_to :assignment3
   has_many :scheduled_meetings, dependent: :destroy
   has_many :users, through: :scheduled_meetings
 

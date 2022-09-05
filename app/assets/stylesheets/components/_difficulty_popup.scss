@@ -18,3 +18,51 @@
   justify-content: center;
   align-items: center;
 }
+
+.difficulty-input .form-check-input.is-valid ~ .form-check-label {
+  color: black;
+}
+
+.difficulty-input .form-check:first-of-type {
+  input, input.is-valid {
+    border-color: $difficulty-easy !important;
+    background-color: $difficulty-easy !important;
+  }
+
+  // label {
+  //   background-color: green !important;
+  // }
+}
+
+.difficulty-input .form-check:nth-of-type(2) {
+  input, input.is-valid {
+    border-color: $difficulty-medium !important;
+    background-color: $difficulty-medium !important;
+  }
+
+  // label {
+  //   background-color: rgb(219, 203, 30) !important;
+  // }
+}
+
+.difficulty-input .form-check:nth-of-type(3) {
+  input, input.is-valid {
+    border-color: $difficulty-hard !important;
+    background-color: $difficulty-hard !important;
+  }
+
+  // label {
+  //   background-color: orange !important;
+  // }
+}
+
+.difficulty-input .form-check:nth-of-type(4) {
+  input, input.is-valid {
+    border-color: $difficulty-expert !important;
+    background-color: $difficulty-expert !important;
+  }
+
+  // label {
+  //   color: red !important;
+  // }
+}
