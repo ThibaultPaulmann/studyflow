@@ -1,5 +1,10 @@
+<div class="btn-edit">
+  <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
+</div>
+
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
+
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
     <div class="container-title-difficulty-due-date d-flex justify-content-between align-items-center" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
@@ -12,9 +17,29 @@
         </div>
         <%= render partial: "components/difficulty", locals: { difficulty: @difficulty } %></div>
     </div>
-    <div class="d-flex justify-content-between">
-      <div class="btn-edit">
-        <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
+    <div class="container-forum-schedule-meeting">
+      <div class="forum-box">
+        <div id="forum-button">
+          <p>Have a Question?</p>
+          <p>Want to help your classmates?</p>
+        <%# <p>The Forum has </p><%= pluralize @assignment.questions.size, "Question" %>
+          <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light", style: "width: 100%;" %>
+        </div>
+      </div>
+      <div id="schedule-study-session">
+        <div class="simple-form-input-schedule-meeting">
+          <%= simple_form_for [@course, @assignment, @study_session] do |f| %>
+            <div class="form-group col-md-6" style="width: 100%;">
+              <%= f.input :title %>
+            </div>
+            <div class="form-group col-md-6" style="width: 100%;">
+              <%= f.input :meeting_time %>
+            </div>
+            <div>
+            <%= f.submit class:"btn submit-btn"%>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div id="pdf-container">
@@ -50,19 +75,6 @@
   <div id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
-    <%# <div class="user-avatar-name profile-current-user">
-      <div class="profile-left">
-        <div class="profiles">
-          <%= render "shared/avatar", user: @current_user_assignment.user %>
-    <%# </div>
-        <div class="user-name">
-          <strong>Me</strong>
-        </div>
-      </div>
-      <div>
-        <%= render partial: "components/user_progress", locals: { user_progress: @current_user_assignment&.user_progress } %>
-    <%# </div> %>
-    <%# </div> %>
     <div class="user-avatar-name">
       <div class="profile-left">
         <div class="profiles">
@@ -92,8 +104,5 @@
         </div>
       </div>
     <% end %>
-    <div class="container-forum" id="forum-button">
-      <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light" %>
-    </div>
   </div>
 </div>

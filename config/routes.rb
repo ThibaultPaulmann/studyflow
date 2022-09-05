@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :courses, only: [:index, :show, :new, :create] do
     resources :assignments, only: [:show, :new, :create, :edit, :update] do
+      resources :study_sessions, only: [:create]
       resources :questions, only: [:create, :index] do
         member do
           patch "upvote", to: "questions#upvote"
@@ -25,4 +26,5 @@ Rails.application.routes.draw do
   end
   resources :user_assignments, only: [:update]
   resources :course_enrollments, only: [:create]
+  resources :study_sessions, only: [:index]
 end
