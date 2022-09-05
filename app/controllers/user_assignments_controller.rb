@@ -12,6 +12,6 @@ class UserAssignmentsController < ApplicationController
   private
   
   def user_assignment_params
-    params.require(:user_assignment).permit(:user_progress)
+    params.require(:user_assignment).permit(:user_progress, :difficulty)
   end
 end

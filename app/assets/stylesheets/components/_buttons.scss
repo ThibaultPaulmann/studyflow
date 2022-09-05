@@ -13,7 +13,6 @@
   color: $background-color;
 }
 
-
 .btn-flat {
   color: $background-color;
   padding: 8px 24px;
@@ -25,4 +24,28 @@
 .btn-flat:hover {
   background: $quarternary-color;
   color: $font-color;
+}
+
+.hand-in-button {
+  width: 125px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 5px 5px 7px 5px;
+  border: 2px solid $background-color;
+
+  h5 {
+    margin: auto;
+    color: $background-color;
+    font-weight: 900;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $tertiary-color;
+    border-color: $tertiary-color;
+  }
 }

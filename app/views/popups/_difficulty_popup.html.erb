@@ -1,5 +1,10 @@
-<div class="difficulty-popup d-flex justify-content-center align-items-center">
+<div class="difficulty-popup" data-user-progress-target="popup">
   <div class="popup-content">
     <h1> How difficult was this assignment?</h1>
+    <%= simple_form_for user_assignment do |f| %>
+      <%= f.input :user_progress, :as => :hidden, :input_html => { :value => "Completed" } %>
+      <%= f.input :difficulty, required: true, collection: 1..4, as: :radio_buttons %>
+      <%= f.submit "Mark as completed" %>
+    <% end %>
   </div>
 </div>

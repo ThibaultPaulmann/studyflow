@@ -8,11 +8,13 @@
   background: rgba(220, 220, 220, 0.3);
   z-index: 10;
 
-  .active {
-    display: block;
-  }
-
   .popup-content {
     background: $background-color;
   }
+}
+
+.popup-active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
