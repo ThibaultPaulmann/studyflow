@@ -129,4 +129,49 @@
     display: flex;
     justify-content: center;
   }
+
+  .big-box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .vote {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  .vote-container {
+    i {
+      font-size: xx-large;
+    }
+
+    .fa-thumbs-up {
+      text-shadow: 1px 1px lawngreen;
+    }
+
+    .fa-thumbs-down {
+      text-shadow: 1px 1px red;
+    }
+
+    p {
+      font-size: x-large;
+    }
+    display: flex;
+  }
+
+  .vote-item {
+    padding: 0 20px;
+  }
+
+  .voted {
+    color: lawngreen;
+  }
+
+  .downvoted {
+    color: red;
+  }
+
+  .default {
+    color: white;
+  }
 }

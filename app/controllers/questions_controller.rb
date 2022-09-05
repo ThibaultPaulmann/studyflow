@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :set_assignment_and_course, except: :show
+
   def index
     if params[:query].present?
       questions = Question.search_by_title(params[:query]).where(assignment: params[:assignment_id])
@@ -6,8 +8,6 @@ class QuestionsController < ApplicationController
       questions = Question.where(assignment: params[:assignment_id])
     end
     @data = []
-    @assignment = Assignment.find(params[:assignment_id])
-    @course = @assignment.course
     @question = Question.new
     @answer = Answer.new
     questions.each do |question|
@@ -21,15 +21,13 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @assignment = Assignment.find(params[:assignment_id])
   end
 
   def create
     @question = Question.new(question_params)
     @question.user = current_user
-    @question.assignment = Assignment.find(params[:assignment_id])
-    @assignment = @question.assignment
-    @course = @assignment.course
+    @question.assignment = @assignment
+
     if @question.save!
       redirect_to course_assignment_questions_path(@course, @assignment)
       flash[:notice] = "Question posted!"
@@ -44,19 +42,42 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
+
   def upvote
-    @question = Question.find(params[:question_id])
-    newUpvotes = @question.upvotes + 1
-    if @question.update(upvotes: newUpvotes)
-      redirect_to assignment_questions_path
-      flash[:notice] = "Question upvoted!"
+    @question = Question.find(params[:id])
+    if current_user.voted_up_on? @question
+      @question.unvote_by current_user
     else
-      flash[:alert] = "Error upvoting the question"
+      @question.upvote_by current_user
     end
 
+    respond_to do |format|
+      format.html { redirect_to course_assignment_questions_path }
+      format.json { render json: { upvote_buttons: render_to_string(partial: "components/upvote_buttons", locals: { question: @question }, formats: [:html]) } }
+    end
+  end
+
+  def downvote
+    @question = Question.find(params[:id])
+    if current_user.voted_down_on? @question
+      @question.unvote_by current_user
+    else
+      @question.downvote_by current_user
+    end
+    respond_to do |format|
+      format.html { redirect_to course_assignment_questions_path }
+      format.json { render json: { upvote_buttons: render_to_string(partial: "components/upvote_buttons", locals: { question: @question }, formats: [:html]) } }
+    end
   end
 
   private
+
+  def set_assignment_and_course
+    @assignment = Assignment.find(params[:assignment_id])
+    @course = @assignment.course
+  end
+
+
 
   def question_params
     params.require(:question).permit(:title)
