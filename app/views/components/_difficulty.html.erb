@@ -1,4 +1,17 @@
-  <div class="container-difficulty-box" id="difficulty-box">
-    <span class="dot"></span>
-    <h5>medium</h5>
-  </div>
+<div class="container-difficulty-box" id="difficulty-box">
+  <% if difficulty == 0 %>
+    <h5>N/A</h5>
+  <% elsif difficulty == 1 %>
+    <div id="diamond-narrow-easy"></div>
+    <h5>Easy</h5>
+  <% elsif difficulty == 2 %>
+    <div id="diamond-narrow-medium"></div>
+    <h5>Medium</h5>
+  <% elsif difficulty == 3%>
+    <div id="diamond-narrow-hard"></div>
+    <h5>Hard</h5>
+  <% else %>
+    <div id="diamond-narrow-expert"></div>
+    <h5>Expert</h5>
+  <% end %>
+</div>

@@ -4,20 +4,94 @@
   height: 40px;
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 5px 5px 7px 5px;
+  color: $font-color;
 
   h5 {
     margin: auto;
     color: $font-color;
+    font-weight: 900;
   }
 
-  .dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    background-color: yellow;
-    margin: auto;
+  #diamond-narrow-easy {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 14px solid $difficulty-easy;
+    position: relative;
+    top: -10px;
+  }
+
+  #diamond-narrow-easy:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 14px solid $difficulty-easy;
+  }
+
+  #diamond-narrow-medium {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 14px solid $difficulty-medium;
+    position: relative;
+    top: -10px;
+  }
+
+  #diamond-narrow-medium:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 14px solid $difficulty-medium;
+  }
+
+  #diamond-narrow-hard {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 14px solid $difficulty-hard;
+    position: relative;
+    top: -10px;
+  }
+
+  #diamond-narrow-hard:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 14px solid $difficulty-hard;
+  }
+
+  #diamond-narrow-expert {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom: 14px solid $difficulty-expert;
+    position: relative;
+    top: -10px;
+  }
+
+  #diamond-narrow-expert:after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 14px solid $difficulty-expert;
   }
 }
