@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get "courses/:course_id/assignments/:assignment_id/forum", to: "questions#index", as: :assignment_questions
   # get "courses/:course_id/assignments/:assignment_id/forum/new", to: "questions#new", as: :new_assignment_question
   post "courses/:course_id/assignments/:assignment_id/forum", to: "questions#create"
-  patch "/courses/:course_id/assignments/:assignment_id/forum/", to: "questions#upvote"
+  # patch "/courses/:course_id/assignments/:assignment_id/forum/", to: "questions#upvote"
 
   # post "/courses/:course_id/assignments/:assignment_id/forum/:question_id/answers", to: "answers#create", as: :question_answers
   # patch "/courses/:course_id/assignments/:assignment_id/forum/:question_id/answers/:answer_id", to: "answers#update", as: :question_answer
@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     resources :assignments, only: [:show, :new, :create, :edit, :update] do
       resources :study_sessions, only: [:create]
       resources :questions, only: [:create, :index] do
+        member do
+          patch "upvote", to: "questions#upvote"
+          patch "downvote", to: "questions#downvote"
+        end
         resources :answers, only: [:create, :upvote, :update]
       end
     end

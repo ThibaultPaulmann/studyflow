@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :photo
+  acts_as_voter
 
   has_many :course_enrollments, dependent: :destroy
   has_many :courses, through: :course_enrollments

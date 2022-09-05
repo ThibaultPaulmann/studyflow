@@ -3,13 +3,17 @@
     <div class="question-text">
       <div class="question-header d-flex justify-content-between">
         <p><%= dataHash[:question].user.firstName %> <%= dataHash[:question].user.lastName %></p>
-        <p>^ <%= dataHash[:question].upvotes %></p>
       </div>
       <div class="question-body">
         <h3><%= dataHash[:question].title %></h3>
       </div>
-      <div class="question-footer">
-        <p><%= dataHash[:question].created_at.strftime("%a %d - %H:%M") %></p>
+      <div class="big-box">
+        <div class="question-footer">
+          <p><%= dataHash[:question].created_at.strftime("%a %d - %H:%M") %></p>
+        </div>
+        <div class="vote">
+          <%= render "components/upvote_buttons", question: dataHash[:question] %>
+        </div>
       </div>
     </div>
   </div>

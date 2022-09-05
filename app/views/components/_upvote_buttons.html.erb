@@ -1,0 +1,10 @@
+ <div data-controller="upvote" class="vote-container">
+  <%= link_to upvote_course_assignment_question_path(@course, @assignment, question), data: {'turbo-method': :patch, upvote_target: "button", action: "click->upvote#handleUpvote"} do %>
+    <i class="fa-regular fa-thumbs-up vote-item <%= current_user.voted_up_on?(question) ? "voted" : "default" %>"></i>
+  <% end %>
+  <% vote_count = question.get_upvotes.size - question.get_downvotes.size %>
+  <p data-upvote-target="total" class="<%= vote_count == 0 ? '' : vote_count > 0 ? 'voted' : 'downvoted' %>"> <%= number_to_human(vote_count) %></p>
+  <%= link_to downvote_course_assignment_question_path(@course, @assignment, question), data: {'turbo-method': :patch, upvote_target: "button", action: "click->upvote#handleUpvote"} do %>
+      <i class="fa-regular fa-thumbs-down vote-item <%= current_user.voted_down_on?(question) ? "downvoted" : "default" %>"></i>
+  <% end %>
+</div>
