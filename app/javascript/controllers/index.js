@@ -7,5 +7,11 @@ import { application } from "./application"
 import CalendarController from "./calendar_controller"
 application.register("calendar", CalendarController)
 
+import CreateNewController from "./create_new_controller"
+application.register("create-new", CreateNewController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import UpvoteController from "./upvote_controller"
+application.register("upvote", UpvoteController)

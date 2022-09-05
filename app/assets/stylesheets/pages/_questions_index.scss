@@ -11,18 +11,10 @@
 }
 
 .number-of-questions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: $font-color;
-  width: 48%;
-  color: $background-color;
-  border-radius: 20px;
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 0 15px $font-color;
-
+  width: 30%;
+  margin-top: 30px;
+  margin-left: 54px;
+  margin-bottom: 0;
 
   h3 {
     padding: 5px;
