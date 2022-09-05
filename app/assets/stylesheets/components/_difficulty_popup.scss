@@ -1,0 +1,20 @@
+.difficulty-popup {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(220, 220, 220, 0.3);
+  z-index: 10;
+
+  .popup-content {
+    background: $background-color;
+  }
+}
+
+.popup-active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}

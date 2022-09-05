@@ -15,3 +15,6 @@ application.register("hello", HelloController)
 
 import UpvoteController from "./upvote_controller"
 application.register("upvote", UpvoteController)
+
+import UserProgressController from "./user_progress_controller"
+application.register("user-progress", UserProgressController)
