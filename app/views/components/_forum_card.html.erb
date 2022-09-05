@@ -24,7 +24,7 @@
         <div class="answer-body">
           <p><%= answer.content %></p>
           <div class="answer-date">
-            <p><%= answer.created_at.strftime("%b %e, %l:%M %p") %></p>
+            <p><%= answer.created_at.strftime("%a %d - %H:%M") %></p>
           </div>
         </div>
       </div>
@@ -36,11 +36,11 @@
         <div class="bottom-answer-box">
           <div class="row-form-group">
             <div class="form-group col-md-6">
-              <%= f.input :content, as: :text, input_html: {rows: 3 } %>
+              <%= f.input :content, label: 'Answer', as: :text, input_html: {rows: 3 } %>
             </div>
           </div>
           <div class="btn-centered">
-             <%= f.submit class:"btn btn-flat"%>
+             <%= f.submit 'Post Answer', class:"btn btn-flat" %>
            </div>
          <% end %>
         </div>

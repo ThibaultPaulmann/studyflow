@@ -4,7 +4,6 @@
   height: auto;
   background-color: $background-color;
   margin: 10px;
-  box-shadow: 0 0 15px $font-color;
 
 
   .question {
@@ -13,6 +12,7 @@
     color: $background-color;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    box-shadow: 0 0 15px $font-color;
 
     .question-header {
       color: $tertiary-color;
@@ -27,19 +27,12 @@
     }
 
     .question-footer {
-      border: 1px solid $font-color;
-      background-color: $background-color;
       width: 38%;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 0px;
-      padding-top: 10px;
+      height: auto;
 
       p {
-        color: $font-color;
+        color: $background-color;
+        font-style: italic;
       }
      }
   }
@@ -56,17 +49,24 @@
     border: 1px solid black;
     width: 90%;
     margin: 10px;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
+    border-radius: 14px;
+
+    p {
+      margin-left: 4px;
+    }
+
 
     .answer-date {
-      background-color: $quarternary-color;
       color: $font-color;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      height: 40px;
-      width: 35%;
+
+      p {
+        margin-bottom: 0px;
+        color: grey;
+        font-size: 15px;
+      }
     }
     }
 
@@ -91,9 +91,13 @@
   }
 
   .btn {
-    width: 40%;
     margin: auto;
     margin-bottom: 10px;
+    &:hover {
+      background-color: black;
+      animation: reverse 1s;
+      color: azure;
+    }
   }
 
   h4 {

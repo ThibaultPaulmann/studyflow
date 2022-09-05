@@ -24,6 +24,7 @@ export default class extends Controller {
       this.extensionTarget.classList.add("d-none");
       if (this.previousTarget != null) {
         this.previousTarget.style.backgroundColor = "#1f2839";
+
       }
     }
   }
@@ -31,9 +32,21 @@ export default class extends Controller {
   extend(event) {
     if (this.previousTarget != null) {
       this.previousTarget.style.backgroundColor = "#1f2839";
+      let date = new Date();
+      let year = date.getFullYear();
+      let dateOld = new Date(this.previousTarget.dataset.date);
+      let sec = dateOld.setFullYear(year);
+      let d = new Date(sec);
+      let calendarToday = d.getDate();
+      let today = new Date().getDate();
+
+      if (calendarToday === today) {
+        this.previousTarget.style.backgroundColor = "white";
+      }
     }
 
     event.target.style.backgroundColor = "rgba(193,207,206,0.4)";
+
     this.previousTarget = event.target;
 
     const calendar = document.querySelector(".simple-calendar");
@@ -46,15 +59,21 @@ export default class extends Controller {
     assignments.forEach((assignment) => {
       this.extensionAssignmentsTarget.insertAdjacentHTML(
         "beforeend",
-        this.renderAssignment(assignment.title, assignment.due_date)
+        this.renderAssignment(assignment)
       );
     });
   }
 
-  renderAssignment(name, time) {
+  renderAssignment(assignment) {
     const reg = /T(\d\d):(\d\d)/;
-    const match = reg.exec(time);
-    const assignmentCard = `<div class='calendar-assignment-card'><p class='assignment-name'>${name}</p><p class='assignment-time'>${match[1]}:${match[2]}</p></div>`;
+    const match = reg.exec(assignment.due_date);
+    const assignmentCard = `<div class='calendar-assignment-card'>\
+      <a href='courses/${assignment.course_id}/assignments/${assignment.id}'>\
+        <p class='assignment-name'>${assignment.title}</p>\
+      </a>\
+      <p class='assignment-time'>${match[1]}:${match[2]}</p>\
+      </div>`;
     return assignmentCard;
   }
+
 }
