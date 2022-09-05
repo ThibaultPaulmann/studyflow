@@ -3,13 +3,25 @@
     <div class="question-text">
       <div class="question-header d-flex justify-content-between">
         <p><%= dataHash[:question].user.firstName %> <%= dataHash[:question].user.lastName %></p>
-        <p>^ <%= dataHash[:question].upvotes %></p>
       </div>
       <div class="question-body">
         <h3><%= dataHash[:question].title %></h3>
       </div>
-      <div class="question-footer">
-        <p><%= dataHash[:question].created_at.strftime("%a %d - %H:%M") %></p>
+      <div class="big-box">
+        <div class="question-footer">
+          <p><%= dataHash[:question].created_at.strftime("%a %d - %H:%M") %></p>
+        </div>
+        <div class="vote">
+          <div data-controller="upvote" class="vote-container">
+          <%= link_to upvote_course_assignment_question_path(@course, @assignment, dataHash[:question]), data: {'turbo-method': :patch} do %>
+            <i class="fa-regular fa-thumbs-up vote-item <%= current_user.voted_up_on?(dataHash[:question]) ? "voted" : "default" %>"></i>
+          <% end %>
+            <p><%= number_to_human(dataHash[:question].get_upvotes.size - dataHash[:question].get_downvotes.size) %></p>
+          <%= link_to downvote_course_assignment_question_path(@course, @assignment, dataHash[:question]), data: {'turbo-method': :patch} do %>
+              <i class="fa-regular fa-thumbs-down vote-item <%= current_user.voted_down_on?(dataHash[:question]) ? "downvoted" : "default" %>"></i>
+          <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="number-of-questions">
-    <h1><%= pluralize @assignment.questions.size, "Question" %></h1>
+    <h1><%= pluralize @assignment.questions.size, "Question" %> on <%= @assignment.title %></h1>
   </div>
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
@@ -20,6 +20,7 @@
     <% sortedData.each_with_index do |dataHash, index| %>
       <% columns[index % 3][:elements] << dataHash %>
       <% columns[index % 3][:height] += (dataHash[:answers].size + 1) %>
+
     <% end %>
     <div class="forum-column">
       <% columns[0][:elements].each do |element| %>

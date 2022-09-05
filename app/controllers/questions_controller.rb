@@ -40,17 +40,49 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def upvote
-    @question = Question.find(params[:question_id])
-    newUpvotes = @question.upvotes + 1
-    if @question.update(upvotes: newUpvotes)
-      redirect_to assignment_questions_path
-      flash[:notice] = "Question upvoted!"
-    else
-      flash[:alert] = "Error upvoting the question"
-    end
 
+  def upvote
+    unless signed_in?
+      redirect_to new_user_session_path
+      flash[:alert] = "You need to log in first"
+    else
+      @question = Question.find(params[:id])
+      if current_user.voted_up_on? @question
+        @question.unvote_by current_user
+      else
+        @question.upvote_by current_user
+      end
+      redirect_to course_assignment_questions_path
+      flash[:notice] = "Question upvoted!"
+    end
   end
+
+  def downvote
+    unless signed_in?
+      redirect_to new_user_session_path
+      flash[:alert] = "You need to log in first"
+    else
+      @question = Question.find(params[:id])
+      if current_user.voted_down_on? @question
+        @question.unvote_by current_user
+      else
+        @question.downvote_by current_user
+      end
+      redirect_to course_assignment_questions_path
+      flash[:notice] = "Question downvoted!"
+    end
+  end
+
+  # def upvote
+  #   @question = Question.find(params[:question_id])
+  #   newUpvotes = @question.upvotes + 1
+  #   if @question.update(upvotes: newUpvotes)
+  #     redirect_to assignment_questions_path
+  #     flash[:notice] = "Question upvoted!"
+  #   else
+  #     flash[:alert] = "Error upvoting the question"
+  #   end
+  # end
 
   private
 
