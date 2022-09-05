@@ -1,0 +1,19 @@
+.study-session {
+  color: $background-color;
+  background-color: $font-color;
+  margin: auto;
+  width: 40%;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.title-study-session {
+  background-color: $background-color;
+  border-radius: 15px;
+  margin: 10px 10px 10px 0px;
+  padding: 5px;
+  width: fit-content;
+  height: auto;
+  color: $font-color;
+}

@@ -1,7 +1,3 @@
-<div class="btn-edit">
-  <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
-</div>
-
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
 
@@ -38,6 +34,9 @@
           <%= simple_form_for [@course, @assignment, @study_session] do |f| %>
             <div class="form-group col-md-6" style="width: 100%;">
               <%= f.input :title %>
+            </div>
+              <div class="form-group col-md-6" style="width: 100%;">
+              <%= f.input :duration%>
             </div>
             <div class="form-group col-md-6" style="width: 100%;">
               <%= f.input :meeting_time %>

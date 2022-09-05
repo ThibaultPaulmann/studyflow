@@ -1,1 +1,18 @@
-<h1>hello</h1>
+<h1>Scheduled Study Sessions:</h1>
+
+<% @study_sessions.each do |study_session| %>
+
+
+    <div class="study-session">
+      <div class="title-study-session">
+        <h3><%= study_session.title %></h3>
+      </div>
+        <h5> <strong><%= study_session.assignment.course.name %></strong> - <em><%= study_session.assignment.title %></em></h5>
+        <p>Duration: <em><%= study_session.duration %></em></p>
+        <p>Date & Time: <em><%= study_session.meeting_time.strftime("%b %e, %l:%M %p") %></em></p>
+    </div>
+
+<%# <%= if study_session.exist? %>
+<%# <%= else %>
+<%# <h1> You dont have any Scheduled Meetings </h1> %>
+<% end %>
