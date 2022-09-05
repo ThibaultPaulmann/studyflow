@@ -1,7 +1,12 @@
 class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
-    @user_assignments = UserAssignment.where(assignment: @assignment)
+    @user_assignments = UserAssignment.where(assignment: @assignment).reject { |assignment| assignment.user == current_user}
+    @current_user_assignment = UserAssignment.where(assignment: @assignment).find_by(user: current_user)
+
+    if @current_user_assignment.user_progress == "Not started"
+      @current_user_assignment.update(user_progress: "Working")
+    end
   end
 
   def new

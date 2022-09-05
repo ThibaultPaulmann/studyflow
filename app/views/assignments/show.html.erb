@@ -1,4 +1,5 @@
 <div class="container-assignment-top">
+  <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
     <div class="container-title-difficulty-due-date" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
@@ -7,8 +8,16 @@
       </div>
       <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
     </div>
-    <div class="btn-edit">
-      <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
+    <div class="d-flex justify-content-between">
+      <div class="btn-edit">
+        <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
+      </div>
+      <div data-controller="user-progress" data-user-progress-target="form" data-action="submit->user-progress#completed">
+        <%= simple_form_for(@current_user_assignment, html: { novalidate: true }) do |f| %>
+          <%= f.input :user_progress, :as => :hidden, :input_html => { :value => "Completed" } %>
+          <%= f.submit 'Hand-in', class: "hand-in-button"%>
+        <% end %>
+      </div>
     </div>
     <div id="pdf-container">
       <% if @assignment.photos.size == 1 %>
@@ -43,21 +52,34 @@
   <div id="classmate-progress">
     <h3>User progress</h3>
     <i class="fa-solid fa-user-tie-hair"></i>
-    <div class="user-avatar-name profile-current-user">
+    <%# <div class="user-avatar-name profile-current-user">
       <div class="profile-left">
         <div class="profiles">
-          <%= render "shared/avatar", user: @user_assignments.find { |user_assignment| user_assignment.user == current_user}.user %>
+          <%= render "shared/avatar", user: @current_user_assignment.user %>
+    <%# </div>
+        <div class="user-name">
+          <strong>Me</strong>
+        </div>
+      </div>
+      <div>
+        <%= render partial: "components/user_progress", locals: { user_progress: @current_user_assignment&.user_progress } %>
+    <%# </div> %>
+    <%# </div> %>
+    <div class="user-avatar-name">
+      <div class="profile-left">
+        <div class="profiles">
+          <%= render "shared/avatar", user: @current_user_assignment.user %>
         </div>
         <div class="user-name">
           <strong>Me</strong>
         </div>
       </div>
       <div>
-        <%= render partial: "components/user_progress", locals: { user_progress: @user_assignments.find { |user_assignment| user_assignment.user == current_user}&.user_progress } %>
+        <%= render partial: "components/user_progress", locals: { user_progress: @current_user_assignment&.user_progress } %>
       </div>
     </div>
     <div class="seperator"></div>
-    <% @user_assignments.filter { |user_assignment| user_assignment.user != current_user}.each do |user_assignment| %>
+    <% @user_assignments.each do |user_assignment| %>
       <div class="user-avatar-name">
         <div class="profile-left">
           <div class="profiles">
