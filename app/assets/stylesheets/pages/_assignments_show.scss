@@ -167,3 +167,39 @@
 .carousel-control-prev:hover {
   background-color: rgba($color: $tertiary-color, $alpha: 0.5);
 }
+
+
+#schedule-study-session {
+  background-color: blue;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 55%;
+  background-color: $font-color;
+  color: $background-color;
+  border-radius: 20px;
+
+
+}
+
+.form-group {
+  width: 100;
+}
+
+.container-forum-schedule-meeting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  width: 100%;
+  margin: 0PX;
+}
+
+.forum-box {
+  background-color: $font-color;
+  width: 40%;
+  padding: 30px;
+  border-radius: 20px;
+}

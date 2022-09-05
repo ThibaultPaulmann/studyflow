@@ -2,13 +2,16 @@ class AssignmentsController < ApplicationController
   def show
     @assignment = Assignment.find(params[:id])
     @user_assignments = UserAssignment.where(assignment: @assignment)
+    @course = Course.find(params[:course_id])
+    @assignment = Assignment.find(params[:course_id])
+    @study_session = StudySession.new
   end
 
   def new
     @course = Course.find(params[:course_id])
     @assignment = Assignment.new
   end
-  
+
   def create
     @assignment = Assignment.new(assignment_params)
     @course = Course.find(params[:course_id])
