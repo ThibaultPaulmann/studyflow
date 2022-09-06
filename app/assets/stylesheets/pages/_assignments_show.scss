@@ -178,6 +178,8 @@
 
 
 
+
+
   i {
     text-decoration: none;
     color: $font-color;
@@ -244,5 +246,23 @@
     justify-content: space-between;
     align-items: space-between;
 
+    a:hover {
+      background-color: $font-color;
+      color: $background-color;
+    }
+
   }
+}
+
+.zoom-box {
+  padding: 10px;
+  background-color: $background-color;
+  transition: transform .2s;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.zoom-box:hover {
+  transform: scale(1.5);
 }

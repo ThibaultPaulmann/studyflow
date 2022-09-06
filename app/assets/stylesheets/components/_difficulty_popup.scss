@@ -10,6 +10,17 @@
 
   .popup-content {
     background: $background-color;
+    opacity: 1px;
+    border: #1f2839 solid 3px;
+    border-radius: 10px;
+    background-color: $background-color;
+    box-shadow: inset 0 0 10px #000000;
+    h1 {
+      font-size: 1.5em;
+      margin: 0;
+      padding: 0.5em;
+      text-align: center;
+    }
   }
 }
 
@@ -38,6 +49,7 @@
   input, input.is-valid {
     border-color: $difficulty-medium !important;
     background-color: $difficulty-medium !important;
+
   }
 
   // label {
@@ -65,4 +77,32 @@
   // label {
   //   color: red !important;
   // }
+}
+
+.mb-3 {
+  margin-bottom: 0.5em !important;
+  text-align: center;
+}
+
+.mark-complete {
+  text-align: -webkit-center !important;
+  padding: 10px !important;
+  margin: 3px !important;
+  border-radius: 17px !important;
+  :hover {
+    box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.edit_user_assignment {
+
+    margin: 3px;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.difficulty-input {
+  display: flex;
+  justify-content: space-evenly;
 }

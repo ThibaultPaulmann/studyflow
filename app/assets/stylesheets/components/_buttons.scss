@@ -16,14 +16,22 @@
 .btn-flat {
   color: $background-color;
   padding: 8px 24px;
-  border-radius: 4px;
+  // border-radius: 4px;
+  border: none;
   background: $font-color;
   transition: background 0.3s ease;
 }
 
-.btn-flat:hover {
-  background: $quarternary-color;
-  color: $font-color;
+.zoom-box {
+  padding: 10px;
+  background-color: $background-color;
+  transition: transform .2s;
+  width: 30px;
+  height: 30px;
+}
+
+.zoom-box:hover {
+  transform: scale(1.5);
 }
 
 .hand-in-button {
