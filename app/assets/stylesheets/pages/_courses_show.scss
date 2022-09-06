@@ -18,11 +18,14 @@
 
   h1 {
     font-weight: bold;
-    color: antiquewhite;
+    color: $background-color;
   }
 
   h4 {
-    color: antiquewhite;
+    color: $background-color;
+  }
+  h4:hover{
+    color: $tertiary_color;
   }
 
   .assignments {
@@ -52,7 +55,7 @@
     justify-content: center;
     border: 1px solid antiquewhite;
     h1 {
-      color: antiquewhite;
+      color: $background-color;
     }
   }
 
