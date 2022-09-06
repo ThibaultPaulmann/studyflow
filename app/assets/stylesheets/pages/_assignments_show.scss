@@ -254,15 +254,15 @@
   }
 }
 
-.zoom-box {
+.fa-circle-plus {
   padding: 10px;
-  background-color: $background-color;
   transition: transform .2s;
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
   margin: 0 auto;
+  position: relative;
 }
 
-.zoom-box:hover {
-  transform: scale(1.5);
+.fa-circle-plus:hover {
+  transform: scale(1.3);
 }
