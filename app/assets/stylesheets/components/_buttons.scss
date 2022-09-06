@@ -16,7 +16,15 @@
 .btn-flat {
   color: $background-color;
   padding: 8px 24px;
-  // border-radius: 4px;
+  border-radius: 4px;
+  background: $font-color;
+  transition: background 0.3s ease;
+  border: groove;
+}
+
+.btn-flats {
+  color: $background-color;
+  padding: 8px 24px;
   border: none;
   background: $font-color;
   transition: background 0.3s ease;
