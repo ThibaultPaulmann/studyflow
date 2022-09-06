@@ -178,6 +178,8 @@
 
 
 
+
+
   i {
     text-decoration: none;
     color: $font-color;
@@ -244,9 +246,27 @@
     justify-content: space-between;
     align-items: space-between;
   }
-}
+
 
 .duration-input {
   display: flex;
   justify-content: flex-start;
+
+    a:hover {
+      background-color: $font-color;
+      color: $background-color;
+    }
+
+  }
+}
+
+.fa-circle-plus {
+  padding: 10px;
+  transition: transform .2s;
+  width: 10px;
+  height: 10px;
+}
+
+.fa-circle-plus:hover {
+  transform: scale(1.3);
 }

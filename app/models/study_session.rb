@@ -7,4 +7,5 @@ class StudySession < ApplicationRecord
   validates :meeting_time, presence: true
   validates :duration_hours, presence: true, numericality: { in: 0..8 }
   validates :duration_minutes, presence: true, numericality: { in: 0..59 }
+
 end

@@ -1,19 +1,19 @@
 <div class="courses-index">
   <div class="index-left">
-  <h1>Courses:</h1>
+    <h1>Courses:</h1>
     <div class="courses">
       <% @courses.each do |course|%>
         <%= render partial: "components/course_card", locals: { course: course } %>
       <% end %>
     </div>
     <div class="add-course-btn">
-      <%= link_to "Add a Course", new_course_path, class: "btn btn-flat"%>
+      <%= link_to "Add a Course", new_course_path, class: "btn btn-flat "%>
     </div>
     <%= link_to "Join a course", new_course_enrollment_path %>
   </div>
   <div class="index-right">
     <div class="calendar">
-      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
+      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments, meetings: @meetings } %>
     </div>
     <div class="due-assignments">
       <div style="padding-bottom: 10px; padding-top: 10px;">
