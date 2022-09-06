@@ -4,5 +4,10 @@
   margin-top: 10px;
   .link {
     padding: 10px;
+    text-align: -webkit-center;
+    a {
+      text-decoration: none;
+      color: $background-color;
+    }
   }
 }
