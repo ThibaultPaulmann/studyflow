@@ -1,5 +1,4 @@
 class StudySessionsController < ApplicationController
-
   def index
     @assignments = current_user.assignments
     @booked_sessions = current_user.booked_study_sessions
