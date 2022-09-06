@@ -1,6 +1,33 @@
-<h1>Course enrollment edit</h1>
-<%= simple_form_for @course_enrollment do |f|%>
-  <%= CourseEnrollment::COLORS %>
-  <%= f.input :color, as: :radio_buttons, collection: CourseEnrollment::COLORS %>
-  <%= f.submit 'Done' %>
-<% end %>
+<div class="course-enrollment-edit">
+  <h1>Course enrollment edit</h1>
+  <%= simple_form_for @course_enrollment do |f|%>
+    <fieldset class="mb-3 radio_buttons optional course_enrollment_color">
+      <input type="hidden" name="course_enrollment[color]" value="" autocomplete="off">
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#1f2f98" checked="checked" name="course_enrollment[color]" id="course_enrollment_color_1f2f98">
+        <label class="form-check-label collection_radio_buttons" id="bg-1f2f98" for="course_enrollment_color_1f2f98"></label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#f04393" name="course_enrollment[color]" id="course_enrollment_color_f04393">
+        <label class="form-check-label collection_radio_buttons" id="bg-f04393" for="course_enrollment_color_f04393"></label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#7be495" name="course_enrollment[color]" id="course_enrollment_color_7be495">
+        <label class="form-check-label collection_radio_buttons" id="bg-7be495" for="course_enrollment_color_7be495"></label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#fe7a15" name="course_enrollment[color]" id="course_enrollment_color_fe7a15">
+        <label class="form-check-label collection_radio_buttons" id="bg-fe7a15" for="course_enrollment_color_fe7a15"></label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#522157" name="course_enrollment[color]" id="course_enrollment_color_522157">
+        <label class="form-check-label collection_radio_buttons" id="bg-522157" for="course_enrollment_color_522157"></label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#f8d90f" name="course_enrollment[color]" id="course_enrollment_color_f8d90f">
+        <label class="form-check-label collection_radio_buttons" id="bg-f8d90f" for="course_enrollment_color_f8d90f"></label>
+      </div>
+    </fieldset>
+    <%= f.submit 'Done' %>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@
     <h1>Courses:</h1>
     <div class="courses">
       <% @courses.each do |course|%>
-        <%= render partial: "components/course_card", locals: { course: course } %>
+        <%= render partial: "components/course_card", locals: { course: course, course_enrollment:  CourseEnrollment.find_by(user: current_user, course: course) } %>
       <% end %>
     </div>
     <div class="add-course-btn">

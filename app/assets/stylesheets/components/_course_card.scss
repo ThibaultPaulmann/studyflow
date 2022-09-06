@@ -88,4 +88,42 @@
     margin-bottom: auto;
     margin-top: 35px;
   }
+
+  #first-subject-color {
+    background: linear-gradient(135deg, $first-subject-color 0%, #e0896c 100%);
+  }
+  #second-subject-color {
+    background: linear-gradient(135deg, $second-subject-color 0%, #25888f 100%);
+  }
+  #tertiary-subject-color {
+    background: linear-gradient(
+      135deg,
+      $tertiary-subject-color 0%,
+      #e0ecde 100%
+    );
+  }
+
+  #quarternary-subject-color {
+    background: linear-gradient(
+      135deg,
+      $quarternary-subject-color 0%,
+      #e05380 100%
+    );
+  }
+
+  #quinternary-subject-color {
+    background: linear-gradient(
+      135deg,
+      $quinternary-subject-color 0%,
+      #4d446f 100%
+    );
+  }
+
+  #hexernary-subject-color {
+    background: linear-gradient(
+      135deg,
+      $hexernary-subject-color 0%,
+      #f8956f 100%
+    );
+  }
 }
