@@ -6,23 +6,43 @@
     flex-grow: 1;
   }
 
+  .fa-4x {
+    font-size: 2em;
+    color: $background-color;
+  }
+
+  .fa-4x:hover {
+    color: $tertiary_color;
+  }
+  .btn-flat:hover {
+    color: $font-color;
+  }
+
   .course-title-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #1f2839;
     width: 100%;
-    padding: 27px;
+    padding: 20px 27px;
     margin-bottom: 20px;
+
+    #share-code {
+      color: $tertiary-color;
+      margin: 0;
+    }
   }
 
   h1 {
     font-weight: bold;
-    color: antiquewhite;
+    color: $background-color;
   }
 
   h4 {
-    color: antiquewhite;
+    color: $background-color;
+  }
+  h4:hover{
+    color: $tertiary_color;
   }
 
   .assignments {
@@ -52,7 +72,7 @@
     justify-content: center;
     border: 1px solid antiquewhite;
     h1 {
-      color: antiquewhite;
+      color: $background-color;
     }
   }
 
@@ -60,18 +80,21 @@
     margin-bottom: 10px;
   }
 
-  .course-title-container{
+  .course-title-container {
     border: 1px solid;
     border-radius: 15px;
   }
   .assignment-card {
-    border: 1px solid antiquewhite;
+    border: 1px solid $background-color;
+  }
+  .assignment-card:hover {
+    border: 1px solid $tertiary_color;
   }
   .btn {
     background-color: #1f2839;
     color: antiquewhite;
   }
-  .btn-outline-primary{
+  .btn-outline-primary {
     color: antiquewhite;
     border: 1px solid antiquewhite;
     height: 40px;
@@ -80,4 +103,8 @@
     display: flex;
     justify-content: flex-end;
   }
+}
+
+.fa-4x {
+  font-size: 2em;
 }

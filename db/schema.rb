@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_080147) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "shareCode"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -110,6 +111,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_080147) do
     t.integer "duration_hours"
     t.integer "duration_minutes"
     t.index ["assignment_id"], name: "index_study_sessions_on_assignment_id"
+  end
+
+  create_table "useful_resources", force: :cascade do |t|
+    t.text "link"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_useful_resources_on_course_id"
   end
 
   create_table "user_assignments", force: :cascade do |t|
@@ -165,6 +174,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_080147) do
   add_foreign_key "scheduled_meetings", "study_sessions"
   add_foreign_key "scheduled_meetings", "users"
   add_foreign_key "study_sessions", "assignments"
+  add_foreign_key "useful_resources", "courses"
   add_foreign_key "user_assignments", "assignments"
   add_foreign_key "user_assignments", "users"
 end

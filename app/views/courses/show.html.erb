@@ -6,8 +6,9 @@
         <em>
           <h4><%= @course.code %></h2>
         </em>
+        <h5 id="share-code">Share code: <%= @course.shareCode %></h5>
       </div>
-       <%= link_to icon('fa-solid', 'circle-plus fa-4x'), new_course_assignment_path(@course), class: "btn btn-flat" %>
+      <%= link_to icon('fa-solid', 'circle-plus fa-4x'), new_course_assignment_path(@course), class: "btn btn-flat" %>
     </div>
     <div class="assignments">
       <h1>Due Assignments: </h1>
@@ -41,9 +42,7 @@
     </div>
     <div class="container-useful-resources">
       <h1>Useful Resources</h1>
-      <div >
-        <%# after the migration, use each to list each resource %>
-      </div>
     </div>
+          <%= render partial: "components/useful_links"%>
   </div>
 </div>
