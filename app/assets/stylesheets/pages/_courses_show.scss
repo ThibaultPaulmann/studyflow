@@ -24,8 +24,13 @@
     justify-content: space-between;
     background-color: #1f2839;
     width: 100%;
-    padding: 27px;
+    padding: 20px 27px;
     margin-bottom: 20px;
+
+    #share-code {
+      color: $tertiary-color;
+      margin: 0;
+    }
   }
 
   h1 {
@@ -75,7 +80,7 @@
     margin-bottom: 10px;
   }
 
-  .course-title-container{
+  .course-title-container {
     border: 1px solid;
     border-radius: 15px;
   }
@@ -89,7 +94,7 @@
     background-color: #1f2839;
     color: antiquewhite;
   }
-  .btn-outline-primary{
+  .btn-outline-primary {
     color: antiquewhite;
     border: 1px solid antiquewhite;
     height: 40px;
@@ -98,4 +103,8 @@
     display: flex;
     justify-content: flex-end;
   }
+}
+
+.fa-4x {
+  font-size: 2em;
 }
