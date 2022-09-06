@@ -7,12 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 60%;
 
 }
 
 .question-create {
   background-color: $font-color;
-  width: 70%;
+  width: 100%;
   height: auto;
   border-radius: 15px;
   color: $background-color;
@@ -48,16 +49,9 @@
   }
 }
 
-.create-search-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .search-box {
   background-color: #1f2839;
-  width: 40%;
   height: auto;
   border-radius: 15px;
   color: #f5f5ef;
@@ -66,7 +60,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 15px $font-color;
-  margin-top: 40px;
+  flex-basis: 30%;
 
 }
 
@@ -77,4 +71,13 @@
   .btn {
     margin-top: 15px;
   }
+}
+
+.question-and-search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0px;
 }
