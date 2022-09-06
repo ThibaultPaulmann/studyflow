@@ -20,7 +20,7 @@
 
   .course-title-container {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     background-color: #1f2839;
     width: 100%;
@@ -107,4 +107,12 @@
 
 .fa-4x {
   font-size: 2em;
+}
+
+.centered-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width:100%;
 }
