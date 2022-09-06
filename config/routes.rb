@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # patch "/courses/:course_id/assignments/:assignment_id/forum/:question_id/answers/:answer_id", to: "answers#update", as: :question_answer
 
   resources :courses, only: [:index, :show, :new, :create] do
+    resources :useful_resources, only: [:index]
     resources :assignments, only: [:show, :new, :create, :edit, :update] do
       resources :study_sessions, only: [:create]
       resources :questions, only: [:create, :index] do
