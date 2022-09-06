@@ -1,6 +1,6 @@
 <div class="courses-index">
   <div class="index-left">
-  <h1>Courses:</h1>
+    <h1>Courses:</h1>
     <div class="courses">
       <% @courses.each do |course|%>
         <%= render partial: "components/course_card", locals: { course: course } %>
@@ -13,7 +13,7 @@
   </div>
   <div class="index-right">
     <div class="calendar">
-      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
+      <%= render partial: "components/calendar", locals: { assignments: current_user.assignments, meetings: @meetings } %>
     </div>
     <div class="due-assignments">
       <div style="padding-bottom: 10px; padding-top: 10px;">

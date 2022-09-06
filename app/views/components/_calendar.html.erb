@@ -1,18 +1,34 @@
 <div class="d-flex position-relative" data-controller="calendar" data-action="click@window->calendar#toggleExtend">
   <div id="extension" class="d-none" data-calendar-target="extension">
     <div class="extension-header">
-      <h5>Assignments due <span id="extension-date" data-calendar-target="extensionDate"></span></h5>
+      <h4><em><span id="extension-date" data-calendar-target="extensionDate"></span></em></h4>
     </div>
-    <div class="assignments" data-calendar-target="extensionAssignments">
+    <div class="assignments-header">
+      <h5>Assignments</h5>
+      <div class="assignments" data-calendar-target="extensionAssignments">
+      </div>
+    </div>
+    <div class="meetings-header">
+      <h5>Meetings</h5>
+      <div class="meetings" data-calendar-target="extensionMeetings"></div>
     </div>
   </div>
-  <%= month_calendar(attribute: :due_date, events: assignments) do |date, assignments| %>
+  <%= month_calendar(attribute: :due_date, events: assignments+meetings) do |date, events| %>
     <div class="calendar-item">
-      <span class="day-container" data-calendar-target="item" data-date="<%= date.strftime("%B %d") %>" data-assignments="<%= assignments.to_json %>">
+      <% @data_meetings = [] %>
+      <% @data_assignments = [] %>
+      <% events.each do |event| %>
+        <% if event.is_a? Assignment %>
+          <% @data_assignments << event %>
+        <% elsif event.is_a? StudySession %>
+          <% @data_meetings << event %>
+        <% end %>
+      <% end %>
+      <span class="day-container" data-calendar-target="item" data-date="<%= date.strftime("%B %d") %>" data-assignments="<%= @data_assignments.to_json %>" data-meetings="<%= @data_meetings.to_json %>">
         <%= date.day %>
       </span>
       <div class="assignments-container">
-        <% assignments.each do |assignment| %>
+        <% events.each do |event| %>
           <i class="fa-solid fa-circle"></i>
         <% end %>
       </div>
