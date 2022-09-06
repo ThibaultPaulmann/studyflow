@@ -100,7 +100,7 @@
 
   .today {
     .day-container {
-      background-color: $background-color;
+      background-color: $background-color !important;
       color: $font-color;
     }
   }
@@ -173,6 +173,30 @@
     }
 
     .assignment-time {
+      font-style: italic;
+      color: $tertiary-color;
+    }
+  }
+
+  .meetings-header h5 {
+    margin: 0;
+  }
+
+  .meetings {
+    margin-top: 5px;
+  }
+
+  .calendar-meeting-card {
+    margin: 18px 0;
+    p {
+      margin: 0;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .meeting-time {
       font-style: italic;
       color: $tertiary-color;
     }

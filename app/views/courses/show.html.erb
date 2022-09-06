@@ -37,12 +37,12 @@
   <div class="course-show-right">
     <div class="container-calendar">
       <div class="calendar">
-        <%= render partial: "components/calendar", locals: { assignments: current_user.assignments } %>
+        <%= render partial: "components/calendar", locals: { assignments: current_user.assignments, meetings: @meetings } %>
       </div>
     </div>
     <div class="container-useful-resources">
       <h1>Useful Resources</h1>
     </div>
-          <%= render partial: "components/useful_links"%>
+    <%= render partial: "components/useful_links"%>
   </div>
 </div>
