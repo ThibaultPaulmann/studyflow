@@ -1,0 +1,5 @@
+<h1>Join a course</h1>
+<%= simple_form_for(@course, method: :post, url: course_enrollments_path) do |f| %>
+  <%= f.input :shareCode %>
+  <%= f.submit 'Join course' %>
+<% end %>
