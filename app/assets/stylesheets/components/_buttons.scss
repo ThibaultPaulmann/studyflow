@@ -19,11 +19,27 @@
   border-radius: 4px;
   background: $font-color;
   transition: background 0.3s ease;
+  border: groove;
 }
 
-.btn-flat:hover {
-  background: $quarternary-color;
-  color: $font-color;
+.btn-flats {
+  color: $background-color;
+  padding: 8px 24px;
+  border: none;
+  background: $font-color;
+  transition: background 0.3s ease;
+}
+
+.zoom-box {
+  padding: 10px;
+  background-color: $background-color;
+  transition: transform .2s;
+  width: 30px;
+  height: 30px;
+}
+
+.zoom-box:hover {
+  transform: scale(1.5);
 }
 
 .hand-in-button {
