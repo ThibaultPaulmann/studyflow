@@ -13,4 +13,8 @@ export default class extends Controller {
     this.popupTarget.classList.add("popup-active");
     console.log(this.popupTarget);
   }
+
+  disconnect(){
+    this.popupTarget.hide()
+  }
 }

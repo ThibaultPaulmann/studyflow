@@ -9,9 +9,12 @@
     </div>
     <div class="courses">
       <% @courses.each do |course|%>
-        <%= render partial: "components/course_card", locals: { course: course } %>
+        <%= render partial: "components/course_card", locals: { course: course, course_enrollment:  CourseEnrollment.find_by(user: current_user, course: course) } %>
       <% end %>
     </div>
+
+    <%= link_to "Study Sessions", study_sessions_path %>
+
   </div>
   <div class="index-right">
     <div class="calendar">

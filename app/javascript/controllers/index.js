@@ -10,6 +10,9 @@ application.register("calendar", CalendarController)
 import CreateNewController from "./create_new_controller"
 application.register("create-new", CreateNewController)
 
+import EnrollmentEditController from "./enrollment_edit_controller"
+application.register("enrollment-edit", EnrollmentEditController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

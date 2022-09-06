@@ -1,0 +1,113 @@
+.study-session-page-header {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  background-color: $font-color;
+  color: $background-color;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+
+}
+
+.study-session-container {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.container-available-sessions {
+  background-color: $quarternary-color;
+  padding: 15px;
+  flex-grow: 1;
+  margin: 10px;
+  border-radius: 15px;
+
+  .study-session {
+    color: $background-color;
+    background-color: $font-color;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+
+    p {
+      display: flex;
+    }
+
+    .join-meeting {
+      background-color: green;
+    }
+  }
+
+
+  .title-study-session {
+    margin: 10px 10px 20px 0px;
+    padding: 5px;
+    color: $background-color;
+    border-bottom: solid 1px $background-color;
+  }
+
+}
+
+.container-scheduled-meetings {
+  flex-grow: 1;
+  background-color: $quarternary-color;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 15px;
+
+  .scheduled-meeting {
+    color: $background-color;
+    background-color: $font-color;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+
+  .title-scheduled-meeting {
+    margin: 10px 10px 20px 0px;
+    padding: 5px;
+    color: $background-color;
+    border-bottom: solid 1px $background-color;
+  }
+
+  a {
+    text-decoration: none;
+    color: $font-color;
+  }
+}
+
+.join-meeting-button {
+  background-color: $tertiary-color;
+  border: solid 1px $quarternary-color;
+  border-radius: 15px;
+  padding: 4px;
+  color: $font-color;
+  margin: 1px;
+
+  &:hover {
+    border: solid 2px rgb(9, 145, 9);
+    color: rgb(9, 145, 9);
+    margin: 0px;
+  }
+}
+
+
+.cancel-meeting-button {
+  background-color: $tertiary-color;
+  border: solid 1px $quarternary-color;
+  border-radius: 15px;
+  padding: 5px;
+  color: $font-color;
+  margin: 1px;
+
+  &:hover {
+    border: solid 2px rgb(164, 9, 9);
+    color:rgb(164, 9, 9);
+    margin: 0px;
+  }
+}
