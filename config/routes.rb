@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   end
   resources :user_assignments, only: [:update]
   resources :course_enrollments, only: [:new, :create]
-  resources :study_sessions, only: [:index]
+  resources :study_sessions, only: [:index] do
+    resources :scheduled_meetings, only: [:create, :destroy]
+  end
 end

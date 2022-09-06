@@ -69,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_125427) do
     t.boolean "creator", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color", default: "#1f2f98"
     t.index ["course_id"], name: "index_course_enrollments_on_course_id"
     t.index ["user_id"], name: "index_course_enrollments_on_user_id"
   end
@@ -104,10 +105,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_125427) do
   create_table "study_sessions", force: :cascade do |t|
     t.bigint "assignment_id", null: false
     t.string "title"
-    t.time "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "due_date"
+    t.integer "duration_hours"
+    t.integer "duration_minutes"
     t.index ["assignment_id"], name: "index_study_sessions_on_assignment_id"
   end
 
