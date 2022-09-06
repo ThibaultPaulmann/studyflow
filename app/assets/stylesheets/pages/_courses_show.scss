@@ -82,6 +82,9 @@
   .assignment-card {
     border: 1px solid $background-color;
   }
+  .assignment-card:hover {
+    border: 1px solid $tertiary_color;
+  }
   .btn {
     background-color: #1f2839;
     color: antiquewhite;
