@@ -1,8 +1,8 @@
 <div class="edit-or-join-popup" data-user-progress-target="popup">
   <div class="popup-content">
     <div class="add-course-btn">
-      <%= link_to "Add a Course", new_course_path, class: "btn btn-flat"%>
+      <%= link_to icon("fa-solid", "fa-circle-plus"), new_course_path, class: "btn btn-flat"%>
     </div>
-    <%= link_to "Join a course", new_course_enrollment_path %>
+    <%= link_to icon("fa-solid", "fa-users"), new_course_enrollment_path, class: "btn btn-flat" %>
   </div>
 </div>

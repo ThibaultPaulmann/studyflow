@@ -13,6 +13,9 @@ application.register("create-new", CreateNewController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import TurboController from "./turbo_controller"
+application.register("turbo", TurboController)
+
 import UpvoteController from "./upvote_controller"
 application.register("upvote", UpvoteController)
 

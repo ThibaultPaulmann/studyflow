@@ -2,10 +2,10 @@
   <div class="index-left">
     <div class="head-box" data-controller="user-progress">
       <h1>Courses:</h1>
-      <i class="fa-solid circle-plus fa-4x"></i>
-      <i class="fa-solid fa-users-medical"></i>
-
-      <%= render partial: "popups/edit_or_join_popup" %>
+      <div data-controller="turbo">
+        <%= link_to icon("fa-solid", "fa-circle-plus") %>
+        <%= render partial: "popups/edit_or_join_popup" %>
+      </div>
     </div>
     <div class="courses">
       <% @courses.each do |course|%>
