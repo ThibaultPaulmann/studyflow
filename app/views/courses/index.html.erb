@@ -1,15 +1,18 @@
 <div class="courses-index">
   <div class="index-left">
-  <h1>Courses:</h1>
+    <div class="head-box" data-controller="user-progress">
+      <h1>Courses:</h1>
+      <i class="fa-solid circle-plus fa-4x"></i>
+      <i class="fa-solid fa-users-medical"></i>
+
+      <%= render partial: "popups/edit_or_join_popup" %>
+    </div>
     <div class="courses">
       <% @courses.each do |course|%>
         <%= render partial: "components/course_card", locals: { course: course } %>
       <% end %>
     </div>
-    <div class="add-course-btn">
-      <%= link_to "Add a Course", new_course_path, class: "btn btn-flat"%>
-    </div>
-    <%= link_to "Join a course", new_course_enrollment_path %>
+
   </div>
   <div class="index-right">
     <div class="calendar">
