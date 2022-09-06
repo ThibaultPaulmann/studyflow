@@ -1,10 +1,8 @@
 <div class="btn-edit">
   <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
 </div>
-
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
-
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
     <div class="container-title-difficulty-due-date d-flex justify-content-between align-items-center" id="title-difficulty-due-date">
       <div class="container-title-difficulty" id="title-difficulty">
@@ -15,21 +13,20 @@
         <div class="hand-in-button" data-action="click->user-progress#completed">
           <h5>Hand-in</h5>
         </div>
-          <%= link_to edit_course_assignment_path(params[:course_id], params[:id]) do %>
-        <div class="edit-assignment zoom-box">
+        <%= link_to edit_course_assignment_path(params[:course_id], params[:id]) do %>
+          <div class="edit-assignment zoom-box">
             <i class="fa-solid fa-pen-to-square"></i>
-        </div>
-            <% end %>
+          </div>
+        <% end %>
         <%= render partial: "components/difficulty", locals: { difficulty: @difficulty } %>
-        </div>
+      </div>
     </div>
-
     <div class="container-forum-schedule-meeting">
       <div class="forum-box">
         <div id="forum-button">
           <p>Have a Question?</p>
           <p>Want to help your classmates?</p>
-        <%# <p>The Forum has </p><%= pluralize @assignment.questions.size, "Question" %>
+          <%# <p>The Forum has </p><%= pluralize @assignment.questions.size, "Question" %>
           <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light", style: "width: 100%;" %>
         </div>
       </div>
@@ -40,10 +37,10 @@
               <%= f.input :title %>
             </div>
             <div class="form-group col-md-6" style="width: 100%;">
-              <%= f.input :meeting_time %>
+              <%= f.input :due_date %>
             </div>
             <div>
-            <%= f.submit class:"btn submit-btn"%>
+              <%= f.submit class:"btn submit-btn"%>
             </div>
           <% end %>
         </div>
