@@ -9,5 +9,8 @@
       text-decoration: none;
       color: $background-color;
     }
+    a:hover {
+      color: $tertiary-color;
+    }
   }
 }
