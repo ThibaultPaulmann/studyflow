@@ -243,6 +243,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
-
   }
+}
+
+.duration-input {
+  display: flex;
+  justify-content: flex-start;
 }

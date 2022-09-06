@@ -9,11 +9,16 @@
 }
 
 .title-study-session {
-  background-color: $background-color;
-  border-radius: 15px;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 20px 0px;
   padding: 5px;
-  width: fit-content;
   height: auto;
-  color: $font-color;
+  color: $background-color;
+  border-bottom: solid 1px $background-color;
+}
+
+.container-study-sessions {
+
+  h1 {
+    margin: auto;
+  }
 }

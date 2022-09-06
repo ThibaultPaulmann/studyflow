@@ -5,5 +5,6 @@ class StudySession < ApplicationRecord
 
   validates :title, presence: true, length: { minimum: 3 }
   validates :meeting_time, presence: true
-  validates :duration, presence: true
+  validates :duration_hours, presence: true, numericality: { in: 0..24 }
+  validates :duration_minutes, presence: true, numericality: { in: 0..59 }
 end
