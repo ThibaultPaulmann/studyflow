@@ -1,5 +1,7 @@
 <% unless @resource_links.empty? %>
   <% @resource_links.each do |link| %>
-    <%= link.link %>
+    <div class="link-box">
+      <a href="<%= link.link %>"><%= link.link %></a>
+    </div>
   <% end %>
 <% end %>
