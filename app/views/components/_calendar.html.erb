@@ -2,9 +2,15 @@
   <div id="extension" class="d-none" data-calendar-target="extension">
     <div class="extension-header">
       <h4><em><span id="extension-date" data-calendar-target="extensionDate"></span></em></h4>
-      <h5>Assignments</h5>
     </div>
-    <div class="assignments" data-calendar-target="extensionAssignments">
+    <div class="assignments-header">
+      <h5>Assignments</h5>
+      <div class="assignments" data-calendar-target="extensionAssignments">
+      </div>
+    </div>
+    <div class="meetings-header">
+      <h5>Meetings</h5>
+      <div class="meetings" data-calendar-target="extensionMeetings"></div>
     </div>
   </div>
   <%= month_calendar(attribute: :due_date, events: assignments) do |date, assignments| %>
