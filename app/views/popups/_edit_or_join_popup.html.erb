@@ -1,8 +1,16 @@
-<div class="edit-or-join-popup" data-user-progress-target="popup">
+<div class="edit-or-join-popup" data-turbo-target="popup">
   <div class="popup-content">
     <div class="add-course-btn">
-      <%= link_to icon("fa-solid", "fa-circle-plus"), new_course_path, class: "btn btn-flat"%>
+      <%= link_to new_course_path, class: "btn btn-flat" do %>
+        <i class="fa-solid fa-circle-plus"></i>
+        <h4>Add a course</h4>
+      <% end %>
     </div>
-    <%= link_to icon("fa-solid", "fa-users"), new_course_enrollment_path, class: "btn btn-flat" %>
+    <div class="join-course-btn">
+      <%= link_to new_course_enrollment_path, class: "btn btn-flat" do %>
+        <i class="fa-solid fa-user-group"></i>
+        <h4>Join a course</h4>
+      <% end %>
+    </div>
   </div>
 </div>

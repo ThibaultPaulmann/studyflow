@@ -1,0 +1,53 @@
+.edit-or-join-popup {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(220, 220, 220, 0.3);
+  z-index: 10;
+
+  .popup-content {
+    background: $background-color;
+    // padding: 40px;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20%;
+    i {
+      font-size: 2em;
+    }
+
+    i:hover {
+      color: white;
+    }
+
+    h4:hover {
+      color: rgb(170, 170, 170);
+    }
+
+    .btn {
+      background-color: $font-color;
+    }
+
+    .btn:hover {
+      color: none;
+    }
+
+    .btn-flat:hover {
+      color: none;
+    }
+  }
+
+  .add-course-btn {
+    margin: 0;
+  }
+}
+
+.popup-active {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}

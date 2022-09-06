@@ -2,16 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="turbo"
 export default class extends Controller {
+  static targets = ["popup"];
+
   connect() {
-    console.log("Connected")
+    console.log("Connected turbo")
   }
 
-  initialize() {
-    this.element.setAttribute("data-action", "click->turbo#click")
-  }
-
-  click(e){
-    e.preventDefault()
-    this.button = this.element.getAttribute("i")
+  open(){
+    console.log(this.popupTarget);
+    this.popupTarget.classList.add("popup-active");
+    console.log(this.popupTarget);
   }
 }

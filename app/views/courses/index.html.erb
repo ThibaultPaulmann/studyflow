@@ -3,7 +3,7 @@
     <div class="head-box" data-controller="user-progress">
       <h1>Courses:</h1>
       <div data-controller="turbo">
-        <%= link_to icon("fa-solid", "fa-circle-plus") %>
+        <i data-action="click->turbo#open" class="fa-solid fa-circle-plus"></i>
         <%= render partial: "popups/edit_or_join_popup" %>
       </div>
     </div>
