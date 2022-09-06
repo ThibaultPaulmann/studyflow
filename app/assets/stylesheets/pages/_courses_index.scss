@@ -63,3 +63,15 @@
   margin-top: 35px;
   margin-left: 7px;
 }
+
+.head-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  i {
+    font-size: 2.5em;
+  }
+  .plus {
+    margin-right: 40px;
+  }
+}
