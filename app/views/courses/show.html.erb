@@ -42,10 +42,10 @@
     <div class="container-useful-resources">
       <h1>Useful Resources</h1>
       <% unless @resource_links.empty? %>
-      <div >
-        <%# after the migration, use each to list each resource %>
+        <% resource_links.each do |link| %>
+          <div >
 
-      </div>
+          </div>
     </div>
   </div>
 </div>
