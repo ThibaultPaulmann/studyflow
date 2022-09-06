@@ -6,6 +6,18 @@
     flex-grow: 1;
   }
 
+  .fa-4x {
+    font-size: 2em;
+    color: $background-color;
+    :hover {
+      color: $tertiary_color;
+    }
+  }
+
+  .btn-flat:hover {
+    color: $font-color;
+  }
+
   .course-title-container {
     display: flex;
     align-items: center;
