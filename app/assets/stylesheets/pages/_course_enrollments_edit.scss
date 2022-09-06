@@ -1,0 +1,28 @@
+.edit_course_enrollment {
+  .form-check {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+
+    label {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: grey;
+    }
+
+    input,
+    input.is-valid {
+      margin: 0;
+      float: none;
+      background-color: $font-color !important;
+      border-color: black !important;
+    }
+  }
+  .form-check-input.is-valid ~ .form-check-label {
+    color: black;
+  }
+}
