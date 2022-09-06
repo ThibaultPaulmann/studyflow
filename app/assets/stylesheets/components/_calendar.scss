@@ -159,6 +159,10 @@
       margin: 0;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .assignment-time {
       font-style: italic;
       color: $tertiary-color;
