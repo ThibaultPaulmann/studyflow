@@ -1,0 +1,2 @@
+class UsefulResourceController < ApplicationController
+end
