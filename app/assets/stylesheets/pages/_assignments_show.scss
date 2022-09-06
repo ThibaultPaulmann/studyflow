@@ -208,6 +208,14 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+
+    .study_session_title {
+      text-align: start;
+    }
+
+    .study_session_due_date {
+      text-align: start;
+    }
   }
 }
 
@@ -250,7 +258,6 @@
 
 .duration-input {
   display: flex;
-  justify-content: flex-start;
 
     a:hover {
       background-color: $font-color;
