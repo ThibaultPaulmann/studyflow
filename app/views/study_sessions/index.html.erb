@@ -23,7 +23,7 @@
                  & <%= study_session.duration_minutes %> Minutes</p>
                  <% end %>
             </div>
-            <p><em> Date & Time: &#160 </em><%= study_session.meeting_time %></p>
+            <p><em> Date & Time: &#160 </em><%= study_session.due_date %></p>
             <%= simple_form_for([study_session, ScheduledMeeting.new]) do |f| %>
               <%= f.submit 'Join Meeting', class: "join-meeting-button" %>
             <% end %>
@@ -45,7 +45,7 @@
             & <%= session.duration_minutes %> Minutes</p>
             <% end %>
       </div>
-      <p><em> Date & Time: &#160 </em><%= session.meeting_time.strftime("%b %e, %l:%M %p") %></p>
+      <p><em> Date & Time: &#160 </em><%= session.due_date.strftime("%b %e, %l:%M %p") %></p>
       <%= link_to "Cancel Meeting", study_session_scheduled_meeting_path(session, ScheduledMeeting.find_by(study_session: session, user: current_user)), data: { turbo_method: :delete }, class: "cancel-meeting-button" %>
     </div>
     <% end %>
