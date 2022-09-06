@@ -8,8 +8,8 @@
             <h3><%= study_session.title %></h3>
           </div>
             <h5> <strong><%= study_session.assignment.course.name %></strong> - <em><%= study_session.assignment.title %></em></h5>
+              <p>Duration: <em> <%= pluralize(study_session.duration_hours.count, 'Hour') %> <p> & </p><%= study_session.duration_minutes%>minutes</em></p>
           <div style="d-flex">
-            <p>Duration: <em><%= study_session.duration_hours.pluralize(.count, "Hour")%> <p> & </p><%= study_session.duration_minutes%>minutes</em></p>
           </div>
         </div>
     <% end %>
