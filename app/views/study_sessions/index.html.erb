@@ -1,30 +1,53 @@
 
-
-<div class="container-study-sessions">
-  <h1>Scheduled Study Sessions</h1>
-    <% @study_sessions.each do |study_session| %>
-        <div class="study-session">
-          <div class="title-study-session">
-            <h3><%= study_session.title %></h3>
-          </div>
-            <h5> <strong><%= study_session.assignment.course.name %></strong> - <em><%= study_session.assignment.title %></em></h5>
-              <p>Duration: <em> <%= pluralize(study_session.duration_hours.count, 'Hour') %> <p> & </p><%= study_session.duration_minutes%>minutes</em></p>
-          <div style="d-flex">
-          </div>
-        </div>
-    <% end %>
+<div style="display: flex; justify-content: center;">
+  <div class="study-session-page-header">
+    <h1 style="margin: auto; font-size: 60px;">Study Sessions</h1>
+  </div>
 </div>
 
+<div class="study-session-container"s>
 
+  <div class="container-available-sessions">
+    <div>
+      <h1 style="display: flex; justify-content: center;">Available Sessions</h1>
+    </div>
+      <% @study_sessions.each do |study_session| %>
+          <div class="study-session">
+            <div class="title-study-session">
+              <h3><%= study_session.title %></h3>
+            </div>
+              <h5> <strong><%= study_session.assignment.course.name %></strong> - <%= study_session.assignment.title %></h5>
+            <div class="d-flex">
+                <p><em> Duration: &#160 </em> <%= pluralize(study_session.duration_hours, 'Hour') %>
+                <% if study_session.duration_minutes != 0 %>
+                 & <%= study_session.duration_minutes %> Minutes</p>
+                 <% end %>
+            </div>
+            <p><em> Date & Time: &#160 </em><%= study_session.meeting_time %></p>
+            <%= simple_form_for([study_session, ScheduledMeeting.new]) do |f| %>
+              <%= f.submit 'Join Meeting', class: "join-meeting-button" %>
+            <% end %>
+          </div>
+      <% end %>
+  </div>
 
-
-
-
-
-
-<%# pluralize hours and minutes %>
-
-
-  <%# <%= if study_session.exist? %>
-  <%# <%= else %>
-  <%# <h1> You dont have any Scheduled Meetings </h1> %>
+  <div class="container-scheduled-meetings">
+    <h1 style="display: flex;justify-content: center;">Scheduled Meetings</h1>
+    <% @booked_sessions.each do |session| %>
+    <div class="scheduled-meeting">
+      <div class="title-scheduled-meeting">
+        <h3><%= session.title %></h3>
+      </div>
+        <h5><strong><%= session.assignment.course.name %></strong> - <%= session.assignment.title %></h5>
+      <div class="d-flex">
+        <p><em> Duration: &#160 </em> <%= pluralize(session.duration_hours, 'Hour') %>
+          <% if session.duration_minutes != 0 %>
+            & <%= session.duration_minutes %> Minutes</p>
+            <% end %>
+      </div>
+      <p><em> Date & Time: &#160 </em><%= session.meeting_time.strftime("%b %e, %l:%M %p") %></p>
+      <%= link_to "Cancel Meeting", study_session_scheduled_meeting_path(session, ScheduledMeeting.find_by(study_session: session, user: current_user)), data: { turbo_method: :delete }, class: "cancel-meeting-button" %>
+    </div>
+    <% end %>
+  </div>
+</div>

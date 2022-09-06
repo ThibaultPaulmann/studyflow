@@ -1,7 +1,9 @@
 class StudySessionsController < ApplicationController
 
   def index
-    @study_sessions = StudySession.all
+    @assignments = current_user.assignments
+    @booked_sessions = current_user.booked_study_sessions
+    @study_sessions = StudySession.where(assignment: @assignments).where.not(id: @booked_sessions)
   end
 
   def create
@@ -14,7 +16,6 @@ class StudySessionsController < ApplicationController
       flash[:alert] = "Error creating the session"
     end
   end
-
 
   private
 
