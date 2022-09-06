@@ -9,11 +9,11 @@
   .fa-4x {
     font-size: 2em;
     color: $background-color;
-    :hover {
-      color: $tertiary_color;
-    }
   }
 
+  .fa-4x:hover {
+    color: $tertiary_color;
+  }
   .btn-flat:hover {
     color: $font-color;
   }
@@ -80,7 +80,7 @@
     border-radius: 15px;
   }
   .assignment-card {
-    border: 1px solid antiquewhite;
+    border: 1px solid $background-color;
   }
   .btn {
     background-color: #1f2839;
