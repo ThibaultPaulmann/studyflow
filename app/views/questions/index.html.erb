@@ -1,29 +1,29 @@
 <div class="questions-index">
-  <div class="create-question-box">
-    <div class="question-create">
-      <div class="element-within-question-create">
-        <%= simple_form_for([@course, @assignment, @question]) do |f| %>
-        <div class="input-title">
-          <%= f.input :title, label: 'Ask a question'%>
+  <div class="question-and-search-box">
+    <div class="create-question-box">
+      <div class="question-create">
+        <div class="element-within-question-create">
+          <%= simple_form_for([@course, @assignment, @question]) do |f| %>
+          <div class="input-title">
+            <%= f.input :title %>
+          </div>
+              <%= f.button :submit, class: "btn btn-flat" %>
+          <% end %>
         </div>
-            <%= f.button :submit, class: "btn btn-flat" %>
-        <% end %>
       </div>
     </div>
-  </div>
 
- <div class="create-search-box">
-    <div class="search-box">
-      <div class="input-search-box">
-        <%= form_with url: course_assignment_questions_path, method: :get do %>
-           <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a Question/Answer" %>
-          <%= submit_tag "Search", class: "btn btn-flat" %>
-        <% end %>
+      <div class="search-box">
+        <div class="input-search-box">
+          <%= form_with url: course_assignment_questions_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a Question/Answer" %>
+            <%= submit_tag "Search", class: "btn btn-flat" %>
+          <% end %>
+        </div>
       </div>
-    </div>
   </div>
 
   <div class="forum-container">
