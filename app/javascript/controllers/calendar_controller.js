@@ -7,6 +7,7 @@ export default class extends Controller {
     "item",
     "extensionDate",
     "extensionAssignments",
+    "extensionMeetings",
   ];
 
   previousTarget = null;
@@ -24,7 +25,6 @@ export default class extends Controller {
       this.extensionTarget.classList.add("d-none");
       if (this.previousTarget != null) {
         this.previousTarget.style.backgroundColor = "#1f2839";
-
       }
     }
   }
@@ -32,17 +32,6 @@ export default class extends Controller {
   extend(event) {
     if (this.previousTarget != null) {
       this.previousTarget.style.backgroundColor = "#1f2839";
-      let date = new Date();
-      let year = date.getFullYear();
-      let dateOld = new Date(this.previousTarget.dataset.date);
-      let sec = dateOld.setFullYear(year);
-      let d = new Date(sec);
-      let calendarToday = d.getDate();
-      let today = new Date().getDate();
-
-      if (calendarToday === today) {
-        this.previousTarget.style.backgroundColor = "white";
-      }
     }
 
     event.target.style.backgroundColor = "rgba(193,207,206,0.4)";
@@ -55,11 +44,20 @@ export default class extends Controller {
     this.extensionDateTarget.innerText = event.target.dataset.date;
     this.extensionTarget.classList.remove("d-none");
     const assignments = JSON.parse(event.target.dataset.assignments);
+    const meetings = JSON.parse(event.target.dataset.meetings);
     this.extensionAssignmentsTarget.innerHTML = "";
+    this.extensionMeetingsTarget.innerHTML = "";
     assignments.forEach((assignment) => {
       this.extensionAssignmentsTarget.insertAdjacentHTML(
         "beforeend",
         this.renderAssignment(assignment)
+      );
+    });
+    meetings.forEach((meeting) => {
+      console.log(meeting);
+      this.extensionMeetingsTarget.insertAdjacentHTML(
+        "beforeend",
+        this.renderMeeting(meeting)
       );
     });
   }
@@ -69,11 +67,22 @@ export default class extends Controller {
     const match = reg.exec(assignment.due_date);
     const assignmentCard = `<div class='calendar-assignment-card'>\
       <a href='courses/${assignment.course_id}/assignments/${assignment.id}'>\
-        <p class='assignment-name'>${assignment.title}</p>\
+      <p class='assignment-name'>${assignment.title}</p>\
       </a>\
       <p class='assignment-time'>${match[1]}:${match[2]}</p>\
       </div>`;
     return assignmentCard;
   }
 
+  renderMeeting(meeting) {
+    const reg = /T(\d\d):(\d\d)/;
+    const match = reg.exec(meeting.due_date);
+    const meetingCard = `<div class='calendar-meeting-card'>\
+      <a href='/study_sessions'>\
+      <p class='meeting-name'>${meeting.title}</p>\
+      </a>\
+      <p class='meeting-time'>${match[1]}:${match[2]}</p>\
+      </div>`;
+    return meetingCard;
+  }
 }

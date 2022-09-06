@@ -100,7 +100,7 @@
 
   .today {
     .day-container {
-      background-color: $background-color;
+      background-color: $background-color !important;
       color: $font-color;
     }
   }
@@ -135,6 +135,11 @@
   background: $font-color;
 
   color: $background-color;
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
   h5 {
     font-weight: 600;
   }
@@ -142,10 +147,14 @@
   width: 350px;
   left: -350px;
   height: 100%;
-  padding: 45px 10px 10px 15px;
+  padding: 15px 10px 10px 15px;
+
+  .assignments-header h5 {
+    margin: 0;
+  }
 
   .assignments {
-    margin-top: 32px;
+    margin-top: 5px;
   }
 
   a {
@@ -159,7 +168,35 @@
       margin: 0;
     }
 
+    a:hover {
+      text-decoration: underline;
+    }
+
     .assignment-time {
+      font-style: italic;
+      color: $tertiary-color;
+    }
+  }
+
+  .meetings-header h5 {
+    margin: 0;
+  }
+
+  .meetings {
+    margin-top: 5px;
+  }
+
+  .calendar-meeting-card {
+    margin: 18px 0;
+    p {
+      margin: 0;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .meeting-time {
       font-style: italic;
       color: $tertiary-color;
     }

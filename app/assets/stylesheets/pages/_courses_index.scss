@@ -62,6 +62,11 @@
 .add-course-btn {
   margin-top: 35px;
   margin-left: 7px;
+
+  a:hover {
+    background-color: $font-color;
+    color: $background-color;
+  }
 }
 
 .head-box {
