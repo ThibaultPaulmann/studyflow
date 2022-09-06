@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
     assignments = Assignment.where(course: @course)
     @due_assignments = assignments.filter { |assignment| assignment.due_date >= Time.now }.sort_by { |assignment| assignment.due_date }
     @past_assignments = assignments.filter { |assignment| assignment.due_date < Time.now }.sort_by { |assignment| assignment.due_date }.reverse
+    @resource_links = @course.useful_resources
   end
 
   def new
