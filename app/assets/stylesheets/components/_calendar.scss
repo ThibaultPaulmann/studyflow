@@ -135,6 +135,11 @@
   background: $font-color;
 
   color: $background-color;
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
   h5 {
     font-weight: 600;
   }
@@ -142,10 +147,10 @@
   width: 350px;
   left: -350px;
   height: 100%;
-  padding: 45px 10px 10px 15px;
+  padding: 15px 10px 10px 15px;
 
   .assignments {
-    margin-top: 32px;
+    margin-top: 5px;
   }
 
   a {
