@@ -208,6 +208,14 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+
+    .study_session_title {
+      text-align: start;
+    }
+
+    .study_session_due_date {
+      text-align: start;
+    }
   }
 }
 
@@ -219,7 +227,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: antiquewhite;
+  background-color: $background-color;
   width: 100%;
   margin: 0PX;
 }
@@ -245,6 +253,11 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
+  }
+
+
+.duration-input {
+  display: flex;
 
     a:hover {
       background-color: $font-color;
