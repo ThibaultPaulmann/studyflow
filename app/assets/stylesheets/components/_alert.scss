@@ -1,7 +1,10 @@
 .alert {
   z-index: 1000;
   border-radius: 50px;
-  position: top;
-  position: initial;
   width: fit-content;
+  position: absolute;
+  bottom: 0px;
+  border: 1px solid #a1a1a1;
+  margin: auto;
+  overflow-y: auto;
 }

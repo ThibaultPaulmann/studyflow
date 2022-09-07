@@ -1,10 +1,17 @@
 <div class="course-card">
+  <% course_enrollment = CourseEnrollment.find_by(user: current_user, course: course) %>
+  <div class="course-card-overlay"></div>
+  <%= link_to edit_course_enrollment_path(course_enrollment), class: 'course-card-edit' do %>
+    <i class="fa-solid fa-pen"></i>
+  <% end %>
   <%= link_to course_path(course) do %>
-    <div class="icon-container">
+    <div class="icon-container" id="<%= 'first-subject-color' if course_enrollment.color == '#f04393'%><%= 'second-subject-color' if course_enrollment.color == '#1f2f98'%><%= 'tertiary-subject-color' if course_enrollment.color == '#7be495'%><%= 'quarternary-subject-color' if course_enrollment.color == '#fe7a15'%><%= 'quinternary-subject-color' if course_enrollment.color == '#522157'%><%= 'hexernary-subject-color' if course_enrollment.color == '#f8d90f'%>">
       <i class="fa-solid fa-dna"></i>
       <div class="content justify-content-between">
         <h3> <%= link_to course.name, course_path(course) %></h3>
-        <em><h6><%= link_to course.code, course_path(course) %></h6></em>
+        <em>
+          <h6><%= link_to course.code, course_path(course) %></h6>
+        </em>
       </div>
     </div>
   <% end %>

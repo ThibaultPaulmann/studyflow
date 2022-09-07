@@ -17,5 +17,5 @@ class User < ApplicationRecord
   has_many :answers
 
   has_many :scheduled_meetings, dependent: :destroy
-  has_many :study_sessions, through: :scheduled_meetings
+  has_many :booked_study_sessions, through: :scheduled_meetings, source: :study_session
 end

@@ -4,6 +4,8 @@ class StudySession < ApplicationRecord
   has_many :users, through: :scheduled_meetings
 
   validates :title, presence: true, length: { minimum: 3 }
-  validates :meeting_time, presence: true
-
+  validates :due_date, presence: true
+  validates :duration_hours, presence: true, numericality: { in: 0..8 }
+  validates :duration_minutes, presence: true, numericality: { in: 0..59 }
+  validates :due_date, presence: true
 end

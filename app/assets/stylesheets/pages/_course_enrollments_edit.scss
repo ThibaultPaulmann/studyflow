@@ -1,0 +1,54 @@
+.edit_course_enrollment {
+  .form-check {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+
+    label {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    input,
+    input.is-valid {
+      margin: 0;
+      float: none;
+      background-color: $font-color !important;
+      border-color: black !important;
+      box-shadow: none;
+    }
+  }
+  .form-check-input.is-valid ~ .form-check-label {
+    color: black;
+  }
+
+  #bg-1f2f98 {
+    background-color: $second-subject-color;
+  }
+
+  #bg-f04393 {
+    background-color: $first-subject-color;
+  }
+
+  #bg-7be495 {
+    background-color: $tertiary-subject-color;
+  }
+
+  #bg-fe7a15 {
+    background-color: $quarternary-subject-color;
+  }
+
+  #bg-522157 {
+    background-color: $quinternary-subject-color;
+  }
+
+  #bg-f8d90f {
+    background-color: $hexernary-subject-color;
+  }
+}

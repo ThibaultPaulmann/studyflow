@@ -25,13 +25,14 @@
 .zoom-box {
   padding: 10px;
   background-color: $background-color;
-  transition: transform .2s;
+  transition: transform 0.2s;
   width: 30px;
   height: 30px;
 }
 
 .zoom-box:hover {
   transform: scale(1.5);
+  z-index: 1;
 }
 
 .hand-in-button {
@@ -58,6 +59,28 @@
   }
 }
 
+.completed-button {
+  width: 125px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 5px 5px 7px 5px;
+  border: 2px solid $background-color;
+  opacity: 0.6;
+
+  h5 {
+    margin: auto;
+    color: $background-color;
+    font-weight: 900;
+  }
+
+  &:hover {
+    cursor: default;
+  }
+}
 .submit-btn {
   color: $font-color;
   width: 100%;
