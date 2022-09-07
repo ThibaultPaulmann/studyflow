@@ -23,7 +23,7 @@
       <div class="answer">
         <div class="answer-header d-flex justify-content-between">
           <p><%= answer.user.firstName + answer.user.lastName %></p>
-          <p>^ <%= answer.upvotes %></p>
+          <%= render "components/answer_upvote_buttons", answer: answer %>
         </div>
         <div class="answer-body">
           <p><%= answer.content %></p>

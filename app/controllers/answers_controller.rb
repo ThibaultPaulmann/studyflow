@@ -11,14 +11,41 @@ class AnswersController < ApplicationController
     end
   end
 
+  # def upvote
+  #   @answer = Answer.find(params[:answer_id])
+  #   newUpvotes = @answer.upvotes + 1
+  #   @answer.update(upvotes: newUpvotes)
+  #   if redirect_to assignment_questions_path
+  #     flash[:notice] = "Answer upvoted!"
+  #   else
+  #     flash[:alert] = "Error upvoting the answer"
+  #   end
+  # end
+
   def upvote
-    @answer = Answer.find(params[:answer_id])
-    newUpvotes = @answer.upvotes + 1
-    @answer.update(upvotes: newUpvotes)
-    if redirect_to assignment_questions_path
-      flash[:notice] = "Answer upvoted!"
+    @answer = Answer.find(params[:id])
+    if current_user.voted_up_on? @answer
+      @answer.unvote_by current_user
     else
-      flash[:alert] = "Error upvoting the answer"
+      @answer.upvote_by current_user
+    end
+
+    respond_to do |format|
+      format.html { redirect_to course_assignment_questions_path }
+      format.json { render json: { upvote_buttons: render_to_string(partial: "components/answer_upvote_buttons", locals: { answer: @answer }, formats: [:html]) } }
+    end
+  end
+
+  def downvote
+    @answer = Answer.find(params[:id])
+    if current_user.voted_down_on? @answer
+      @answer.unvote_by current_user
+    else
+      @answer.downvote_by current_user
+    end
+    respond_to do |format|
+      format.html { redirect_to course_assignment_questions_path }
+      format.json { render json: { upvote_buttons: render_to_string(partial: "components/answer_upvote_buttons", locals: { answer: @answer }, formats: [:html]) } }
     end
   end
 

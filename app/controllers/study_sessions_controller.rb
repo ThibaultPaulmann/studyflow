@@ -1,8 +1,10 @@
 class StudySessionsController < ApplicationController
   def index
     @assignments = current_user.assignments
-    @booked_sessions = current_user.booked_study_sessions
-    @study_sessions = StudySession.where(assignment: @assignments).where.not(id: @booked_sessions)
+    booked_sessions = current_user.booked_study_sessions
+    @booked_sessions = booked_sessions.filter { |booked_session| booked_session.due_date >= Time.now }.sort_by { |booked_session| booked_session.due_date }
+    study_sessions = StudySession.where(assignment: @assignments).where.not(id: @booked_sessions)
+    @study_sessions = study_sessions.filter { |study_session| study_session.due_date >= Time.now }.sort_by { |study_session| study_session.due_date }
   end
 
   def create
