@@ -2,6 +2,8 @@ import flatpickr from "flatpickr";
 
 const initFlatPickr = () => {
   flatpickr(".datepicker", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i"
 
   });
 }
