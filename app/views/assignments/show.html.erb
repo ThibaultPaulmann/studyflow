@@ -1,6 +1,3 @@
-<div class="btn-edit">
-  <%= link_to "Edit",  edit_course_assignment_path(params[:course_id], params[:id]), class: "btn btn-flat" %>
-</div>
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
@@ -33,10 +30,18 @@
       <div id="schedule-study-session">
         <div class="simple-form-input-schedule-meeting">
           <%= simple_form_for [@course, @assignment, @study_session] do |f| %>
-            <div class="form-group col-md-6" style="width: 100%;">
-              <%= f.input :title %>
+            <div class="duration-input" style="display: flex; justify-content: flex-start;">
+              <div class="form-group col-md-6" style="width: 50%; margin-right: 20px;">
+                <%= f.input :title %>
+              </div>
+              <div class="form-group col-md-6" style="width: 20%; margin-right: 10px;">
+                <%= f.input :duration_hours, label: 'Hours', :collection => 0..8, default: '0'%>
+              </div>
+              <div class="form-group col-md-6" style="width: 20%;">
+                <%= f.input :duration_minutes, label: 'Minutes', :collection => (0..59).step(5), default: '0'%>
+              </div>
             </div>
-            <div class="form-group col-md-6" style="width: 100%;">
+            <div class="form-group col-md-6" style="width: 97%; display: flex; justify-content: flex-start;">
               <%= f.input :due_date %>
             </div>
             <div>
