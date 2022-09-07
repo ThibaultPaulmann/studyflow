@@ -33,12 +33,12 @@ class CourseEnrollmentsController < ApplicationController
       render :edit, status: :unprocessable_entity
       flash[:alert] = "Couldn't change the course color"
     end
-    
+
   end
 
   private
 
   def course_enrollments_params
-    params.require(:course_enrollment).permit(:color)
+    params.require(:course_enrollment).permit(:color, :icon)
   end
 end

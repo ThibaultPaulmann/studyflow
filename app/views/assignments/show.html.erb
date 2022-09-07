@@ -1,3 +1,6 @@
+<div class="navigation_history">
+  <%= navigation_history(@assignment) %>
+</div>
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
@@ -34,7 +37,7 @@
         </div>
       </div>
       <div id="schedule-study-session">
-        <div class="simple-form-input-schedule-meeting">
+        <div id="input-schedule-meeting" data-action="click->due_date_study_session#click">
           <%= simple_form_for [@course, @assignment, @study_session] do |f| %>
             <div class="duration-input" style="display: flex; justify-content: flex-start;">
               <div class="form-group col-md-6" style="width: 50%; margin-right: 20px;">
@@ -48,17 +51,21 @@
               </div>
             </div>
             <div class="form-group col-md-6" style="width: 97%; display: flex; justify-content: flex-start;">
-              <%= f.input :due_date %>
+              <%= f.input :due_date, as: :date, html5: :true, input_html: {class: "datepicker"} %>
             </div>
             <div>
-              <%= f.submit class:"submit-btn"%>
+              <%= f.submit "Book a study session", class:"submit-btn"%>
             </div>
           <% end %>
         </div>
       </div>
     </div>
     <div id="pdf-container">
-      <% if @assignment.photos.size == 1 %>
+      <% if @assignment.photos.size == 0 %>
+        <div class="no-content">
+          <h1>No pdf uploaded yet</h1>
+        </div>
+      <% elsif @assignment.photos.size == 1 %>
         <img class="d-block w-100 one-image" src="<%= cl_image_path @assignment.photos.first.key %>" alt="photo" >
       <% elsif @assignment.photos.size > 1 %>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">

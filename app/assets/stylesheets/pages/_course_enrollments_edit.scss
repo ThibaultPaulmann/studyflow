@@ -13,6 +13,9 @@
       width: 100%;
       border-radius: 10px;
       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     input,
@@ -50,5 +53,16 @@
 
   #bg-f8d90f {
     background-color: $hexernary-subject-color;
+  }
+
+  i {
+    font-size: xxx-large;
+    color: $font-color;
+  }
+
+  .icon-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

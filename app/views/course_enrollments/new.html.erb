@@ -1,8 +1,11 @@
+<div class="navigation_history">
+  <%= navigation_history(:course_enrollment_new) %>
+</div>
 <div style="display: flex; justify-content: center;">
   <div class="join-course-box">
     <h1>Join a course</h1>
     <%= simple_form_for(@course, method: :post, url: course_enrollments_path) do |f| %>
-    <div style="display: flex; flex-direction: column; justify-content: flex-start;>
+    <div style="display: flex; flex-direction: column; justify-content: flex-start;">
       <%= f.input :shareCode %>
       <%= f.submit 'Join course', class: "submit-btn", style: "width: 100%"%>
     </div>

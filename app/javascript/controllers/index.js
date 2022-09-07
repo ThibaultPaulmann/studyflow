@@ -7,8 +7,20 @@ import { application } from "./application"
 import CalendarController from "./calendar_controller"
 application.register("calendar", CalendarController)
 
+import CreateNewController from "./create_new_controller"
+application.register("create-new", CreateNewController)
+
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
+
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
+
+import PickerController from "./picker_controller"
+application.register("picker", PickerController)
+
+import UpvoteController from "./upvote_controller"
+application.register("upvote", UpvoteController)
 
 import TypedTitlesController from "./typed_titles_controller"
 application.register("typed-titles", TypedTitlesController)
