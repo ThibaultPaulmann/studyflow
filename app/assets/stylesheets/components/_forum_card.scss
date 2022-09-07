@@ -138,9 +138,44 @@
   .vote {
     display: flex;
     margin-left: 20px;
+    align-items: center;
   }
 
   .vote-container {
+    flex-direction: column;
+    i {
+      font-size: xx-large;
+    }
+
+    .fa-chevron-up {
+      text-shadow: 0px 1px 10px lawngreen;
+      padding-top: 3px;
+    }
+
+    .fa-chevron-down {
+      text-shadow: 0px 0px 10px red;
+    }
+
+    .answer-up {
+      padding: 18px 5px;
+      font-size: larger;
+    }
+
+    .answer-down {
+      padding: 17px 5px;
+      font-size: larger;
+    }
+
+    p {
+      font-size: x-large;
+      margin-bottom: 0;
+      align-self: center;
+    }
+    display: flex;
+  }
+
+  .answers-vote-container {
+    margin-right: 10px;
     i {
       font-size: xx-large;
     }
