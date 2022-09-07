@@ -255,6 +255,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
+
+    #btn-to-forum {
+      margin-bottom: 0;
+    }
   }
 
   .duration-input {
