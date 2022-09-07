@@ -22,5 +22,11 @@ application.register("picker", PickerController)
 import UpvoteController from "./upvote_controller"
 application.register("upvote", UpvoteController)
 
+import TypedTitlesController from "./typed_titles_controller"
+application.register("typed-titles", TypedTitlesController)
+
+import UpvoteController from "./upvote_controller"
+application.register("upvote", UpvoteController)
+
 import UserProgressController from "./user_progress_controller"
 application.register("user-progress", UserProgressController)
