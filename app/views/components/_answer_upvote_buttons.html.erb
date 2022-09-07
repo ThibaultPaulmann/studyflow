@@ -1,4 +1,4 @@
- <div data-controller="upvote" class="vote-container">
+ <div data-controller="upvote" class="answers-vote-container">
   <%= link_to upvote_answer_path(answer), data: {'turbo-method': :patch, upvote_target: "button", action: "click->upvote#handleUpvote"} do %>
     <i class="fa-solid fa-chevron-up answer-up vote-item <%= current_user.voted_up_on?(answer) ? "voted" : "default" %>"></i>
   <% end %>

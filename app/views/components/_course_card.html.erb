@@ -6,7 +6,7 @@
   <% end %>
   <%= link_to course_path(course) do %>
     <div class="icon-container" id="<%= 'first-subject-color' if course_enrollment.color == '#f04393'%><%= 'second-subject-color' if course_enrollment.color == '#1f2f98'%><%= 'tertiary-subject-color' if course_enrollment.color == '#7be495'%><%= 'quarternary-subject-color' if course_enrollment.color == '#fe7a15'%><%= 'quinternary-subject-color' if course_enrollment.color == '#522157'%><%= 'hexernary-subject-color' if course_enrollment.color == '#f8d90f'%>">
-      <i class="fa-solid fa-dna"></i>
+      <i class="fa-solid fa-<%= course_enrollment.icon %>"></i>
       <div class="content justify-content-between">
         <h3> <%= link_to course.name, course_path(course) %></h3>
         <em>

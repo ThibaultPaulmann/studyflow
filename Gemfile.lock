@@ -121,6 +121,7 @@ GEM
     faker (2.22.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    flatpickr (4.6.11.0)
     font-awesome-sass (6.1.2)
       sassc (~> 2.0)
     globalid (1.0.0)
@@ -258,6 +259,8 @@ GEM
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+    typedjs-rails (2.0.9)
+      railties (>= 3.1)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     unf (0.1.4)
@@ -297,6 +300,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
+  flatpickr
   font-awesome-sass (~> 6.1)
   jbuilder
   jsbundling-rails
@@ -311,6 +315,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails
   turbo-rails
+  typedjs-rails (~> 2.0.9)
   tzinfo-data
   web-console
   webdrivers
