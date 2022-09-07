@@ -47,19 +47,33 @@ export default class extends Controller {
     const meetings = JSON.parse(event.target.dataset.meetings);
     this.extensionAssignmentsTarget.innerHTML = "";
     this.extensionMeetingsTarget.innerHTML = "";
-    assignments.forEach((assignment) => {
+    if (assignments.length === 0) {
       this.extensionAssignmentsTarget.insertAdjacentHTML(
         "beforeend",
-        this.renderAssignment(assignment)
+        "<p><em>None</em></p>"
       );
-    });
-    meetings.forEach((meeting) => {
-      console.log(meeting);
+    } else {
+      assignments.forEach((assignment) => {
+        this.extensionAssignmentsTarget.insertAdjacentHTML(
+          "beforeend",
+          this.renderAssignment(assignment)
+        );
+      });
+    }
+    if (meetings.length === 0) {
       this.extensionMeetingsTarget.insertAdjacentHTML(
         "beforeend",
-        this.renderMeeting(meeting)
+        "<p><em>None</em></p>"
       );
-    });
+    } else {
+      meetings.forEach((meeting) => {
+        console.log(meeting);
+        this.extensionMeetingsTarget.insertAdjacentHTML(
+          "beforeend",
+          this.renderMeeting(meeting)
+        );
+      });
+    }
   }
 
   renderAssignment(assignment) {
