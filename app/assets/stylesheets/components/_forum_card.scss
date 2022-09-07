@@ -145,12 +145,23 @@
       font-size: xx-large;
     }
 
-    .fa-up {
-      text-shadow: 1px 1px lawngreen;
+    .fa-chevron-up {
+      text-shadow: 0px 1px 10px lawngreen;
+      padding-top: 3px;
     }
 
-    .fa-down {
-      text-shadow: 1px 1px red;
+    .fa-chevron-down {
+      text-shadow: 0px 0px 10px red;
+    }
+
+    .answer-up {
+      padding: 18px 5px;
+      font-size: larger;
+    }
+
+    .answer-down {
+      padding: 18px 5px;
+      font-size: larger;
     }
 
     p {
