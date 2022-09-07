@@ -2,22 +2,19 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application";
+import { application } from "./application"
 
-import CalendarController from "./calendar_controller";
-application.register("calendar", CalendarController);
-
-import CreateNewController from "./create_new_controller";
-application.register("create-new", CreateNewController);
+import CalendarController from "./calendar_controller"
+application.register("calendar", CalendarController)
 
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
-import HelloController from "./hello_controller";
-application.register("hello", HelloController);
+import TypedTitlesController from "./typed_titles_controller"
+application.register("typed-titles", TypedTitlesController)
 
-import UpvoteController from "./upvote_controller";
-application.register("upvote", UpvoteController);
+import UpvoteController from "./upvote_controller"
+application.register("upvote", UpvoteController)
 
-import UserProgressController from "./user_progress_controller";
-application.register("user-progress", UserProgressController);
+import UserProgressController from "./user_progress_controller"
+application.register("user-progress", UserProgressController)
