@@ -27,7 +27,70 @@
         <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#f8d90f" name="course_enrollment[color]" id="course_enrollment_color_f8d90f">
         <label class="form-check-label collection_radio_buttons" id="bg-f8d90f" for="course_enrollment_color_f8d90f"></label>
       </div>
+
+
+      <input type="hidden" name="course_enrollment[icon]" value="" autocomplete="off">
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="graduation-cap" checked="checked" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-graduation-cap"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="dna" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-dna"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="square-root-variable" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-square-root-variable"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="landmark" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-landmark"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="file-invoice-dollar" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-file-invoice-dollar"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="books" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-books"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="microchip-ai" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-microchip-ai"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="earth-americas" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-earth-americas"></i></label>
+
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="paint-brush" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-paint-brush"></i></label>
+
+        </div>
+
+
+
     </fieldset>
+    <%# <div class="icon-selector" data-controller="picker">
+      <button type="button" id="GetIconPicker" data-action="click->picker#pick" data-iconpicker-input="input#IconInput" data-iconpicker-preview="i#IconPreview">Select Icon</button>
+    </div> %>
     <%= f.submit 'Done' %>
   <% end %>
 </div>
