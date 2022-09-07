@@ -7,9 +7,15 @@
         <h6><strong></strong><%= @assignment.due_date.strftime("%A, %d %b %Y %l:%M %p") %></h6>
       </div>
       <div class="d-flex">
-        <div class="hand-in-button" data-action="click->user-progress#completed">
-          <h5>Hand-in</h5>
-        </div>
+        <% if @current_user_assignment.user_progress == "Completed" %>
+          <div class="completed-button">
+            <h5>Completed</h5>
+          </div>
+        <% else %>
+          <div class="hand-in-button" data-action="click->user-progress#completed">
+            <h5>Hand-in</h5>
+          </div>
+        <% end %>
         <%= link_to edit_course_assignment_path(params[:course_id], params[:id]) do %>
           <div class="edit-assignment zoom-box">
             <i class="fa-solid fa-pen-to-square"></i>
