@@ -34,7 +34,7 @@
         </div>
       </div>
       <div id="schedule-study-session">
-        <div class="simple-form-input-schedule-meeting">
+        <div id="input-schedule-meeting" data-action="click->due_date_study_session#click">
           <%= simple_form_for [@course, @assignment, @study_session] do |f| %>
             <div class="duration-input" style="display: flex; justify-content: flex-start;">
               <div class="form-group col-md-6" style="width: 50%; margin-right: 20px;">
@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="form-group col-md-6" style="width: 97%; display: flex; justify-content: flex-start;">
-              <%= f.input :due_date %>
+              <%= f.input :due_date, as: :date, html5: :true, input_html: {class: "datepicker"} %>
             </div>
             <div>
               <%= f.submit class:"btn submit-btn"%>
