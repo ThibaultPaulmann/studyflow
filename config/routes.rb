@@ -17,12 +17,23 @@ Rails.application.routes.draw do
     resources :assignments, only: [:show, :new, :create, :edit, :update] do
       resources :study_sessions, only: [:create]
       resources :questions, only: [:create, :index] do
-        member do
-          patch "upvote", to: "questions#upvote"
-          patch "downvote", to: "questions#downvote"
-        end
+
         resources :answers, only: [:create, :upvote, :update]
       end
+    end
+  end
+
+  resources :questions, only: [] do
+    member do
+      patch "upvote", to: "questions#upvote"
+      patch "downvote", to: "questions#downvote"
+    end
+  end
+
+  resources :answers, only: [] do
+    member do
+      patch "upvote", to: "answers#upvote"
+      patch "downvote", to: "answers#downvote"
     end
   end
   resources :user_assignments, only: [:update]
