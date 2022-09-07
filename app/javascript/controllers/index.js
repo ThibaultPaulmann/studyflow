@@ -10,6 +10,9 @@ application.register("calendar", CalendarController);
 import CreateNewController from "./create_new_controller";
 application.register("create-new", CreateNewController);
 
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
 import HelloController from "./hello_controller";
 application.register("hello", HelloController);
 
