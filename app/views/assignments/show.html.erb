@@ -1,3 +1,6 @@
+<div class="navigation_history">
+  <%= navigation_history(@assignment) %>
+</div>
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
