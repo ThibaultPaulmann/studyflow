@@ -1,5 +1,6 @@
 <div class="difficulty-popup" data-user-progress-target="popup">
   <div class="popup-content">
+    <i class="fa-solid fa-x close-button" data-action="click->user-progress#close" data-user-progress-target="close"></i>
     <h1> How difficult was this assignment?</h1>
     <%= simple_form_for user_assignment do |f| %>
       <%= f.input :user_progress, :as => :hidden, :input_html => { :value => "Completed" } %>
@@ -10,6 +11,7 @@
             collection: UserAssignment::DIFFICULTIES,
             label_method: :last,
             value_method: :first,
+            checked: UserAssignment::DIFFICULTIES.keys[0],
             as: :radio_buttons %>
       <%= f.submit "Mark as completed", class: "mark-complete" %>
     <% end %>
