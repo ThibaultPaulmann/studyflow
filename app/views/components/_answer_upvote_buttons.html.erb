@@ -1,10 +1,10 @@
- <div data-controller="upvote" class="vote-container">
+ <div data-controller="upvote" class="answers-vote-container">
   <%= link_to upvote_answer_path(answer), data: {'turbo-method': :patch, upvote_target: "button", action: "click->upvote#handleUpvote"} do %>
-    <i class="fa-regular fa-thumbs-up vote-item <%= current_user.voted_up_on?(answer) ? "voted" : "default" %>"></i>
+    <i class="fa-solid fa-chevron-up answer-up vote-item <%= current_user.voted_up_on?(answer) ? "voted" : "default" %>"></i>
   <% end %>
   <% vote_count = answer.get_upvotes.size - answer.get_downvotes.size %>
   <p data-upvote-target="total" class="<%= vote_count == 0 ? '' : vote_count > 0 ? 'voted' : 'downvoted' %>"> <%= number_to_human(vote_count) %></p>
   <%= link_to downvote_answer_path(answer), data: {'turbo-method': :patch, upvote_target: "button", action: "click->upvote#handleUpvote"} do %>
-      <i class="fa-regular fa-thumbs-down vote-item <%= current_user.voted_down_on?(answer) ? "downvoted" : "default" %>"></i>
+      <i class="fa-solid fa-chevron-down answer-down vote-item <%= current_user.voted_down_on?(answer) ? "downvoted" : "default" %>"></i>
   <% end %>
 </div>

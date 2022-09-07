@@ -1,4 +1,4 @@
-<div class="container" id="simple-form-new-assignment">
+<div class="container" id="simple-form-new-assignment" data-controller="typed-titles" data-typed-titles-target="form">
   <div class="simple-form-input-assignment">
     <%= simple_form_for [@course, @assignment] do |f| %>
       <div>
@@ -15,14 +15,3 @@
     <% end %>
   </div>
 </div>
-
-
-<%# Thibault where do I put this ????? %>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  const typed = new Typed(".auto-type-assignment", { strings: ["Create an Assignment", "Help your Classmates"],
-    typeSpeed: 130,
-    backSpeed: 90,
-    loop: true
-  })
-</script>
