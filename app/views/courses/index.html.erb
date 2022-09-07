@@ -1,19 +1,18 @@
 <div class="courses-index">
   <div class="index-left">
       <div style="display: flex; justify-content: center;">
-        <div class="courses-header">
-          <h1 style="margin: auto; font-size: 40px;">Courses</h1>
+        <div class="display: flex; justify-content: center;">
+          <div class="course-index-buttons">
+              <%= link_to "Add a Course", new_course_path, class: "index-courses-btn"%>
+              <%= link_to "Join a course", new_course_enrollment_path, class: "index-courses-btn" %>
+              <%= link_to "Study Sessions", study_sessions_path, class: "index-courses-btn" %>
+          </div>
         </div>
       </div>
     <div class="courses">
       <% @courses.each do |course|%>
         <%= render partial: "components/course_card", locals: { course: course, course_enrollment:  CourseEnrollment.find_by(user: current_user, course: course) } %>
       <% end %>
-    </div>
-    <div class="course-index-buttons">
-        <%= link_to "Add a Course", new_course_path, class: "index-courses-btn"%>
-        <%= link_to "Join a course", new_course_enrollment_path, class: "index-courses-btn" %>
-        <%= link_to "Study Sessions", study_sessions_path, class: "index-courses-btn" %>
     </div>
   </div>
   <div class="index-right">
