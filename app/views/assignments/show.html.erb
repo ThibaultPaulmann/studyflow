@@ -34,12 +34,12 @@
               <div class="form-group col-md-6" style="width: 50%; margin-right: 20px;">
                 <%= f.input :title %>
               </div>
-                <div class="form-group col-md-6" style="width: 20%; margin-right: 10px;">
-                  <%= f.input :duration_hours, label: 'Hours', :collection => 0..8, default: '0'%>
-                </div>
-                <div class="form-group col-md-6" style="width: 20%;">
-                    <%= f.input :duration_minutes, label: 'Minutes', :collection => (0..59).step(5), default: '0'%>
-                </div>
+              <div class="form-group col-md-6" style="width: 20%; margin-right: 10px;">
+                <%= f.input :duration_hours, label: 'Hours', :collection => 0..8, default: '0'%>
+              </div>
+              <div class="form-group col-md-6" style="width: 20%;">
+                <%= f.input :duration_minutes, label: 'Minutes', :collection => (0..59).step(5), default: '0'%>
+              </div>
             </div>
             <div class="form-group col-md-6" style="width: 97%; display: flex; justify-content: flex-start;">
               <%= f.input :due_date %>

@@ -19,4 +19,26 @@ class CourseEnrollmentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @course_enrollment = CourseEnrollment.find(params[:id])
+  end
+
+  def update
+    @course_enrollment = CourseEnrollment.find(params[:id])
+    if @course_enrollment.update(course_enrollments_params)
+      redirect_to courses_path
+      flash[:notice] = "Your course color has been changed!"
+    else
+      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Couldn't change the course color"
+    end
+    
+  end
+
+  private
+
+  def course_enrollments_params
+    params.require(:course_enrollment).permit(:color)
+  end
 end
