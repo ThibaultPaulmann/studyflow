@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_assignment_and_course, except: :show
+  before_action :set_assignment_and_course, except: [:show, :upvote, :downvote]
 
   def index
     if params[:query].present?
