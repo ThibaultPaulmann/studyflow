@@ -1,3 +1,6 @@
+<div class="navigation_history">
+  <%= navigation_history(@assignment) %>
+</div>
 <div class="container-assignment-top" data-controller="user-progress">
   <%= render partial: "popups/difficulty_popup", locals: {user_assignment: @current_user_assignment} %>
   <div class="container-difficulty-title-pdf" id="difficulty-title-pdf">
@@ -30,7 +33,7 @@
           <p>Have a Question?</p>
           <p>Want to help your classmates?</p>
           <%# <p>The Forum has </p><%= pluralize @assignment.questions.size, "Question" %>
-          <%= link_to "Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn btn-outline-light", style: "width: 100%;" %>
+          <%= link_to "Go to Forum", course_assignment_questions_path(params[:course_id], params[:id]), class: "btn submit-btn", style: "width: 100%;" %>
         </div>
       </div>
       <div id="schedule-study-session">
@@ -51,7 +54,7 @@
               <%= f.input :due_date, as: :date, html5: :true, input_html: {class: "datepicker"} %>
             </div>
             <div>
-              <%= f.submit class:"btn submit-btn"%>
+              <%= f.submit "Book a study session", class:"btn submit-btn"%>
             </div>
           <% end %>
         </div>

@@ -1,3 +1,6 @@
+<div class="navigation_history">
+  <%= navigation_history(:course_enrollment_new) %>
+</div>
 <h1>Join a course</h1>
 <%= simple_form_for(@course, method: :post, url: course_enrollments_path) do |f| %>
   <%= f.input :shareCode %>
