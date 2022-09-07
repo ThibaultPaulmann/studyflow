@@ -27,8 +27,11 @@
         <input class="form-check-input is-valid radio_buttons optional" type="radio" value="#f8d90f" name="course_enrollment[color]" id="course_enrollment_color_f8d90f">
         <label class="form-check-label collection_radio_buttons" id="bg-f8d90f" for="course_enrollment_color_f8d90f"></label>
       </div>
-
-
+</fieldset>
+<% end %>
+      <br>
+<%= simple_form_for @course_enrollment do |f|%>
+<fieldset class="mb-3 radio_buttons optional course_enrollment_color">
       <input type="hidden" name="course_enrollment[icon]" value="" autocomplete="off">
 
         <div class="form-check">
@@ -62,14 +65,14 @@
         </div>
 
         <div class="form-check">
-          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="books" name="course_enrollment[icon]">
-          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-books"></i></label>
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="book-bookmark" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-book-bookmark"></i></label>
 
         </div>
 
         <div class="form-check">
-          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="microchip-ai" name="course_enrollment[icon]">
-          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-microchip-ai"></i></label>
+          <input class="form-check-input is-valid radio_buttons optional" type="radio" value="laptop-code" name="course_enrollment[icon]">
+          <label class="form-check-label collection_radio_buttons"><i class="fa-solid fa-laptop-code"></i></label>
 
         </div>
 
@@ -88,9 +91,6 @@
 
 
     </fieldset>
-    <%# <div class="icon-selector" data-controller="picker">
-      <button type="button" id="GetIconPicker" data-action="click->picker#pick" data-iconpicker-input="input#IconInput" data-iconpicker-preview="i#IconPreview">Select Icon</button>
-    </div> %>
     <%= f.submit 'Done' %>
   <% end %>
 </div>
