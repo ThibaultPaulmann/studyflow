@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_07_134006) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_07_214547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -111,6 +111,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134006) do
     t.datetime "due_date"
     t.integer "duration_hours"
     t.integer "duration_minutes"
+    t.integer "zoom_meeting_id"
+    t.string "venue"
     t.index ["assignment_id"], name: "index_study_sessions_on_assignment_id"
   end
 
@@ -119,6 +121,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_134006) do
     t.bigint "course_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["course_id"], name: "index_useful_resources_on_course_id"
   end
 
