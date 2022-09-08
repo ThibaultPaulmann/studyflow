@@ -1,10 +1,9 @@
 .forum-card {
-  padding: 10px;
+  // padding: 10px;
   width: 100%;
   height: auto;
   background-color: $background-color;
-  margin: 10px;
-
+  // margin: 10px;
 
   .question {
     border: 1px solid black;
@@ -34,7 +33,7 @@
         color: $background-color;
         font-style: italic;
       }
-     }
+    }
   }
 
   .answers {
@@ -55,7 +54,6 @@
       margin-left: 4px;
     }
 
-
     .answer-date {
       color: $font-color;
       display: flex;
@@ -68,7 +66,7 @@
         font-size: 15px;
       }
     }
-    }
+  }
 
   .answer-header {
     background-color: $font-color;
@@ -115,6 +113,7 @@
   }
 
   .answer-header-form {
+    padding-top: 15px;
     background-color: $font-color;
     color: $background-color;
     margin: auto;
@@ -123,7 +122,6 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
-
 
   .btn-centered {
     display: flex;
