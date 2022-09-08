@@ -14,9 +14,9 @@
           </div>
         </div>
       </div>
-          <div class="vote">
-            <%= render "components/upvote_buttons", question: dataHash[:question] %>
-        </div>
+      <div class="vote">
+        <%= render "components/upvote_buttons", question: dataHash[:question] %>
+      </div>
     </div>
   </div>
   <div class="answers">
@@ -42,14 +42,14 @@
         <div class="bottom-answer-box">
           <div class="row-form-group">
             <div class="form-group col-md-6">
-              <%= f.input :content, label: 'Answer', as: :text, input_html: {rows: 3 } %>
+              <%= f.input :content, label: false, placeholder: "Post your answer", as: :text, input_html: { rows: 3 } %>
             </div>
           </div>
           <div class="btn-centered">
-             <%= f.submit 'Post Answer', class:"btn btn-flat" %>
-           </div>
-         <% end %>
-        </div>
+            <%= f.submit 'Post Answer', class:"btn btn-flat" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
