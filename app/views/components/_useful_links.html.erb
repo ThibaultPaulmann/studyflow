@@ -1,8 +1,10 @@
 <% unless @resource_links.empty? %>
   <div class="link-box">
     <% @resource_links.each do |link| %>
-      <div class="link">
+      <div class="title-link">
+        <a href="<%= link.link %>"><h4><%= link.name %></h4></a>
         <a href="<%= link.link %>"><%= link.link %></a>
+        <%= link_to link.link, "http://#{link.link}" %>
       </div>
     <% end %>
   </div>

@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @useful_resource = UsefulResource.new
     @course = Course.find(params[:id])
     assignments = Assignment.where(course: @course)
     @due_assignments = assignments.filter { |assignment| assignment.due_date >= Time.now }.sort_by { |assignment| assignment.due_date }

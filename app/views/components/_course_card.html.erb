@@ -1,6 +1,8 @@
 <div class="course-card">
   <% course_enrollment = CourseEnrollment.find_by(user: current_user, course: course) %>
-  <div class="course-card-overlay"></div>
+  <%= link_to course_path(course) do %>
+    <div class="course-card-overlay"></div>
+  <% end %>
   <%= link_to edit_course_enrollment_path(course_enrollment), class: 'course-card-edit' do %>
     <i class="fa-solid fa-pen"></i>
   <% end %>

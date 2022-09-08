@@ -2,17 +2,16 @@
   <%= navigation_history(:course_new) %>
 </div>
 <div class="container" id="simple-form-new-course" data-controller="typed-titles" data-typed-titles-target="form">
-
   <div class="simple-form-input">
     <h1 id="header-simple-form"><span class="auto-type-course"></span></h1>
     <br>
     <%= simple_form_for(@course) do |f| %>
       <div class="row">
         <div class="form-group col-md-6">
-          <%= f.input :name %>
+          <%= f.input :name, required: false, label: "Course Name" %>
         </div>
         <div class="form-group col-md-6">
-          <%= f.input :code %>
+          <%= f.input :code, required: false, label: "Course Code" %>
         </div>
         <%= f.submit class:"btn submit-btn"%>
       <% end %>
