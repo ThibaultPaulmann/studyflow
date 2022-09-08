@@ -1,5 +1,5 @@
 module NavigationHelper
-  def navigation_history(resource, action=nil)
+  def navigation_history(resource, action = nil)
     links = [link_to('Home', root_path)]
     if resource.is_a?(Assignment) && action == :questions
       links << link_to_resource(resource.course)
@@ -21,7 +21,7 @@ module NavigationHelper
     links.join(' > ').html_safe
   end
 
-  def link_to_resource(resource, action=nil)
+  def link_to_resource(resource, action = nil)
     if resource.is_a? Course
       link_to resource.name, course_path(resource)
     elsif resource.is_a?(Assignment) && action == :questions
@@ -30,7 +30,4 @@ module NavigationHelper
       link_to resource.title, course_assignment_path(resource.course, resource)
     end
   end
-
-
-
 end
