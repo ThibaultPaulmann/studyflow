@@ -47,5 +47,13 @@
       <h1>Useful Resources</h1>
     </div>
     <%= render partial: "components/useful_links"%>
+    <div class="add-useful-resource">
+      <h2>Add a Useful Resource</h2>
+       <%= simple_form_for [@course, @useful_resource] do |f| %>
+          <%= f.input :name, label: 'Name', required: false %>
+          <%= f.input :link, label: 'URL', required: false, :input_html => {:style => 'width: 100%', :rows => 1} %>
+          <%= f.submit class: 'submit-btn' %>
+        <% end %>
+    </div>
   </div>
 </div>
