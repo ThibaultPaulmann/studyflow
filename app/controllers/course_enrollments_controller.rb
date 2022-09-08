@@ -7,6 +7,7 @@ class CourseEnrollmentsController < ApplicationController
     if course = Course.find_by(shareCode: params[:course][:shareCode])
       course_enrollment = CourseEnrollment.new(user: current_user, course: course, creator: false)
       if course_enrollment.save
+        course_enrollment.course.assignments.each { |assignment| UserAssignment.create(user: current_user, assignment: assignment, user_progress: "Not started") }
         redirect_to courses_path
       else
         @course = Course.new
