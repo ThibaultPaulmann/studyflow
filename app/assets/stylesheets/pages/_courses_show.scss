@@ -74,6 +74,7 @@
     border: 1px solid antiquewhite;
     h1 {
       color: $background-color;
+      padding-top: 10px;
     }
   }
 
@@ -99,7 +100,7 @@
     color: antiquewhite;
     border: 1px solid antiquewhite;
     height: 40px;
-    
+
   }
   .add-btn {
     display: flex;
@@ -117,4 +118,17 @@
   align-items: center;
   height: 100%;
   width: 100%;
+}
+
+.add-useful-resource {
+  background-color: $font-color;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 20px;
+  color: $background-color;
+
+  label {
+    width: 100%;
+    text-align: start;
+  }
 }
