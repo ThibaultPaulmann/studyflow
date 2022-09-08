@@ -23,6 +23,13 @@
   align-items: center;
   box-shadow: 0 0 15px $font-color;
 
+  .btn {
+    background-color: #1f2839;
+    &:hover {
+      background-color: black;
+    }
+  }
+
   .element-within-question-create {
     margin: 20px;
     width: 85%;
@@ -67,6 +74,10 @@
 
   .btn {
     margin-top: 15px;
+    background-color: #1f2839;
+    &:hover {
+      background-color: black;
+    }
   }
 }
 
@@ -77,4 +88,21 @@
   justify-content: space-between;
   width: 100%;
   margin: 0px;
+}
+
+.btn-centered .btn {
+  background-color: #1f2839;
+}
+
+.form-control {
+  border-radius: 6px;
+}
+
+.form-label.text.required {
+  margin-top: 0.5rem;
+  font-size: larger;
+}
+
+.form-label.string.required {
+  font-size: larger;
 }
