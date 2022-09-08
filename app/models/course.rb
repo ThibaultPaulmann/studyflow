@@ -6,7 +6,7 @@ class Course < ApplicationRecord
   has_many :useful_resources, dependent: :destroy
 
   validates :code, presence: true
-  validates :name, presence: true, length: { minimum: 3, maximum: 17 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 43 }
 
   private
 
