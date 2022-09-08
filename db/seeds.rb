@@ -19,7 +19,7 @@ puts "created users"
 Course.destroy_all
 
 8.times do
-  course = Course.new(name: Faker::Educator.course_name.truncate(17), code: rand(101..207))
+  course = Course.new(name: Faker::Educator.course_name.truncate(43), code: rand(101..207))
   course.save!
 
   users = User.all.sample(3)

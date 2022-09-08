@@ -191,19 +191,20 @@
 }
 
 #schedule-study-session {
+  flex-grow: 1;
   background-color: blue;
   padding: 30px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 55%;
   background-color: $font-color;
   color: $background-color;
   border-radius: 20px;
 
   #input-schedule-meeting {
     height: 100%;
+    width: 100%;
   }
 
   #new_study_session {
@@ -212,12 +213,14 @@
     justify-content: space-between;
     height: 100%;
 
-    .study_session_title {
+    label {
+      width: 100%;
       text-align: start;
     }
 
-    .study_session_due_date {
-      text-align: start;
+    #study_session_due_date {
+      width: 100%;
+      margin: 0px !important;
     }
   }
 }
@@ -236,10 +239,11 @@
 }
 
 .forum-box {
+  flex-grow: 1;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   background-color: $font-color;
-  width: 42%;
   padding: 30px;
   border-radius: 20px;
 

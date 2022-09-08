@@ -7,7 +7,7 @@
         </div>
         <h6><%= render partial: "components/user_progress", locals: {user_progress: UserAssignment.where(user: current_user).where(assignment: assignment).first&.user_progress} %></h6>
       </div>
-      <p><em><%= assignment.due_date.strftime("%A, %b %d")%></em></p>
+      <p><%= assignment.course.code %> - <em><%= assignment.due_date.strftime("%A, %b %d")%></em></p>
     </div>
   <% end %>
 </div>

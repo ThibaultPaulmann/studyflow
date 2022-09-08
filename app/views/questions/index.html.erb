@@ -7,35 +7,32 @@
       <div class="question-create">
         <div class="element-within-question-create">
           <%= simple_form_for([@course, @assignment, @question]) do |f| %>
-          <div class="input-title">
-            <%= f.input :title %>
-          </div>
-              <%= f.button :submit, class: "btn btn-flat" %>
+            <div class="input-title">
+              <%= f.input :title, label: false, required: false, placeholder: "Ask your question" %>
+            </div>
+            <%= f.button :submit, class: "btn btn-flat" %>
           <% end %>
         </div>
       </div>
     </div>
-
-      <div class="search-box">
-        <div class="input-search-box">
-          <%= form_with url: course_assignment_questions_path, method: :get do %>
-            <%= text_field_tag :query,
+    <div class="search-box">
+      <div class="input-search-box">
+        <%= form_with url: course_assignment_questions_path, method: :get do %>
+          <%= text_field_tag :query,
               params[:query],
               class: "form-control",
-              placeholder: "Find a Question/Answer" %>
-            <%= submit_tag "Search", class: "btn btn-flat" %>
-          <% end %>
-        </div>
+              placeholder: "Find a Question/Answer"%>
+          <%= submit_tag "Search", class: "btn btn-flat" %>
+        <% end %>
       </div>
+    </div>
   </div>
-
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
     <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, -dataHash[:answers].size] } %>
     <% sortedData.each_with_index do |dataHash, index| %>
       <% columns[index % 3][:elements] << dataHash %>
       <% columns[index % 3][:height] += (dataHash[:answers].size + 1) %>
-
     <% end %>
     <div class="forum-column">
       <% columns[0][:elements].each do |element| %>
