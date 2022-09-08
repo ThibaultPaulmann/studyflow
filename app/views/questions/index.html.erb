@@ -29,8 +29,7 @@
   </div>
   <div class="forum-container">
     <% columns = [{elements: [], height: 0}, {elements: [], height: 0}, {elements: [], height: 0}] %>
-    <% sortedData =  @data.sort_by { |dataHash| [dataHash[:question].upvotes, -dataHash[:answers].size] } %>
-    <% sortedData.each_with_index do |dataHash, index| %>
+    <% @data.each_with_index do |dataHash, index| %>
       <% columns[index % 3][:elements] << dataHash %>
       <% columns[index % 3][:height] += (dataHash[:answers].size + 1) %>
     <% end %>
