@@ -1,47 +1,52 @@
-<div class="container bootstrap snippets bootdey">
-  <h1 class="text-primary">Edit Profile <%= resource_name.to_s.humanize %></h1>
-  <div class="row">
+<h1 class="text-primary text-center">Edit Profile <%= resource_name.to_s.humanize %></h1>
+
+<div class="container d-flex">
+
+  <div class="profile-pic">
     <!-- left column-->
-    <div class="col-md-3">
-      <div class="text-center">
-        <% if current_user.photo.present? %> Current: <%= current_user.photo.filename.to_s %><% end %>
-        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar-edit img-circle" alt="avatar">
-        <h6>Upload a different photo...</h6>
-        <input type="file" class="form-control">
-      </div>
+    <% if current_user.photo.present? %>
+      <%= cl_image_tag current_user.photo.key, class: "avatar-edit" %>
+      <h6>Upload a different photo...</h6>
+        <input type="file" class="form-control-edit">
+    <% else %>
+      <%= image_tag "https://www.pngitem.com/pimgs/m/272-2720607_this-icon-for-gender-neutral-user-circle-hd.png", class: "avatar-edit"%>
+    <% end %>
     </div>
+
+
+
+  <div class="form-group" id="edit-form">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :firstName,
+                  hint: "Leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-username" } %>
+          <%= f.input :lastName,
+                  hint: "Leave it blank if you don't want to change it",
+                  required: false,
+                  input_html: { autocomplete: "new-username" } %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+        <%= f.input :email,
+              hint: "Leave it blank if you don't want to change it",
+              required: false,
+              input_html: { autocomplete: "new-username" } %>
+        <%= f.input :current_password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions-edit">
+        <%= f.button :submit, "Update" %>
+        <%= link_to "Back", courses_path %>
+      </div>
+    <% end %>
   </div>
 
-<div class="form-group">
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-    <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :firstName,
-                hint: "Leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-username" } %>
-        <%= f.input :lastName,
-                hint: "Leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-username" } %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-      <%= f.input :email,
-            hint: "Leave it blank if you don't want to change it",
-            required: false,
-            input_html: { autocomplete: "new-username" } %>
-      <%= f.input :current_password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
-    </div>
-  <% end %>
 </div>
-
-<%= link_to "Back", courses_path %>
