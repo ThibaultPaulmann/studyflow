@@ -78,6 +78,9 @@
   .btn {
     margin-top: 15px;
     background-color: #1F2839;
+    &:hover {
+      background-color: black;
+    }
   }
 }
 
