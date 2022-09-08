@@ -9,6 +9,11 @@
   background-color: $font-color;
   color: $background-color;
   border-radius: 20px;
+
+  label {
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .simple-form-input-assignment {
