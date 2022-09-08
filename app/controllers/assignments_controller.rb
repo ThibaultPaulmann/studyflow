@@ -52,7 +52,6 @@ class AssignmentsController < ApplicationController
     end
   end
 
-
   private
 
   def assignment_params

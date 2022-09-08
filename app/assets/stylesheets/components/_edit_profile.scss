@@ -5,12 +5,15 @@
   box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
 }
 
+.spaceholder {
+  width: 35%;
+}
+
 .profile-pic {
   width: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 120px;
 
   input {
     display: flex;
@@ -36,7 +39,6 @@
 
 #edit-form input {
   border-radius: 10px;
-
 }
 
 #edit-form {
@@ -45,6 +47,12 @@
   color: whitesmoke;
   border-radius: 10px;
   box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+
+  label {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+  }
 }
 
 .container-edit {
