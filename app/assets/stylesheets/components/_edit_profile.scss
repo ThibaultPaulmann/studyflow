@@ -1,0 +1,67 @@
+.avatar-edit {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+}
+
+.spaceholder {
+  width: 35%;
+}
+
+.profile-pic {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $font-color;
+    margin-top: 20px;
+    padding-top: 48px;
+  }
+}
+
+.form-actions-edit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#edit-form input {
+  border-radius: 10px;
+}
+
+#edit-form {
+  background-color: $font-color;
+  padding: 50px 20px 20px;
+  color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+
+  label {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+  }
+}
+
+.container-edit {
+  background-color: $tertiary-color;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-primary-edit {
+  color: #1f2839;
+  font-size: 75px;
+}

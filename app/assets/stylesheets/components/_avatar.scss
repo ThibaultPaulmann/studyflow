@@ -2,6 +2,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .avatar-large {
   width: 56px;
@@ -24,32 +25,4 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-}
-
-.edit-text {
-  font-size: 24px;
-  color: $font-color;
-  margin-top: 5px;
-}
-
-.form-control-alternative {
-  color: $font-color;
-  border-color: $border-color;
-
-}
-
-.form-actions {
-  margin-top: 20px;
-  padding-top: 24px;
-  background-color: $background-color;
-  color: $font-color;
-}
-
-.back {
-  color: $font-color;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
