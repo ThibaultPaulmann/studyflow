@@ -11,9 +11,9 @@
         <%= f.input :title %>
       </div>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= link_to course_assignment_path(@course, @assignment) do %>
-      <input type="submit" value="Update value">
-      <% end %>
+      <%# <%= link_to course_assignment_path(@course, @assignment) do %>
+      <%= f.submit class:"btn submit-btn"%>
+      <%# <% end %>
     <% end %>
   </div>
 </div>
