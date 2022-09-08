@@ -44,7 +44,7 @@ class AssignmentsController < ApplicationController
   def update
     @assignment = Assignment.find(params[:id])
     if @assignment.update(assignment_params)
-      redirect_to course_assignment_path(@assignment)
+      redirect_to course_assignment_path(@assignment.course, @assignment)
       flash[:notice] = "Your assignment has been changed!"
     else
       render :edit, status: :unprocessable_entity
