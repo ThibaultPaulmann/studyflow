@@ -11,8 +11,7 @@
         </em>
         <h5 id="share-code">Share code: <%= @course.shareCode %></h5>
       </div>
-       <%= render partial: "popups/add_course_popup", locals: {user_assignment: @current_user_assignment} %>
-
+      <%= link_to icon('fa-solid', 'circle-plus fa-4x centered-icon'), new_course_assignment_path(@course), class: "text-decoration-none" %>
     </div>
     <div class="assignments">
       <h1>Due Assignments: </h1>

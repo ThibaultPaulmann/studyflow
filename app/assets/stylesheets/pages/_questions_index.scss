@@ -70,6 +70,7 @@
 
   .btn {
     margin-top: 15px;
+    background-color: #1F2839;
   }
 }
 
@@ -80,4 +81,8 @@
   justify-content: space-around;
   width: 100%;
   margin: 0px;
+}
+
+.btn-centered .btn {
+  background-color: #1F2839;
 }
