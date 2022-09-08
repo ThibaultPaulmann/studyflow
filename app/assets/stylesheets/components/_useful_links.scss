@@ -2,15 +2,24 @@
   background: $font-color;
   border-radius: 12px;
   margin-top: 10px;
-  .link {
-    padding: 10px;
-    text-align: -webkit-center;
+  .title-link {
+    padding: 15px;
+    text-align: left;
+    border-radius: 15px;
+    margin-bottom: 10px;
+
     a {
       text-decoration: none;
       color: $background-color;
     }
+
+
     a:hover {
       color: $tertiary-color;
+    }
+
+    h4 {
+      color: $background-color;
     }
   }
 }

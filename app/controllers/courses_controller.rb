@@ -1,11 +1,12 @@
 class CoursesController < ApplicationController
   def index
-    @courses = current_user.courses
+    @courses = current_user.course_enrollments.sort_by { |enrollemnt| enrollemnt.created_at }.map { |enrollment| enrollment.course }
     @due_assignments = current_user.user_assignments.reject { |user_assignment| user_assignment.user_progress == "Completed"}.map { |user_assignment| user_assignment.assignment }.filter { |assignment| assignment.due_date >= Time.now }.sort_by { |assignment| assignment.due_date }.first(5)
     @meetings = current_user.scheduled_meetings.map { |meeting| meeting.study_session }
   end
 
   def show
+    @useful_resource = UsefulResource.new
     @course = Course.find(params[:id])
     assignments = Assignment.where(course: @course)
     @due_assignments = assignments.filter { |assignment| assignment.due_date >= Time.now }.sort_by { |assignment| assignment.due_date }

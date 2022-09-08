@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :courses, only: [:index, :show, :new, :create] do
-    resources :useful_resources, only: [:index]
+    resources :useful_resources, only: [:index, :create]
     resources :assignments, only: [:show, :new, :create, :edit, :update] do
       resources :study_sessions, only: [:create]
       resources :questions, only: [:create, :index] do

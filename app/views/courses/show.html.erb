@@ -33,9 +33,6 @@
         <% end %>
       <% end %>
     </div>
-    <div id="back-to-courses-btn">
-      <%= link_to "Back to all Courses", courses_path(@courses), class: 'btn btn-outline-primary' %>
-    </div>
   </div>
   <div class="course-show-right">
     <div class="container-calendar">
@@ -47,5 +44,13 @@
       <h1>Useful Resources</h1>
     </div>
     <%= render partial: "components/useful_links"%>
+    <div class="add-useful-resource">
+      <h2>Add a Useful Resource</h2>
+       <%= simple_form_for [@course, @useful_resource] do |f| %>
+          <%= f.input :name, label: 'Name', required: false %>
+          <%= f.input :link, label: 'URL', required: false, :input_html => {:style => 'width: 100%', :rows => 1} %>
+          <%= f.submit class: 'submit-btn' %>
+        <% end %>
+    </div>
   </div>
 </div>

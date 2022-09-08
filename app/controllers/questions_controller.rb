@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :set_assignment_and_course, except: [:show, :upvote, :downvote]
 
+
   def index
     if params[:query].present?
       questions = Question.search_by_title(params[:query]).where(assignment: params[:assignment_id])
@@ -10,7 +11,7 @@ class QuestionsController < ApplicationController
     @data = []
     @question = Question.new
     @answer = Answer.new
-    questions.each do |question|
+    questions.order(cached_weighted_score: :desc).each do |question|
       hash = {
         question: question,
         answers: Answer.where(question: question)

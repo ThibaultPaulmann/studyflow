@@ -5,10 +5,10 @@
         <h1 id="header-simple-form"><span class="auto-type-assignment"></span></h1>
       </div>
       <div class="form-group col-md-6">
-        <%= f.input :title %>
+        <%= f.input :title, required: false, label: "Assignment Title" %>
       </div>
       <div class="form-group col-md-6">
-        <%= f.input :due_date, as: :date, html5: :true, input_html: {class: "datepicker"} %>
+        <%= f.input :due_date, as: :date, required: false, html5: :true, input_html: {class: "datepicker"} %>
       </div>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit class:"btn create-submit-btn"%>
