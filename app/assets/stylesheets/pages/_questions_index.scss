@@ -25,6 +25,9 @@
 
   .btn {
     background-color: #1F2839;
+    &:hover {
+      background-color: black;
+    }
   }
 
 
