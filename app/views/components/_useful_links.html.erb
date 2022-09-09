@@ -2,9 +2,10 @@
   <div class="link-box">
     <% @resource_links.each do |link| %>
       <div class="title-link">
-        <a href="<%= link.link %>"><h4><%= link.name %></h4></a>
-        <a href="<%= link.link %>"><%= link.link %></a>
-        <%= link_to link.link, "http://#{link.link}" %>
+        <a href="<%= link.link %>">
+          <h4><%= link.name %></h4>
+        </a>
+        <a href="<%= link.link %>"> <%= link.link %> </a>
       </div>
     <% end %>
   </div>
